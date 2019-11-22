@@ -1,6 +1,6 @@
 {
   "name": "asposetaskscloud",
-  "version": "19.4.0",
+  "version": "19.10.0",
   "description": "Aspose.Tasks Cloud SDK for Node.js",
   "main": "src/api.ts",
   "scripts": {
@@ -13,6 +13,10 @@
   ],
   "author": {
     "name": "Ivan Andreychikov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-node.git"
   },
   "license": "MIT",
   "devDependencies": {
