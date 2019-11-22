@@ -1,0 +1,32 @@
+{
+  "name": "asposetaskscloud",
+  "version": "19.4.0",
+  "description": "Aspose.Tasks Cloud SDK for Node.js",
+  "main": "src/api.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.ts --timeout 10000"
+  },
+  "keywords": [
+    "Aspose",
+    "Cloud",
+    "Tasks"
+  ],
+  "author": {
+    "name": "Ivan Andreychikov"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "request-debug": "^0.2.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/request": "^2.48.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "request": "^2.88.0",
+    "superagent": "^3.8.3",
+    "ts-node": "^8.4.1"
+  }
+}
