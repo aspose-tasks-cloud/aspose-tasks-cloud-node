@@ -77,4 +77,4 @@ export class TestTasksApi extends TasksApi {
 export const remoteBaseFolder = "Temp/SdkTests/node/";
 export const remoteBaseTestDataFolder = "Temp/SdkTests/node/TestData/";
 export const remoteBaseTestOutFolder = "Temp/SdkTests/node/TestOut/";
-export const localBaseTestDataFolder = "./TestData/";
+export const localBaseTestDataFolder = "./testData/";
