@@ -45,6 +45,19 @@ export function initializeTasksApi(debugMode?: boolean) {
     return tasksApi;
 }
 
+export function getDateOnly(arg :Date): Date {
+    return new Date(arg.getUTCFullYear(), arg.getUTCMonth(), arg.getUTCDate());
+}
+
+export function getTimeOnly(arg :Date): Date {
+    return new Date(0, 0, 0, arg.getUTCHours(), arg.getUTCMinutes(), arg.getUTCSeconds());
+}
+
+export function convertArrayBufferToString(buffer: ArrayBuffer): string {
+    const uintArray = new Uint8Array(buffer);
+    return String.fromCharCode.apply(this, uintArray)
+  }
+
 /**
  * TasksApi class with simplified file uploading
  */
