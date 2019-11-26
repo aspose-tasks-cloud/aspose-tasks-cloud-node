@@ -50,10 +50,20 @@ export async function invokeApiMethod(requestOptions: request.Options, confgurat
  */
 export function addQueryParameterToUrl(url, queryParameters, parameterName, parameterValue) {
     if (parameterValue !== undefined) {
+        let valueAsString: string;
+        if(parameterValue instanceof Date)
+        {
+            valueAsString = (parameterValue as Date).toISOString();
+        }
+        else
+        {
+            valueAsString = String(parameterValue);
+        }
+
         if (url.indexOf("{" + parameterName + "}") >= 0) {
-            url = url.replace("{" + parameterName + "}", String(parameterValue));
+            url = url.replace("{" + parameterName + "}", valueAsString);
         } else {
-            queryParameters[parameterName] = String(parameterValue);
+            queryParameters[parameterName] = valueAsString;
         }
     } else {
         url = url.replace("/{" + parameterName + "}", "");
@@ -85,6 +95,7 @@ async function invokeApiMethodInternal(requestOptions: request.Options, confgura
         sa.set("Content-Length", postData.length);
         sa.send(postData);
     } else if (requestOptions.body) {
+        sa.type('application/json');
         sa.send(requestOptions.body);
     }
     // query params
