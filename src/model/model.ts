@@ -10518,7 +10518,7 @@ export class PostTaskDocumentWithFormatRequest {
     /**
      * Instance of inheritor of SaveOptions class which contains format-specific settings for saving a project.
      */
-    public saveOptions: any;
+    public saveOptions: Object;
 
     /**
      * If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.

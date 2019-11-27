@@ -3331,7 +3331,7 @@ export class TasksApi {
             qs: queryParameters,
             uri: localVarPath,
             encoding: null,
-            body: ObjectSerializer.serialize(requestObj.saveOptions, requestObj.saveOptions.constructor.name),
+            body: ObjectSerializer.serialize(requestObj.saveOptions, requestObj.saveOptions.constructor.name === "Object" ? "String" : requestObj.saveOptions.constructor.name),
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
