@@ -42,7 +42,7 @@ export class ObjectSerializer {
     /**
      * Serilize object to json string.
      */
-    public static serialize(data: any, type: string) {
+    public static serialize(data: any, type: string, isRecursiveCall :boolean = false) {
         if (data === undefined) {
             return data;
         } else if (primitives.indexOf(type.toLowerCase()) !== -1) {
@@ -54,12 +54,13 @@ export class ObjectSerializer {
             for (const index in data) {
                 if (data.hasOwnProperty(index)) {
                     const date = data[index];
-                    transformedData.push(ObjectSerializer.serialize(date, subType));
+                    transformedData.push(ObjectSerializer.serialize(date, subType, true));
                 }
             }
             return transformedData;
         } else if (type === "Date") {
-            return new Date(data);
+            const result = data.toISOString() as string;
+            return isRecursiveCall ? result : "\"" + result + "\"";;
         } else {
             if (enumsMap[type]) {
                 return data;
@@ -74,7 +75,7 @@ export class ObjectSerializer {
             for (const index in attributeTypes) {
                 if (attributeTypes.hasOwnProperty(index)) {
                     const attributeType = attributeTypes[index];
-                    instance[attributeType.baseName] = ObjectSerializer.serialize(data[attributeType.name], attributeType.type);
+                    instance[attributeType.baseName] = ObjectSerializer.serialize(data[attributeType.name], attributeType.type, true);
                 }
             }
             return instance;
