@@ -64,8 +64,8 @@ describe("getCalendarWorkWeeks function", () => {
         expect(workWeek.weekDays[0].dayWorking).is.true;  
         expect(workWeek.weekDays[0].dayType).to.equal(DayType.Monday);
         expect(workWeek.weekDays[0].workingTimes.length).to.equal(1);
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[0].workingTimes[0].fromTime)).to.eql(new Date(0, 0, 0, 11, 30, 0));  
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[0].workingTimes[0].toTime)).to.eql(new Date(0, 0, 0, 12, 30, 0));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[0].workingTimes[0].fromTime)).to.eql(new Date(Date.UTC(0, 0, 0, 11, 30, 0)));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[0].workingTimes[0].toTime)).to.eql(new Date(Date.UTC(0, 0, 0, 12, 30, 0)));  
 
         expect(workWeek.weekDays[1].dayWorking).is.false;  
         expect(workWeek.weekDays[1].dayType).to.equal(DayType.Tuesday);
@@ -74,15 +74,15 @@ describe("getCalendarWorkWeeks function", () => {
         expect(workWeek.weekDays[2].dayWorking).is.true;  
         expect(workWeek.weekDays[2].dayType).to.equal(DayType.Wednesday);
         expect(workWeek.weekDays[2].workingTimes.length).to.equal(2);
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[0].fromTime)).to.eql(new Date(0, 0, 0, 9, 30, 0));  
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[0].toTime)).to.eql(new Date(0, 0, 0, 13, 23, 0));  
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[1].fromTime)).to.eql(new Date(0, 0, 0, 14, 45, 0));  
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[1].toTime)).to.eql(new Date(0, 0, 0, 18, 45, 0));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[0].fromTime)).to.eql(new Date(Date.UTC(0, 0, 0, 9, 30, 0)));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[0].toTime)).to.eql(new Date(Date.UTC(0, 0, 0, 13, 23, 0)));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[1].fromTime)).to.eql(new Date(Date.UTC(0, 0, 0, 14, 45, 0)));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[2].workingTimes[1].toTime)).to.eql(new Date(Date.UTC(0, 0, 0, 18, 45, 0)));  
 
         expect(workWeek.weekDays[3].dayWorking).is.true;  
         expect(workWeek.weekDays[3].dayType).to.equal(DayType.Saturday);
         expect(workWeek.weekDays[3].workingTimes.length).to.equal(1);
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[3].workingTimes[0].fromTime)).to.eql(new Date(0, 0, 0, 9, 0, 0));  
-        expect(BaseTest.getTimeOnly(workWeek.weekDays[3].workingTimes[0].toTime)).to.eql(new Date(0, 0, 0, 10, 0, 0));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[3].workingTimes[0].fromTime)).to.eql(new Date(Date.UTC(0, 0, 0, 9, 0, 0)));  
+        expect(BaseTest.getTimeOnly(workWeek.weekDays[3].workingTimes[0].toTime)).to.eql(new Date(Date.UTC(0, 0, 0, 10, 0, 0)));  
     });
 })

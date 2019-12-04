@@ -102,11 +102,11 @@ describe("postCalendar function", () => {
         secondDay.fromDate = new Date(0, 0, 0, 8);
         secondDay.toDate = new Date(0, 0, 0, 17);
         const firstWorkingTime = new WorkingTime()
-        firstWorkingTime.fromTime = new Date(0, 0, 0, 8);
-        firstWorkingTime.toTime = new Date(0, 0, 0, 13);
+        firstWorkingTime.fromTime = new Date(Date.UTC(0, 0, 0, 8));
+        firstWorkingTime.toTime = new Date(Date.UTC(0, 0, 0, 13));
         const secondWorkingTime = new WorkingTime()
-        secondWorkingTime.fromTime = new Date(0, 0, 0, 14);
-        secondWorkingTime.toTime = new Date(0, 0, 0, 17);
+        secondWorkingTime.fromTime = new Date(Date.UTC(0, 0, 0, 14));
+        secondWorkingTime.toTime = new Date(Date.UTC(0, 0, 0, 17));
         secondDay.workingTimes = [firstWorkingTime, secondWorkingTime];
         request1.calendar.days = [firstDay, secondDay];
         request1.calendar.isBaseCalendar = false;
@@ -130,10 +130,10 @@ describe("postCalendar function", () => {
         const monday = result2.body.calendar.days.find(d => d.dayType === DayType.Monday);
         expect(monday).is.not.null.and.not.undefined; 
         expect(monday.workingTimes.length).to.equal(2);  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[0].fromTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 8)));  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[0].toTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 13)));  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[1].fromTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 14)));  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[1].toTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 17)));  
+        expect(BaseTest.getTimeOnly(monday.workingTimes[0].fromTime)).to.eql(BaseTest.getTimeOnly(firstWorkingTime.fromTime));  
+        expect(BaseTest.getTimeOnly(monday.workingTimes[0].toTime)).to.eql(BaseTest.getTimeOnly(firstWorkingTime.toTime));  
+        expect(BaseTest.getTimeOnly(monday.workingTimes[1].fromTime)).to.eql(BaseTest.getTimeOnly(secondWorkingTime.fromTime));  
+        expect(BaseTest.getTimeOnly(monday.workingTimes[1].toTime)).to.eql(BaseTest.getTimeOnly(secondWorkingTime.toTime));  
     });
 
     it("should return response with code 400 if workingTimes is empty for any working day", async () => {
@@ -198,14 +198,14 @@ describe("putCalendar function", () => {
         const secondDay = new WeekDay();
         secondDay.dayType = DayType.Monday;
         secondDay.dayWorking = true;
-        secondDay.fromDate = new Date(0, 0, 0, 8);
-        secondDay.toDate = new Date(0, 0, 0, 17);
+        secondDay.fromDate = new Date(Date.UTC(0, 0, 0, 8));
+        secondDay.toDate = new Date(Date.UTC(0, 0, 0, 17));
         const firstWorkingTime = new WorkingTime()
-        firstWorkingTime.fromTime = new Date(0, 0, 0, 8);
-        firstWorkingTime.toTime = new Date(0, 0, 0, 13);
+        firstWorkingTime.fromTime = new Date(Date.UTC(0, 0, 0, 8));
+        firstWorkingTime.toTime = new Date(Date.UTC(0, 0, 0, 13));
         const secondWorkingTime = new WorkingTime()
-        secondWorkingTime.fromTime = new Date(0, 0, 0, 14);
-        secondWorkingTime.toTime = new Date(0, 0, 0, 17);
+        secondWorkingTime.fromTime = new Date(Date.UTC(0, 0, 0, 14));
+        secondWorkingTime.toTime = new Date(Date.UTC(0, 0, 0, 17));
         secondDay.workingTimes = [firstWorkingTime, secondWorkingTime];
         request1.calendar.days = [firstDay, secondDay];
         request1.calendar.isBaseCalendar = false;
@@ -228,10 +228,10 @@ describe("putCalendar function", () => {
         const monday = result2.body.calendar.days.find(d => d.dayType === DayType.Monday);
         expect(monday).is.not.null.and.not.undefined; 
         expect(monday.workingTimes.length).to.equal(2);  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[0].fromTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 8)));  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[0].toTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 13)));  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[1].fromTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 14)));  
-        expect(BaseTest.getTimeOnly(monday.workingTimes[1].toTime)).to.eql(BaseTest.getTimeOnly(new Date(0, 0, 0, 17)));   
+        expect(BaseTest.getTimeOnly(monday.workingTimes[0].fromTime)).to.eql(BaseTest.getTimeOnly(firstWorkingTime.fromTime));  
+        expect(BaseTest.getTimeOnly(monday.workingTimes[0].toTime)).to.eql(BaseTest.getTimeOnly(firstWorkingTime.toTime));  
+        expect(BaseTest.getTimeOnly(monday.workingTimes[1].fromTime)).to.eql(BaseTest.getTimeOnly(secondWorkingTime.fromTime));  
+        expect(BaseTest.getTimeOnly(monday.workingTimes[1].toTime)).to.eql(BaseTest.getTimeOnly(secondWorkingTime.toTime));    
     });
 });
 
