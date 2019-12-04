@@ -46,16 +46,17 @@ export function initializeTasksApi(debugMode?: boolean) {
 }
 
 export function getDateOnly(arg :Date): Date {
-    return new Date(arg.getUTCFullYear(), arg.getUTCMonth(), arg.getUTCDate());
+    return new Date(arg.getFullYear(), arg.getMonth(), arg.getDate());
 }
 
 export function getTimeOnly(arg :Date): Date {
-    return new Date(0, 0, 0, arg.getUTCHours(), arg.getUTCMinutes(), arg.getUTCSeconds());
+    return new Date(0, 0, 0, arg.getHours(), arg.getMinutes(), arg.getSeconds());
 }
 
-export function convertArrayBufferToString(buffer: ArrayBuffer): string {
+export function convertArrayBufferToStrings(buffer: ArrayBuffer): string[] {
     const uintArray = new Uint8Array(buffer);
-    return String.fromCharCode.apply(this, uintArray)
+    const string = String.fromCharCode.apply(this, uintArray);    
+    return string.split("\r\n")
   }
 
 /**
