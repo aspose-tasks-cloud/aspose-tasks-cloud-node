@@ -118,24 +118,30 @@ export class ObjectSerializer {
             for (const index in attributeTypes) {
                 if (attributeTypes.hasOwnProperty(index)) {
                     const attributeType = attributeTypes[index];
-                    if(data.hasOwnProperty(attributeType.baseName)) { // if baseName is pascalCase
-                        instance[attributeType.name] = ObjectSerializer.deserialize(data[attributeType.baseName], attributeType.type);
-                        continue;
-                    }
-
-                    const baseName = this.firstCharAsUpperCase(attributeType.baseName);
-                    if (data.hasOwnProperty(baseName)) {
-                        const type = this.firstCharAsUpperCase(attributeType.type);
-                        instance[attributeType.name] = ObjectSerializer.deserialize(data[baseName], type);
+                    const baseName = this.GetPropertyCaseInsensitive(data, attributeType.baseName)
+                    if(baseName != null) {
+                        instance[attributeType.name] = ObjectSerializer.deserialize(data[baseName], attributeType.type);
                     }
                 }
             }
             return instance;
         }
     }
-    
-    private static firstCharAsUpperCase(string: string) {
-        return string.substring(0,1).toUpperCase() + string.substring(1);
+
+    private static GetPropertyCaseInsensitive(obj: any, property: string): string {
+        let props :string[]= [];
+        for (var i in obj) {
+            if (obj.hasOwnProperty(i)) {
+                props.push(i);
+            }                
+        }             
+        let prop: string;
+        while (prop = props.pop()) {
+            if (prop.toLowerCase() === property.toLowerCase()) {
+                return prop;
+            } 
+        } 
+        return null;
     }
     
    private static findCorrectType(data: any, expectedType: string) {
