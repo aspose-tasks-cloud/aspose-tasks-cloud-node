@@ -7,6 +7,42 @@ This repository contains Aspose.Tasks Cloud SDK for Node.js source code. This SD
 
 To use these SDK, you will need App SID and App Key which can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (free registration in Aspose Cloud is required for this).
 
+### Sample usage
+The examples below show how your application have to initiate and get a project's tasks using aspose-tasks-cloud library:
+``` js
+
+const tasksApi = new TasksApi("Youre AppSid here", "Youre AppKey here");
+
+const request: GetTasksRequest = { name: "ProjectFile.mpp", folder: "documents", storage: ""}
+
+tasksApi.getTasks(request)
+    .then((result) => {
+        // Deal with a result
+        console.log(result.response.statusCode);
+        console.log(result.body);
+    })
+    .catch(function(err) {
+        // Deal with an error
+        console.log(err.reponse.statusCode);
+        console.log(err.body);
+    });
+
+```
+
+Every method returns a chainable promise.
+
+[Tests](test) contain various examples of using the SDK. You have to create "testConfig.json" file in project root to run them.
+"testConfig.json" has the following structure
+``` json
+{
+    "AppSid": "Youre AppSid here",
+    "AppKey": "Youre AppKey here",
+    "BaseUrl": "http://api.aspose.cloud"
+}
+```
+
+For other examples, check the product [Developer Guide](https://docs.aspose.cloud/display/taskscloud/Developer+Guide).
+
 # Licensing
 All Aspose.Tasks Cloud SDKs, helper scripts and templates are licensed under [MIT License](LICENSE).
 
