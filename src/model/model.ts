@@ -8908,7 +8908,7 @@ public projectUid: string;
 public filename: string;
 
     /**
-     * Format of the resulting file. The import to Mpp format is not supported.
+     * Format of the resulting file.
      */
 public format: ProjectFileFormat;
 
@@ -9001,7 +9001,7 @@ public guid: string;
 public xProjectOnlineToken: string;
 
     /**
-     * Format of the resulting file. The import to Mpp format is not supported.
+     * Format of the resulting file.
      */
 public format: ProjectFileFormat;
 
