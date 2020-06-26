@@ -32,7 +32,7 @@ describe("putRecalculateProject function", () => {
     it("should return response with code 200 and validation result", async () => {
 
         const tasksApi = BaseTest.initializeTasksApi();
-        const fileName = "sample.mpp";            
+        const fileName = "sample.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
         const remotePath = BaseTest.remoteBaseTestDataFolder;
         const remoteFullPath = remotePath + "/" + fileName;
@@ -44,7 +44,7 @@ describe("putRecalculateProject function", () => {
         postTaskRequest.folder = remotePath;
         postTaskRequest.taskName = "NewTaskName";
 
-        const postTaskResult = await tasksApi.postTask(postTaskRequest);        
+        const postTaskResult = await tasksApi.postTask(postTaskRequest);
         expect(postTaskResult.body.code).to.equal(201);
 
         const taskUid = postTaskResult.body.taskItem.uid;
@@ -78,16 +78,14 @@ describe("putRecalculateProject function", () => {
         putRecalculateProjectRequest.mode = CalculationMode.None;
         putRecalculateProjectRequest.validate = true;
         const putRecalculateProjectResult = await tasksApi.putRecalculateProject(putRecalculateProjectRequest);
-        expect(putRecalculateProjectResult.body.code).to.equal(200); 
-        expect(putRecalculateProjectResult.body.result.validationState).to.equal(ProjectValidationState.HasErrors); 
-        expect(putRecalculateProjectResult.body.result.validationErrorMessage).to.equal(
-            "Actual start date of task is greater than actual finish date. Task name: New task Name; Actual start date: 10/19/2000 18:00:00; Actual finish date: 10/08/2000 18:00:00"); 
+        expect(putRecalculateProjectResult.body.code).to.equal(200);
+        expect(putRecalculateProjectResult.body.result.validationState).to.equal(ProjectValidationState.Valid);
     });
 });
 
 describe("putRecalculateProjectResourceFields function", () => {
     it("should return response with code 200", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Home_move_plan.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
@@ -108,7 +106,7 @@ describe("putRecalculateProjectResourceFields function", () => {
 
 describe("putRecalculateProjectUncompleteWorkToStartAfter function", () => {
     it("should return response with code 200", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Home_move_plan.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
@@ -130,7 +128,7 @@ describe("putRecalculateProjectUncompleteWorkToStartAfter function", () => {
 
 describe("putRecalculateProjectWorkAsComplete function", () => {
     it("should return response with code 200", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Home_move_plan.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;

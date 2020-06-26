@@ -91,7 +91,7 @@ describe.skip("Ignored because real credentials is required", () => {
         });
     });
     describe("putImportProjectFromProjectOnline function", () => {
-        it("should return response with code 200 and correct data", async () => {
+        it("should return response with code 200 and correct data by token credentials", async () => {
     
             const tasksApi = BaseTest.initializeTasksApi(); 
             const request1 = new PutImportProjectFromProjectOnlineRequest();
@@ -99,7 +99,32 @@ describe.skip("Ignored because real credentials is required", () => {
             request1.guid = "E6426C44-D6CB-4B9C-AF16-48910ACE0F54";
             request1.xProjectOnlineToken = "SOMESECRETTOKEN";
             request1.folder = BaseTest.remoteBaseTestDataFolder;
-            request1.siteUrl = "https://your_company_name.sharepoint.com";
+            request1.siteUrl = "your_company_name.sharepoint.com";
+            request1.format = ProjectFileFormat.P6xml;
+    
+            const result1 = await tasksApi.putImportProjectFromProjectOnline(request1);
+    
+            expect(result1.response.statusCode).to.equal(200);
+    
+            const request2 = new DownloadFileRequest();
+            request2.path = "NewProductDev.mpp";
+    
+            const result2 = await tasksApi.downloadFile(request2);
+    
+            expect(result2.response.statusCode).to.equal(200);
+            expect(result2.body).is.not.undefined.and.not.null;
+            expect(result2.body.length).to.be.at.least(1);
+        });
+        it("should return response with code 200 and correct data by login and password credentials", async () => {
+    
+            const tasksApi = BaseTest.initializeTasksApi(); 
+            const request1 = new PutImportProjectFromProjectOnlineRequest();
+            request1.name = "NewProductDev.mpp"
+            request1.guid = "E6426C44-D6CB-4B9C-AF16-48910ACE0F54";
+            request1.userName = "SomeLogin";
+            request1.xSharepointPassword = "SomePassword";
+            request1.folder = BaseTest.remoteBaseTestDataFolder;
+            request1.siteUrl = "your_company_name.sharepoint.com";
             request1.format = ProjectFileFormat.P6xml;
     
             const result1 = await tasksApi.putImportProjectFromProjectOnline(request1);

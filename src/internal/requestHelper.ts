@@ -94,9 +94,11 @@ async function invokeApiMethodInternal(requestOptions: request.Options, confgura
         sa.type('application/octet-stream');
         sa.set("Content-Length", postData.length);
         sa.send(postData);
-    } else if (requestOptions.body) {
+    } else {
         sa.type('application/json');
-        sa.send(requestOptions.body);
+        if (requestOptions.body) {
+            sa.send(requestOptions.body);
+        }
     }
     // query params
     sa.query(requestOptions.qs);
@@ -104,14 +106,19 @@ async function invokeApiMethodInternal(requestOptions: request.Options, confgura
     //headers
     sa.set("User-Agent", "tasks nodejs sdk");
     sa.set("x-aspose-client", "nodejs sdk");  
-    sa.set("x-aspose-client-version", "19.12"); 
+    sa.set("x-aspose-client-version", "20.6"); 
 
     if (!requestOptions.headers) {
         requestOptions.headers = {};
     } 
     
-    if (!notApplyAuthToRequest && requestOptions.headers.Authorization) {
-        sa.set("Authorization", requestOptions.headers.Authorization);
+    if (!notApplyAuthToRequest) {
+
+        for (let [propName, propValue] of Object.entries(requestOptions.headers)) {
+            if(propValue != undefined && propValue != null) {
+                sa.set(propName, propValue);
+            }
+          }
     }
     
     if (requestOptions.json){

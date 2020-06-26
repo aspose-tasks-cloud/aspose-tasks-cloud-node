@@ -155,6 +155,40 @@ describe("postAssignment function", () => {
         expect(result3.body.task.work).to.equal(result2.body.assignment.work);
         expect(result3.body.task.cost).to.equal(result2.body.assignment.cost);
     });
+    it("should return correct data when using assignment cost instead of units", async () => {
+
+        const tasksApi = BaseTest.initializeTasksApi();
+        const fileName = "Cost_Res.mpp";
+        const localPath = BaseTest.localBaseTestDataFolder + fileName;
+        const remotePath = BaseTest.remoteBaseTestDataFolder;
+        const remoteFullPath = remotePath + "/" + fileName;
+
+        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);
+
+        const request1 = new PostAssignmentRequest();
+        request1.resourceUid = 1;
+        request1.cost = 2;
+        request1.taskUid = 0;
+        request1.name = fileName;
+        request1.folder = remotePath;
+
+        const result1 = await tasksApi.postAssignment(request1);
+
+        expect(result1.response.statusCode).to.equal(200);
+        expect(result1.body.assignmentItem).not.undefined.and.not.null;
+
+        const assignmentUid = result1.body.assignmentItem.uid;
+
+        const request2 = new GetAssignmentRequest();
+        request2.assignmentUid = assignmentUid;
+        request2.name = fileName;
+        request2.folder = remotePath;
+
+        const result2 = await tasksApi.getAssignment(request2);
+
+        expect(result2.response.statusCode).to.equal(200);
+        expect(result2.body.assignment.cost).to.equal(request1.cost);
+    });
 });
 
 describe("putAssignment function", () => {

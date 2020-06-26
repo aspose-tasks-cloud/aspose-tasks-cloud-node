@@ -61,10 +61,10 @@ describe("getCalendarExceptions function", () => {
         expect(calendarException.occurrences).to.eql(8); 
         expect(calendarException.period).to.eql(1); 
         expect(calendarException.workingTimes.length).to.eql(2); 
-        expect(calendarException.workingTimes[0].fromTime).to.eql(new Date(-61851567600000)); 
-        expect(calendarException.workingTimes[0].toTime).to.eql(new Date(-61851554760000)); 
-        expect(calendarException.workingTimes[1].fromTime).to.eql(new Date(-61851545340000)); 
-        expect(calendarException.workingTimes[1].toTime).to.eql(new Date(-61851537000000)); 
+        expect(BaseTest.getTimeOnly(calendarException.workingTimes[0].fromTime)).to.eql(new Date(0, 0, 0, 13, 2, 33)); 
+        expect(BaseTest.getTimeOnly(calendarException.workingTimes[0].toTime)).to.eql(new Date(0, 0, 0, 16, 36, 33)); 
+        expect(BaseTest.getTimeOnly(calendarException.workingTimes[1].fromTime)).to.eql(new Date(0, 0, 0, 19, 13, 33)); 
+        expect(BaseTest.getTimeOnly(calendarException.workingTimes[1].toTime)).to.eql(new Date(0, 0, 0, 21, 32, 33)); 
     });
 });
 
@@ -211,8 +211,8 @@ function assertCalendarExceptionsAreEqual(actual :CalendarException, expected :C
     expect(actual.workingTimes.length).to.equal(expected.workingTimes.length);
     for(let i = 0; i < actual.workingTimes.length; i++)
     {
-        expect(BaseTest.getDateOnly(actual.workingTimes[i].fromTime)).to.eql(BaseTest.getDateOnly(expected.workingTimes[i].fromTime));
-        expect(BaseTest.getDateOnly(actual.workingTimes[i].toTime)).to.eql(BaseTest.getDateOnly(expected.workingTimes[i].toTime));
+        expect(BaseTest.getTimeOnly(actual.workingTimes[i].fromTime)).to.eql(BaseTest.getTimeOnly(expected.workingTimes[i].fromTime));
+        expect(BaseTest.getTimeOnly(actual.workingTimes[i].toTime)).to.eql(BaseTest.getTimeOnly(expected.workingTimes[i].toTime));
     }
     expect(actual.daysOfWeek.length).to.equal(expected.daysOfWeek.length);
     for(let i = 0; i < actual.daysOfWeek.length; i++)

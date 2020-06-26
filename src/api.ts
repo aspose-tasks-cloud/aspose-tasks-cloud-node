@@ -77,6 +77,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -108,6 +109,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -139,6 +141,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -179,6 +182,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -260,6 +264,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destPath", requestObj.destPath);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -290,6 +295,7 @@ export class TasksApi {
         }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
@@ -321,6 +327,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "recursive", requestObj.recursive);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -351,6 +358,7 @@ export class TasksApi {
         }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -390,6 +398,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destPath", requestObj.destPath);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -415,6 +424,7 @@ export class TasksApi {
         const queryParameters: any = {};
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -447,6 +457,7 @@ export class TasksApi {
         }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -480,6 +491,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -511,6 +523,7 @@ export class TasksApi {
             throw new Error('Required parameter "requestObj.storageName" was null or undefined when calling storageExists.');
         }
         
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -552,6 +565,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -591,6 +605,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -633,6 +648,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "endDate", requestObj.endDate);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -666,6 +682,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -710,9 +727,11 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "taskUid", requestObj.taskUid);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "resourceUid", requestObj.resourceUid);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "units", requestObj.units);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "cost", requestObj.cost);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
@@ -760,12 +779,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
+        let requestBody : any;
+        if(requestObj.assignment) {
+            requestBody = ObjectSerializer.serialize(requestObj.assignment, requestObj.assignment.constructor.name === "Object" ? "ResourceAssignment" : requestObj.assignment.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.assignment, requestObj.assignment.constructor.name === "Object" ? "ResourceAssignment" : requestObj.assignment.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -802,6 +827,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -848,6 +874,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -887,6 +914,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -926,6 +954,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -965,6 +994,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -998,6 +1028,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1037,12 +1068,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.calendar) {
+            requestBody = ObjectSerializer.serialize(requestObj.calendar, requestObj.calendar.constructor.name === "Object" ? "Calendar" : requestObj.calendar.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.calendar, requestObj.calendar.constructor.name === "Object" ? "Calendar" : requestObj.calendar.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1083,12 +1120,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.calendarException) {
+            requestBody = ObjectSerializer.serialize(requestObj.calendarException, requestObj.calendarException.constructor.name === "Object" ? "CalendarException" : requestObj.calendarException.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.calendarException, requestObj.calendarException.constructor.name === "Object" ? "CalendarException" : requestObj.calendarException.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1129,12 +1172,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.calendar) {
+            requestBody = ObjectSerializer.serialize(requestObj.calendar, requestObj.calendar.constructor.name === "Object" ? "Calendar" : requestObj.calendar.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.calendar, requestObj.calendar.constructor.name === "Object" ? "Calendar" : requestObj.calendar.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1181,12 +1230,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.calendarException) {
+            requestBody = ObjectSerializer.serialize(requestObj.calendarException, requestObj.calendarException.constructor.name === "Object" ? "CalendarException" : requestObj.calendarException.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.calendarException, requestObj.calendarException.constructor.name === "Object" ? "CalendarException" : requestObj.calendarException.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1216,6 +1271,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1255,6 +1311,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "endDate", requestObj.endDate);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1288,6 +1345,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1321,6 +1379,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1361,6 +1420,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "returnAsZipArchive", requestObj.returnAsZipArchive);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1413,12 +1473,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "databaseSchema", requestObj.databaseSchema);
+
+        let requestBody : any;
+        if(requestObj.connectionString) {
+            requestBody = ObjectSerializer.serialize(requestObj.connectionString, requestObj.connectionString.constructor.name === "Object" ? "string" : requestObj.connectionString.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.connectionString, requestObj.connectionString.constructor.name === "Object" ? "string" : requestObj.connectionString.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1461,6 +1527,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "outputFileFormat", requestObj.outputFileFormat);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -1493,33 +1560,36 @@ export class TasksApi {
             throw new Error('Required parameter "requestObj.name" was null or undefined when calling putImportProjectFromProjectOnline.');
         }
 
-        // verify required parameter 'requestObj.siteUrl' is not null or undefined
-        if (requestObj.siteUrl === null || requestObj.siteUrl === undefined) {
-            throw new Error('Required parameter "requestObj.siteUrl" was null or undefined when calling putImportProjectFromProjectOnline.');
-        }
-
         // verify required parameter 'requestObj.guid' is not null or undefined
         if (requestObj.guid === null || requestObj.guid === undefined) {
             throw new Error('Required parameter "requestObj.guid" was null or undefined when calling putImportProjectFromProjectOnline.');
         }
 
-        // verify required parameter 'requestObj.xProjectOnlineToken' is not null or undefined
-        if (requestObj.xProjectOnlineToken === null || requestObj.xProjectOnlineToken === undefined) {
-            throw new Error('Required parameter "requestObj.xProjectOnlineToken" was null or undefined when calling putImportProjectFromProjectOnline.');
+        // verify required parameter 'requestObj.siteUrl' is not null or undefined
+        if (requestObj.siteUrl === null || requestObj.siteUrl === undefined) {
+            throw new Error('Required parameter "requestObj.siteUrl" was null or undefined when calling putImportProjectFromProjectOnline.');
         }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "siteUrl", requestObj.siteUrl);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "userName", requestObj.userName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "format", requestObj.format);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         headerParams["x-project-online-token"] = ObjectSerializer.serialize(requestObj.xProjectOnlineToken, "string");
+        headerParams["x-sharepoint-password"] = ObjectSerializer.serialize(requestObj.xSharepointPassword, "string");
+
+        let requestBody : any;
+        if(requestObj.guid) {
+            requestBody = ObjectSerializer.serialize(requestObj.guid, requestObj.guid.constructor.name === "Object" ? "string" : requestObj.guid.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             headers: headerParams,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.guid, requestObj.guid.constructor.name === "Object" ? "string" : requestObj.guid.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1549,6 +1619,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1588,6 +1659,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1633,12 +1705,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "filename", requestObj.filename);
+
+        let requestBody : any;
+        if(requestObj.property) {
+            requestBody = ObjectSerializer.serialize(requestObj.property, requestObj.property.constructor.name === "Object" ? "DocumentProperty" : requestObj.property.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.property, requestObj.property.constructor.name === "Object" ? "DocumentProperty" : requestObj.property.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1679,12 +1757,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "filename", requestObj.filename);
+
+        let requestBody : any;
+        if(requestObj.property) {
+            requestBody = ObjectSerializer.serialize(requestObj.property, requestObj.property.constructor.name === "Object" ? "DocumentProperty" : requestObj.property.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.property, requestObj.property.constructor.name === "Object" ? "DocumentProperty" : requestObj.property.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1720,6 +1804,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -1759,6 +1844,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1792,6 +1878,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1831,12 +1918,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.extendedAttribute) {
+            requestBody = ObjectSerializer.serialize(requestObj.extendedAttribute, requestObj.extendedAttribute.constructor.name === "Object" ? "ExtendedAttributeDefinition" : requestObj.extendedAttribute.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.extendedAttribute, requestObj.extendedAttribute.constructor.name === "Object" ? "ExtendedAttributeDefinition" : requestObj.extendedAttribute.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -1872,6 +1965,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -1911,6 +2005,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1944,6 +2039,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1957,6 +2053,57 @@ export class TasksApi {
         return Promise.resolve(result);
     }
 
+
+    /**
+     * Creates new project in Project Server\\Project Online instance.
+     * @param requestObj contains request parameters
+     */
+    public async createNewProject(requestObj: model.CreateNewProjectRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling createNewProject.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/projectOnline/{siteUrl}/{name}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "siteUrl" + "}", String(requestObj.siteUrl));
+        const queryParameters: any = {};
+        const headerParams: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling createNewProject.');
+        }
+
+        // verify required parameter 'requestObj.siteUrl' is not null or undefined
+        if (requestObj.siteUrl === null || requestObj.siteUrl === undefined) {
+            throw new Error('Required parameter "requestObj.siteUrl" was null or undefined when calling createNewProject.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "userName", requestObj.userName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        headerParams["x-project-online-token"] = ObjectSerializer.serialize(requestObj.xProjectOnlineToken, "string");
+        headerParams["x-sharepoint-password"] = ObjectSerializer.serialize(requestObj.xSharepointPassword, "string");
+
+        let requestBody : any;
+        if(requestObj.saveOptions) {
+            requestBody = ObjectSerializer.serialize(requestObj.saveOptions, requestObj.saveOptions.constructor.name === "Object" ? "ProjectServerSaveOptionsDTO" : requestObj.saveOptions.constructor.name);
+        }
+
+        const requestOptions: request.Options = {
+            method: "POST",
+            qs: queryParameters,
+            headers: headerParams,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
+        return Promise.resolve(result);
+    }
 
     /**
      * Gets the list of published projects in the current Project Online account.
@@ -1975,14 +2122,12 @@ export class TasksApi {
         if (requestObj.siteUrl === null || requestObj.siteUrl === undefined) {
             throw new Error('Required parameter "requestObj.siteUrl" was null or undefined when calling getProjectList.');
         }
-
-        // verify required parameter 'requestObj.xProjectOnlineToken' is not null or undefined
-        if (requestObj.xProjectOnlineToken === null || requestObj.xProjectOnlineToken === undefined) {
-            throw new Error('Required parameter "requestObj.xProjectOnlineToken" was null or undefined when calling getProjectList.');
-        }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "siteUrl", requestObj.siteUrl);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "userName", requestObj.userName);
         headerParams["x-project-online-token"] = ObjectSerializer.serialize(requestObj.xProjectOnlineToken, "string");
+        headerParams["x-sharepoint-password"] = ObjectSerializer.serialize(requestObj.xSharepointPassword, "string");
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -1994,6 +2139,57 @@ export class TasksApi {
         const response = await invokeApiMethod(requestOptions, this.configuration);
         const body =  ObjectSerializer.deserialize(response.body, "ProjectListResponse");
 		const result: model.TasksIncomingMessage<model.ProjectListResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Updates existing project in Project Server\\Project Online instance. The existing project will be overwritten.
+     * @param requestObj contains request parameters
+     */
+    public async updateProject(requestObj: model.UpdateProjectRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling updateProject.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/projectOnline/{siteUrl}/{name}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "siteUrl" + "}", String(requestObj.siteUrl));
+        const queryParameters: any = {};
+        const headerParams: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling updateProject.');
+        }
+
+        // verify required parameter 'requestObj.siteUrl' is not null or undefined
+        if (requestObj.siteUrl === null || requestObj.siteUrl === undefined) {
+            throw new Error('Required parameter "requestObj.siteUrl" was null or undefined when calling updateProject.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "userName", requestObj.userName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        headerParams["x-project-online-token"] = ObjectSerializer.serialize(requestObj.xProjectOnlineToken, "string");
+        headerParams["x-sharepoint-password"] = ObjectSerializer.serialize(requestObj.xSharepointPassword, "string");
+
+        let requestBody : any;
+        if(requestObj.saveOptions) {
+            requestBody = ObjectSerializer.serialize(requestObj.saveOptions, requestObj.saveOptions.constructor.name === "Object" ? "ProjectServerSaveOptionsDTO" : requestObj.saveOptions.constructor.name);
+        }
+
+        const requestOptions: request.Options = {
+            method: "PUT",
+            qs: queryParameters,
+            headers: headerParams,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
         return Promise.resolve(result);
     }
 
@@ -2021,6 +2217,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -2055,6 +2252,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -2094,12 +2292,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
+        let requestBody : any;
+        if(requestObj.after) {
+            requestBody = ObjectSerializer.serialize(requestObj.after, requestObj.after.constructor.name === "Object" ? "Date" : requestObj.after.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.after, requestObj.after.constructor.name === "Object" ? "Date" : requestObj.after.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -2135,12 +2339,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
+        let requestBody : any;
+        if(requestObj.completeThrough) {
+            requestBody = ObjectSerializer.serialize(requestObj.completeThrough, requestObj.completeThrough.constructor.name === "Object" ? "Date" : requestObj.completeThrough.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.completeThrough, requestObj.completeThrough.constructor.name === "Object" ? "Date" : requestObj.completeThrough.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -2176,6 +2386,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "type", requestObj.type);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2217,6 +2428,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -2256,6 +2468,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2295,6 +2508,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2337,6 +2551,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "endDate", requestObj.endDate);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2370,6 +2585,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2406,6 +2622,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
@@ -2453,12 +2670,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
+        let requestBody : any;
+        if(requestObj.resource) {
+            requestBody = ObjectSerializer.serialize(requestObj.resource, requestObj.resource.constructor.name === "Object" ? "Resource" : requestObj.resource.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.resource, requestObj.resource.constructor.name === "Object" ? "Resource" : requestObj.resource.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -2500,6 +2723,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2541,6 +2765,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -2580,6 +2805,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2619,6 +2845,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2658,6 +2885,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2700,6 +2928,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "endDate", requestObj.endDate);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2733,6 +2962,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -2769,6 +2999,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
@@ -2826,12 +3057,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.recurringInfo) {
+            requestBody = ObjectSerializer.serialize(requestObj.recurringInfo, requestObj.recurringInfo.constructor.name === "Object" ? "RecurringInfo" : requestObj.recurringInfo.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.recurringInfo, requestObj.recurringInfo.constructor.name === "Object" ? "RecurringInfo" : requestObj.recurringInfo.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -2873,6 +3110,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -2919,6 +3157,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
@@ -2966,12 +3205,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
+        let requestBody : any;
+        if(requestObj.task) {
+            requestBody = ObjectSerializer.serialize(requestObj.task, requestObj.task.constructor.name === "Object" ? "Task" : requestObj.task.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.task, requestObj.task.constructor.name === "Object" ? "Task" : requestObj.task.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -3012,12 +3257,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.recurringInfo) {
+            requestBody = ObjectSerializer.serialize(requestObj.recurringInfo, requestObj.recurringInfo.constructor.name === "Object" ? "RecurringInfo" : requestObj.recurringInfo.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.recurringInfo, requestObj.recurringInfo.constructor.name === "Object" ? "RecurringInfo" : requestObj.recurringInfo.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -3054,6 +3305,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
         const requestOptions: request.Options = {
             method: "DELETE",
             qs: queryParameters,
@@ -3087,6 +3339,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -3126,12 +3379,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
+        let requestBody : any;
+        if(requestObj.taskLink) {
+            requestBody = ObjectSerializer.serialize(requestObj.taskLink, requestObj.taskLink.constructor.name === "Object" ? "TaskLink" : requestObj.taskLink.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.taskLink, requestObj.taskLink.constructor.name === "Object" ? "TaskLink" : requestObj.taskLink.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -3172,12 +3431,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+
+        let requestBody : any;
+        if(requestObj.taskLink) {
+            requestBody = ObjectSerializer.serialize(requestObj.taskLink, requestObj.taskLink.constructor.name === "Object" ? "TaskLink" : requestObj.taskLink.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.taskLink, requestObj.taskLink.constructor.name === "Object" ? "TaskLink" : requestObj.taskLink.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -3207,6 +3472,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -3241,6 +3507,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
         const requestOptions: request.Options = {
             method: "GET",
             qs: queryParameters,
@@ -3280,12 +3547,18 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.taskUids) {
+            requestBody = ObjectSerializer.serialize(requestObj.taskUids, requestObj.taskUids.constructor.name === "Object" ? "Array<number>" : requestObj.taskUids.constructor.name);
+        }
+
         const requestOptions: request.Options = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
-            body: ObjectSerializer.serialize(requestObj.taskUids, requestObj.taskUids.constructor.name === "Object" ? "Array<number>" : requestObj.taskUids.constructor.name),
+            body: requestBody,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);

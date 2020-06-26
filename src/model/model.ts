@@ -2202,6 +2202,69 @@ export class ProjectRecalculationResult {
 }
 
 /**
+ * Allows to specify additional options when project is saved to Project Server or Project Online.
+ */
+export class ProjectServerSaveOptionsDTO {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "projectName",
+            baseName: "projectName",
+            type: "string",
+        },        
+        {
+            name: "projectGuid",
+            baseName: "projectGuid",
+            type: "string",
+        },        
+        {
+            name: "timeout",
+            baseName: "timeout",
+            type: "string",
+        },        
+        {
+            name: "pollingInterval",
+            baseName: "pollingInterval",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return ProjectServerSaveOptionsDTO.attributeTypeMap;
+    }
+
+    /**
+     * Gets or sets name of a project which is displayed in Project Server \\ Project     Online projects list. Should be unique within Project Server \\ Project Online     instance. Is the value is omitted, the value of Prj.Name property will be used     instead.
+     */
+    public projectName: string;
+    
+    /**
+     * Gets or sets unique identifier of a project. Should be unique within Project     Server \\ Project Online instance.
+     */
+    public projectGuid: string;
+    
+    /**
+     * Gets or sets timeout used when waiting for processing of save project request     by a Project Server's queue processing service. The default value for this property     is 1 minute. The processing time may be longer for large projects or in case when Project     Server instance is too busy responding to other requests.
+     */
+    public timeout: string;
+    
+    /**
+     * Gets or sets interval between queue job status requests. The default value is     2 seconds.
+     */
+    public pollingInterval: string;
+    
+    public constructor(init?: Partial<ProjectServerSaveOptionsDTO>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Specifies the state of the project's validation
  */
 export enum ProjectValidationState {
@@ -3307,6 +3370,11 @@ export class ResourceAssignment {
             type: "number",
         },        
         {
+            name: "guid",
+            baseName: "guid",
+            type: "string",
+        },        
+        {
             name: "uid",
             baseName: "uid",
             type: "number",
@@ -3633,6 +3701,11 @@ export class ResourceAssignment {
      * Returns or sets a resource unique id assigned to a task.
      */
     public resourceUid: number;
+    
+    /**
+     * Returns or sets the global unique identifier of an assignment.
+     */
+    public guid: string;
     
     /**
      * Returns or sets the unique identifier of an assignment.
@@ -4697,6 +4770,11 @@ export class Task {
             name: "outlineCodes",
             baseName: "outlineCodes",
             type: "Array<OutlineCode>",
+        },        
+        {
+            name: "warning",
+            baseName: "warning",
+            type: "boolean",
         }    ];
 
     /**
@@ -5238,6 +5316,11 @@ export class Task {
      * Task outline codes.
      */
     public outlineCodes: Array<OutlineCode>;
+    
+    /**
+     * Represents the flag which indicates that task has schedule discrepancies.
+     */
+    public warning: boolean;
     
     public constructor(init?: Partial<Task>) {
         
@@ -7764,6 +7847,7 @@ const typeMap = {
             OutlineValue,
             ProjectInfo,
             ProjectRecalculationResult,
+            ProjectServerSaveOptionsDTO,
             RecurringInfo,
             Resource,
             ResourceAssignment,
@@ -8315,9 +8399,14 @@ public taskUid: number;
 public resourceUid: number;
 
     /**
-     * The units for the new assignment. Default value is 1.
+     * The units for the new assignment. If not specified, 'cost' value is used.
      */
 public units: number;
+
+    /**
+     * The cost for a new assignment. If not specified, default value is used.
+     */
+public cost: number;
 
     /**
      * The name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.
@@ -8986,19 +9075,19 @@ export class PutImportProjectFromProjectOnlineRequest {
 public name: string;
 
     /**
-     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
-     */
-public siteUrl: string;
-
-    /**
      * Guid of the project to import.
      */
 public guid: string;
 
     /**
-     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
      */
-public xProjectOnlineToken: string;
+public siteUrl: string;
+
+    /**
+     * The user name for the sharepoint site.
+     */
+public userName: string;
 
     /**
      * Format of the resulting file.
@@ -9014,6 +9103,16 @@ public folder: string;
      * The document storage.
      */
 public storage: string;
+
+    /**
+     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     */
+public xProjectOnlineToken: string;
+
+    /**
+     * The password for the SharePoint site.
+     */
+public xSharepointPassword: string;
     
     public constructor(init?: Partial<PutImportProjectFromProjectOnlineRequest>) {        
         Object.assign(this, init);
@@ -9350,6 +9449,55 @@ public folder: string;
 }
 
 /**
+ * Request model for createNewProject operation.
+ */
+export class CreateNewProjectRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
+     */
+public siteUrl: string;
+
+    /**
+     * The user name for the sharepoint site.
+     */
+public userName: string;
+
+    /**
+     * Dispensable save options for Project Server\\Project Online.
+     */
+public saveOptions: ProjectServerSaveOptionsDTO;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     */
+public xProjectOnlineToken: string;
+
+    /**
+     * The password for the SharePoint site.
+     */
+public xSharepointPassword: string;
+    
+    public constructor(init?: Partial<CreateNewProjectRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
  * Request model for getProjectList operation.
  */
 export class GetProjectListRequest {
@@ -9359,11 +9507,70 @@ export class GetProjectListRequest {
 public siteUrl: string;
 
     /**
+     * The user name for the sharepoint site.
+     */
+public userName: string;
+
+    /**
      * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
      */
 public xProjectOnlineToken: string;
+
+    /**
+     * The password for the SharePoint site.
+     */
+public xSharepointPassword: string;
     
     public constructor(init?: Partial<GetProjectListRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for updateProject operation.
+ */
+export class UpdateProjectRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
+     */
+public siteUrl: string;
+
+    /**
+     * The user name for the sharepoint site.
+     */
+public userName: string;
+
+    /**
+     * Dispensable save options for Project Server\\Project Online.
+     */
+public saveOptions: ProjectServerSaveOptionsDTO;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     */
+public xProjectOnlineToken: string;
+
+    /**
+     * The password for the SharePoint site.
+     */
+public xSharepointPassword: string;
+    
+    public constructor(init?: Partial<UpdateProjectRequest>) {        
         Object.assign(this, init);
     } 
 }

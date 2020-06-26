@@ -48,7 +48,7 @@ describe("getPageCount function", () => {
         const result = await tasksApi.getPageCount(request);
 
         expect(result.response.statusCode).to.equal(200);
-        expect(result.body.pageCount).to.equal(2);
+        expect(result.body.pageCount).to.equal(4);
     });
     it("should return response with code 200 and correct data with specified presentation format and date interval", async () => {
         
@@ -71,6 +71,6 @@ describe("getPageCount function", () => {
         const result = await tasksApi.getPageCount(request);
 
         expect(result.response.statusCode).to.equal(200);
-        expect(result.body.pageCount).to.equal(2);
+        expect(result.body.pageCount).to.equal(4);
     });
 });

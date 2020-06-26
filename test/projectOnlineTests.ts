@@ -25,23 +25,113 @@
 import { expect } from "chai";
 import "mocha";
 
-import { GetProjectListRequest } from "../src/model/model";
+import { GetProjectListRequest, CreateNewProjectRequest, UpdateProjectRequest } from "../src/model/model";
 import * as BaseTest from "./baseTest";
 
 describe.skip("Ignored because real credentials is required", () => {    
-    describe("getProjectIds function", () => {
-        it("should return response with code 200 and correct data", async () => {
+    describe("getProjectList function", () => {
+        it("should return response with code 200 and correct data by token credentials", async () => {
 
             const tasksApi = BaseTest.initializeTasksApi();
             const request = new GetProjectListRequest();
             request.xProjectOnlineToken = "SOMESECRETTOKEN";
-            request.siteUrl = "https://your_company_name.sharepoint.com";
+            request.siteUrl = "your_company_name.sharepoint.com";
 
             const result = await tasksApi.getProjectList(request);
 
             expect(result.response.statusCode).to.equal(200);
             expect(result.body.projects).not.null.and.not.undefined;
             expect(result.body.projects.projectInfo.length).to.be.at.least(1);
+        });
+        it("should return response with code 200 and correct data by login and password credentials", async () => {
+
+            const tasksApi = BaseTest.initializeTasksApi();
+            const request = new GetProjectListRequest();
+            request.userName = "SomeLogin";
+            request.xSharepointPassword = "SomePassword";
+            request.siteUrl = "your_company_name.sharepoint.com";
+
+            const result = await tasksApi.getProjectList(request);
+
+            expect(result.response.statusCode).to.equal(200);
+            expect(result.body.projects).not.null.and.not.undefined;
+            expect(result.body.projects.projectInfo.length).to.be.at.least(1);
+        });
+    });
+    
+    describe("createNewProject function", () => {
+        it("should return response with code 200 and correct data by token credentials", async () => {
+
+            const tasksApi = BaseTest.initializeTasksApi();
+            
+            const fileName = "NewProductDev.mpp";
+            const localPath = BaseTest.localBaseTestDataFolder + fileName;
+            await tasksApi.uploadFileToStorage(fileName, localPath);
+
+            const request = new CreateNewProjectRequest();
+            request.name = fileName
+            request.xProjectOnlineToken = "SOMESECRETTOKEN";
+            request.siteUrl = "your_company_name.sharepoint.com";
+
+            const result = await tasksApi.createNewProject(request);
+
+            expect(result.response.statusCode).to.equal(200);
+        });
+        it("should return response with code 200 and correct data by login and password credentials", async () => {
+
+            const tasksApi = BaseTest.initializeTasksApi();
+            
+            const fileName = "NewProductDev.mpp";
+            const localPath = BaseTest.localBaseTestDataFolder + fileName;
+            await tasksApi.uploadFileToStorage(fileName, localPath);
+
+            const request = new CreateNewProjectRequest();
+            request.name = fileName
+            request.userName = "SomeLogin";
+            request.xSharepointPassword = "SomePassword";
+            request.siteUrl = "your_company_name.sharepoint.com";
+
+            const result = await tasksApi.createNewProject(request);
+
+            expect(result.response.statusCode).to.equal(200);
+        });
+    });
+    
+    describe("updateProject function", () => {
+        it("should return response with code 200 and correct data by token credentials", async () => {
+
+            const tasksApi = BaseTest.initializeTasksApi();
+            
+            const fileName = "NewProductDev.mpp";
+            const localPath = BaseTest.localBaseTestDataFolder + fileName;
+            await tasksApi.uploadFileToStorage(fileName, localPath);
+
+            const request = new UpdateProjectRequest();
+            request.name = fileName
+            request.xProjectOnlineToken = "SOMESECRETTOKEN";
+            request.siteUrl = "your_company_name.sharepoint.com";
+
+            const result = await tasksApi.updateProject(request);
+
+            expect(result.response.statusCode).to.equal(200);
+        });
+        it("should return response with code 200 and correct data by login and password credentials", async () => {
+
+            const tasksApi = BaseTest.initializeTasksApi();
+            
+            const fileName = "NewProductDev.mpp";
+            const localPath = BaseTest.localBaseTestDataFolder + fileName;
+            await tasksApi.uploadFileToStorage(fileName, localPath);
+
+            const request = new UpdateProjectRequest();
+            request.name = fileName
+            request.userName = "SomeLogin";
+            request.xSharepointPassword = "SomePassword";
+            request.siteUrl = "your_company_name.sharepoint.com";
+
+            const result = await tasksApi.updateProject(request);
+
+            expect(result.response.statusCode).to.equal(200);
         });
     });
 });
