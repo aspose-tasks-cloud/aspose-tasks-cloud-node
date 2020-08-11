@@ -35,7 +35,7 @@ describe.skip("Ignored because real credentials is required", () => {
             const tasksApi = BaseTest.initializeTasksApi();
             const request = new GetProjectListRequest();
             request.xProjectOnlineToken = "SOMESECRETTOKEN";
-            request.siteUrl = "your_company_name.sharepoint.com";
+            request.siteUrl = "http://project_server_instance.local/sites/pwa";
 
             const result = await tasksApi.getProjectList(request);
 
@@ -49,7 +49,7 @@ describe.skip("Ignored because real credentials is required", () => {
             const request = new GetProjectListRequest();
             request.userName = "SomeLogin";
             request.xSharepointPassword = "SomePassword";
-            request.siteUrl = "your_company_name.sharepoint.com";
+            request.siteUrl = "http://project_server_instance.local/sites/pwa";
 
             const result = await tasksApi.getProjectList(request);
 
@@ -71,7 +71,7 @@ describe.skip("Ignored because real credentials is required", () => {
             const request = new CreateNewProjectRequest();
             request.name = fileName
             request.xProjectOnlineToken = "SOMESECRETTOKEN";
-            request.siteUrl = "your_company_name.sharepoint.com";
+            request.siteUrl = "http://project_server_instance.local/sites/pwa";
 
             const result = await tasksApi.createNewProject(request);
 
@@ -89,7 +89,7 @@ describe.skip("Ignored because real credentials is required", () => {
             request.name = fileName
             request.userName = "SomeLogin";
             request.xSharepointPassword = "SomePassword";
-            request.siteUrl = "your_company_name.sharepoint.com";
+            request.siteUrl = "http://project_server_instance.local/sites/pwa";
 
             const result = await tasksApi.createNewProject(request);
 
@@ -109,7 +109,7 @@ describe.skip("Ignored because real credentials is required", () => {
             const request = new UpdateProjectRequest();
             request.name = fileName
             request.xProjectOnlineToken = "SOMESECRETTOKEN";
-            request.siteUrl = "your_company_name.sharepoint.com";
+            request.siteUrl = "http://project_server_instance.local/sites/pwa";
 
             const result = await tasksApi.updateProject(request);
 
@@ -127,7 +127,7 @@ describe.skip("Ignored because real credentials is required", () => {
             request.name = fileName
             request.userName = "SomeLogin";
             request.xSharepointPassword = "SomePassword";
-            request.siteUrl = "your_company_name.sharepoint.com";
+            request.siteUrl = "http://project_server_instance.local/sites/pwa";
 
             const result = await tasksApi.updateProject(request);
 

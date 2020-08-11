@@ -99,7 +99,7 @@ describe.skip("Ignored because real credentials is required", () => {
             request1.guid = "E6426C44-D6CB-4B9C-AF16-48910ACE0F54";
             request1.xProjectOnlineToken = "SOMESECRETTOKEN";
             request1.folder = BaseTest.remoteBaseTestDataFolder;
-            request1.siteUrl = "your_company_name.sharepoint.com";
+            request1.siteUrl = "http://project_server_instance.local/sites/pwa";
             request1.format = ProjectFileFormat.P6xml;
     
             const result1 = await tasksApi.putImportProjectFromProjectOnline(request1);
@@ -124,7 +124,7 @@ describe.skip("Ignored because real credentials is required", () => {
             request1.userName = "SomeLogin";
             request1.xSharepointPassword = "SomePassword";
             request1.folder = BaseTest.remoteBaseTestDataFolder;
-            request1.siteUrl = "your_company_name.sharepoint.com";
+            request1.siteUrl = "http://project_server_instance.local/sites/pwa";
             request1.format = ProjectFileFormat.P6xml;
     
             const result1 = await tasksApi.putImportProjectFromProjectOnline(request1);

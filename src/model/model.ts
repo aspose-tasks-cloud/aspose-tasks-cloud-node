@@ -3683,6 +3683,11 @@ export class ResourceAssignment {
             name: "extendedAttributes",
             baseName: "extendedAttributes",
             type: "Array<ExtendedAttribute>",
+        },        
+        {
+            name: "timephasedData",
+            baseName: "timephasedData",
+            type: "Array<TimephasedData>",
         }    ];
 
     /**
@@ -4016,6 +4021,11 @@ export class ResourceAssignment {
      * ResourceAssignment extended attributes.
      */
     public extendedAttributes: Array<ExtendedAttribute>;
+    
+    /**
+     * Represents a collection of TimephasedData objects.
+     */
+    public timephasedData: Array<TimephasedData>;
     
     public constructor(init?: Partial<ResourceAssignment>) {
         
@@ -9080,7 +9090,7 @@ public name: string;
 public guid: string;
 
     /**
-     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
+     * The URL of PWA (Project Web Access) API of Project Online.
      */
 public siteUrl: string;
 
@@ -9458,7 +9468,7 @@ export class CreateNewProjectRequest {
 public name: string;
 
     /**
-     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
+     * The URL of PWA (Project Web Access) API of Project Online.
      */
 public siteUrl: string;
 
@@ -9502,7 +9512,7 @@ public xSharepointPassword: string;
  */
 export class GetProjectListRequest {
     /**
-     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
+     * The URL of PWA (Project Web Access) API of Project Online.
      */
 public siteUrl: string;
 
@@ -9536,7 +9546,7 @@ export class UpdateProjectRequest {
 public name: string;
 
     /**
-     * The url of sharepoint site. For example, \"https://your_company_name.sharepoint.com\"
+     * The URL of PWA (Project Web Access) API of Project Online.
      */
 public siteUrl: string;
 
