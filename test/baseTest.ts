@@ -40,7 +40,7 @@ after(async function () {
  */
 export function initializeTasksApi(debugMode?: boolean) {
     const config = require("../../testConfig.json");
-    const tasksApi = new TestTasksApi(config.AppSid, config.AppKey, config.BaseUrl, debugMode);
+    const tasksApi = new TestTasksApi(config.AppSid, config.AppKey, config.BaseUrl, config.AuthUrl, debugMode);
     apiInstance = tasksApi;
     return tasksApi;
 }
@@ -55,8 +55,13 @@ export function getTimeOnly(arg :Date): Date {
 
 export function convertArrayBufferToStrings(buffer: ArrayBuffer): string[] {
     const uintArray = new Uint8Array(buffer);
-    const string = String.fromCharCode.apply(this, uintArray);    
-    return string.split("\r\n")
+    const string = String.fromCharCode.apply(this, uintArray);
+    if(string.indexOf("\r\n") >= 0)
+    {        
+        return string.split("\r\n");
+    } else {
+        return string.split("\n");
+    }
   }
 
 /**
@@ -67,10 +72,11 @@ export class TestTasksApi extends TasksApi {
      * @param appSID App SID.
      * @param appKey App key.
      * @param baseUrl Base api Url.
+     * @param authUrl Auth api Url.
      * @param debugMode A value indicating whether debug mode. In debug mode all requests and responses are logged to console.
      */
-    constructor(appSID: string, appKey: string, baseUrl?: string, debugMode?: boolean) {
-        super(appSID, appKey, baseUrl, debugMode);
+    constructor(appSID: string, appKey: string, baseUrl?: string, authUrl?: string, debugMode?: boolean) {
+        super(appSID, appKey, baseUrl, authUrl, debugMode);
     }
 
     /**

@@ -25,12 +25,12 @@
 import { expect } from "chai";
 import "mocha";
 
-import { GetTasksRequest, GetTaskRequest, DeleteTaskRequest, PostTaskRequest, PutTaskRequest, CalculationMode, GetTaskAssignmentsRequest, PutMoveTaskRequest, PutMoveTaskToSiblingRequest } from "../src/model/model";
+import { GetTasksRequest, GetTaskRequest, DeleteTaskRequest, PostTaskRequest, PutTaskRequest, CalculationMode, GetTaskAssignmentsRequest, PutMoveTaskRequest, PutMoveTaskToSiblingRequest, PostTasksRequest, TaskCreationRequest } from "../src/model/model";
 import * as BaseTest from "./baseTest";
 
 describe("getTasks function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Project2016.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
@@ -49,7 +49,7 @@ describe("getTasks function", () => {
         expect(result.body.tasks).is.not.undefined.and.not.null;
         expect(result.body.tasks.taskItem.length).to.equal(6);
 
-        const firstTask  = result.body.tasks.taskItem.find(t => t.uid == 5);
+        const firstTask = result.body.tasks.taskItem.find(t => t.uid == 5);
         expect(firstTask).is.not.undefined.and.not.null;
         expect(firstTask.name).to.equal("Summary Task 1");
         expect(firstTask.start).to.eql(new Date(2015, 7, 3, 8, 0, 0));
@@ -60,7 +60,7 @@ describe("getTasks function", () => {
 
 describe("getTask function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Project2016.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
@@ -90,7 +90,7 @@ describe("getTask function", () => {
 
 describe("deleteTask function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Project2016.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
@@ -118,14 +118,58 @@ describe("deleteTask function", () => {
         expect(getResult.body.tasks).is.not.undefined.and.not.null;
         expect(getResult.body.tasks.taskItem.length).to.equal(5);
 
-        const task  = getResult.body.tasks.taskItem.find(t => t.uid == 4);
+        const task = getResult.body.tasks.taskItem.find(t => t.uid == 4);
         expect(task).is.undefined;
+    });
+});
+
+describe("postTasks function", () => {
+    it("should return response with code 200 and correct data", async () => {
+
+        const tasksApi = BaseTest.initializeTasksApi();
+        const fileName = "Home_move_plan.mpp";
+        const localPath = BaseTest.localBaseTestDataFolder + fileName;
+        const remotePath = BaseTest.remoteBaseTestDataFolder;
+        const remoteFullPath = remotePath + "/" + fileName;
+
+        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);
+
+        const postRequest = new PostTasksRequest();
+        postRequest.name = fileName;
+        postRequest.folder = remotePath;
+        const firstTask = new TaskCreationRequest({
+            taskName: "SomeFirstTaskName"
+        });
+        const secondTask = new TaskCreationRequest({
+            taskName: "SomeSecondTaskNameWithParent",
+            parentTaskUid: 2
+        });
+        postRequest.requests = [firstTask, secondTask]
+
+        const postResult = await tasksApi.postTasks(postRequest);
+
+        expect(postResult.body.code).to.equal(201);
+        expect(postResult.body.tasks).is.not.undefined.and.not.null;
+        expect(postResult.body.tasks.taskItem.length).to.equal(postRequest.requests.length);
+
+        const newSubtaskUid = postResult.body.tasks.taskItem.find(t => t.name === secondTask.taskName).uid
+
+        const getRequest = new GetTaskRequest();
+        getRequest.name = fileName;
+        getRequest.folder = remotePath;
+        getRequest.taskUid = secondTask.parentTaskUid;
+
+        const getResult = await tasksApi.getTask(getRequest);
+
+        expect(getResult.response.statusCode).to.equal(200);
+        expect(getResult.body.task).is.not.undefined.and.not.null;
+        expect(getResult.body.task.subtasksUids).contains(newSubtaskUid)
     });
 });
 
 describe("postTask function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Project2016.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
@@ -159,14 +203,14 @@ describe("postTask function", () => {
 
 describe("putTask function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Project2016.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
         const remotePath = BaseTest.remoteBaseTestDataFolder;
         const remoteFullPath = remotePath + "/" + fileName;
 
-        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);        
+        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);
 
         const getRequest = new GetTaskRequest();
         getRequest.name = fileName;
@@ -206,7 +250,7 @@ describe("putTask function", () => {
 
 describe("getTaskAssignments function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "Home_move_plan.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
@@ -229,14 +273,14 @@ describe("getTaskAssignments function", () => {
 
 describe("putMoveTask function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "sample.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
         const remotePath = BaseTest.remoteBaseTestDataFolder;
         const remoteFullPath = remotePath + "/" + fileName;
 
-        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);        
+        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);
 
         const getRequest = new GetTaskRequest();
         getRequest.name = fileName;
@@ -267,14 +311,14 @@ describe("putMoveTask function", () => {
 
 describe("putMoveTaskToSibling function", () => {
     it("should return response with code 200 and correct data", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "NewProductDev.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
         const remotePath = BaseTest.remoteBaseTestDataFolder;
         const remoteFullPath = remotePath + "/" + fileName;
 
-        await tasksApi.uploadFileToStorage(remoteFullPath, localPath); 
+        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);
 
         const putMoveToSiblingRequest = new PutMoveTaskToSiblingRequest();
         putMoveToSiblingRequest.name = fileName;
@@ -284,7 +328,7 @@ describe("putMoveTaskToSibling function", () => {
 
         const putMoveToSiblingResult = await tasksApi.putMoveTaskToSibling(putMoveToSiblingRequest);
 
-        expect(putMoveToSiblingResult.body.code).to.equal(200);       
+        expect(putMoveToSiblingResult.body.code).to.equal(200);
 
         const getRequest = new GetTaskRequest();
         getRequest.name = fileName;
@@ -297,14 +341,14 @@ describe("putMoveTaskToSibling function", () => {
         expect(getResult.body.task.subtasksUids).to.eql([39, 40, 41]);;
     });
     it("should return response with code 404 if input uid is not found", async () => {
-        
+
         const tasksApi = BaseTest.initializeTasksApi();
         const fileName = "NewProductDev.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
         const remotePath = BaseTest.remoteBaseTestDataFolder;
         const remoteFullPath = remotePath + "/" + fileName;
 
-        await tasksApi.uploadFileToStorage(remoteFullPath, localPath); 
+        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);
 
         const putMoveToSiblingRequest = new PutMoveTaskToSiblingRequest();
         putMoveToSiblingRequest.name = fileName;
@@ -312,9 +356,9 @@ describe("putMoveTaskToSibling function", () => {
         putMoveToSiblingRequest.beforeTaskUid = -1;
         putMoveToSiblingRequest.taskUid = 99999;
 
-        try{
+        try {
             expect(await tasksApi.putMoveTaskToSibling(putMoveToSiblingRequest)).throw();
-        } catch (e) { 
+        } catch (e) {
             expect(e.message).to.equal("Not Found");
             expect(e.response.body.Error.Code).to.equal("TaskDoesntExist");
             expect(e.response.body.Error.Message).to.equal("Task with 99999 Uid doesn't exist");

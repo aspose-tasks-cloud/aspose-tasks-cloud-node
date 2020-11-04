@@ -50,13 +50,22 @@ export class Configuration {
     public baseUrl: string = defaultBasePath;
 
     /**
+     * Auth Url.
+     */
+    public authUrl: string;
+
+    /**
      *  Gets or sets a value indicating whether debug mode. In debug mode all requests and responses are logged to console.
      */
     public debugMode: boolean;
 
-    constructor(appSID: string, appKey: string, baseUrl?: string, debugMode?: boolean) {
+    constructor(appSID: string, appKey: string, baseUrl?: string, authUrl?: string, debugMode?: boolean) {
         if (baseUrl) {
             this.baseUrl = baseUrl;
+        }
+
+        if (authUrl) {
+            this.authUrl = authUrl;
         }
 
         if (!appKey || !appKey.trim()) {

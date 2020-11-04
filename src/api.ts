@@ -43,11 +43,12 @@ export class TasksApi {
      * @param appSID App SID.
      * @param appKey App key.
      * @param baseUrl Base api Url.
+     * @param authUrl Auth Url.
      * @param debugMode A value indicating whether debug mode. In debug mode all requests and responses are logged to console.
      * @param version API version.
      */
-    constructor(appSID: string, appKey: string, baseUrl?: string, debugMode?: boolean) {
-        this.configuration = new Configuration(appSID, appKey, baseUrl, debugMode);
+    constructor(appSID: string, appKey: string, baseUrl?: string, authUrl?: string, debugMode?: boolean) {
+        this.configuration = new Configuration(appSID, appKey, baseUrl, authUrl, debugMode);
     }
 
     /**
@@ -3078,7 +3079,53 @@ export class TasksApi {
     }
 
     /**
-     * Move one task to another parent task
+     * Create multiple tasks by single request.
+     * @param requestObj contains request parameters
+     */
+    public async postTasks(requestObj: model.PostTasksRequest): Promise<model.TasksIncomingMessage<model.TaskItemsResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling postTasks.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/tasks/batch"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling postTasks.');
+        }
+
+        // verify required parameter 'requestObj.requests' is not null or undefined
+        if (requestObj.requests === null || requestObj.requests === undefined) {
+            throw new Error('Required parameter "requestObj.requests" was null or undefined when calling postTasks.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.requests) {
+            requestBody = ObjectSerializer.serialize(requestObj.requests, requestObj.requests.constructor.name === "Object" ? "Array<TaskCreationRequest>" : requestObj.requests.constructor.name);
+        }
+
+        const requestOptions: request.Options = {
+            method: "POST",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "TaskItemsResponse");
+		const result: model.TasksIncomingMessage<model.TaskItemsResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Move one task to another parent task.
      * @param requestObj contains request parameters
      */
     public async putMoveTask(requestObj: model.PutMoveTaskRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {

@@ -301,7 +301,7 @@ describe("putAssignment function", () => {
         expect(result2.body.assignment).not.undefined.and.not.null;
         expect(result2.body.assignment.uid).to.equal(modifiedAssignment.uid);
         expect(result2.body.assignment.vac).to.equal(modifiedAssignment.vac);
-        expect(result2.body.assignment.cost).to.equal(modifiedAssignment.cost);
+        expect(result2.body.assignment.cost).to.not.equal(modifiedAssignment.cost, "Calculated fields must be overwritten");
         expect(result2.body.assignment.start).to.eql(modifiedAssignment.start);
         expect(result2.body.assignment.finish).to.eql(modifiedAssignment.finish);
         expect(result2.body.assignment.work).to.equal("80.00:00:00");

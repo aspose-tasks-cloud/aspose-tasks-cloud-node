@@ -73,10 +73,17 @@ export class OAuth implements IAuthentication {
     }
 
     private async _requestToken(configuration: Configuration): Promise<void> {
+        let uri: string;
+        if (configuration.authUrl) {
+            uri = configuration.authUrl;
+        } else {            
+            uri = configuration.baseUrl + "/connect/token";
+        }
+
         const requestOptions: request.Options = {
             method: "POST",
             json: true,
-            uri: configuration.baseUrl + "/connect/token",
+            uri,
             form: {
                 grant_type: "client_credentials",
                 client_id: configuration.appSID,

@@ -5338,6 +5338,56 @@ export class Task {
     }        
 }
 
+export class TaskCreationRequest {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "taskName",
+            baseName: "taskName",
+            type: "string",
+        },        
+        {
+            name: "parentTaskUid",
+            baseName: "parentTaskUid",
+            type: "number",
+        },        
+        {
+            name: "beforeTaskId",
+            baseName: "beforeTaskId",
+            type: "number",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return TaskCreationRequest.attributeTypeMap;
+    }
+
+    /**
+     * The name for the new task.
+     */
+    public taskName: string;
+    
+    /**
+     * Uid for parent task.
+     */
+    public parentTaskUid: number;
+    
+    /**
+     * Id of task before which new task will be inserted.
+     */
+    public beforeTaskId: number;
+    
+    public constructor(init?: Partial<TaskCreationRequest>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
 /**
  * A task's brief info 
  */
@@ -7865,6 +7915,7 @@ const typeMap = {
             StorageExist,
             StorageFile,
             Task,
+            TaskCreationRequest,
             TaskItem,
             TaskLink,
             TimephasedData,
@@ -9090,7 +9141,7 @@ public name: string;
 public guid: string;
 
     /**
-     * The URL of PWA (Project Web Access) API of Project Online.
+     * The URL of PWA (Project Web Access) API of Project Online
      */
 public siteUrl: string;
 
@@ -10335,6 +10386,40 @@ public storage: string;
 public folder: string;
     
     public constructor(init?: Partial<PostTaskRecurringInfoRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for postTasks operation.
+ */
+export class PostTasksRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Requests to create tasks.
+     */
+public requests: Array<TaskCreationRequest>;
+
+    /**
+     * The name of the project document to save changes to.
+     */
+public fileName: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<PostTasksRequest>) {        
         Object.assign(this, init);
     } 
 }
