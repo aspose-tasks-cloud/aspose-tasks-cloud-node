@@ -54,33 +54,25 @@ XER, XLSX, HTML, XML, TXT, TIF, SVG, PNG, JPEG
 Register an account at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) to get you application information. Next, execute `npm i @asposecloud/aspose-tasks-cloud` from the command line to install Aspose.Tasks Cloud SDK for Node.js via NPM.
 
 
-## Create MPP in the Cloud
+## Get All Tasks from MPP Project File in Node.Js
 
-``` js
-const tasksApi = new TasksApi("AppSid", "AppKey");
-const request: GetTasksRequest = { name: "template.mpp", folder: "documents", storage: ""}
+```js
+	// Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
+	const tasksApi = new TasksApi("MY_CLIENT_ID", "MY_CLIENT_SECRET");
 
-tasksApi.getTasks(request)
-    .then((result) => {
-        // Deal with a result
-        console.log(result.response.statusCode);
-        console.log(result.body);
-    })
-    .catch(function(err) {
-        // Deal with an error
-        console.log(err.reponse.statusCode);
-        console.log(err.body);
-    });
-```
+	const request: GetTasksRequest = { name: "template.mpp", folder: "documents", storage: ""}
 
-[Tests](test) contain various examples of using the SDK. You have to create "testConfig.json" file in project root to run every example. The "testConfig.json" has the following structure.
-
-``` json
-{
-    "AppSid": "Youre AppSid here",
-    "AppKey": "Youre AppKey here",
-    "BaseUrl": "http://api.aspose.cloud"
-}
+	tasksApi.getTasks(request)
+		.then((result) => {
+			// Deal with a result
+			console.log(result.response.statusCode);
+			console.log(result.body);
+		})
+		.catch(function(err) {
+			// Deal with an error
+			console.log(err.reponse.statusCode);
+			console.log(err.body);
+		});
 ```
 
 ## Aspose.Tasks Cloud SDKs in Popular Languages
@@ -88,6 +80,6 @@ tasksApi.getTasks(request)
 | .NET | PHP | Python| Node.js | Go |
 |---|---|---|---|---|
 | [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-dotnet) |[GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-php) | [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-python) | [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-node) |[GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-go)|
-| [NuGet](https://www.nuget.org/packages/Aspose.tasks-Cloud/)| [Composer](https://packagist.org/packages/aspose/tasks-cloud-php) | [PIP](https://pypi.org/project/aspose-tasks-cloud/) | [NPM](https://www.npmjs.com/package/aspose-tasks-cloud) | [Go.Dev](https://pkg.go.dev/github.com/aspose-tasks-cloud/aspose-tasks-cloud-go/) |
+| [NuGet](https://www.nuget.org/packages/Aspose.tasks-Cloud/)| [Composer](https://packagist.org/packages/aspose/tasks-cloud-php) | [PIP](https://pypi.org/project/aspose-tasks-cloud/) | [NPM](https://www.npmjs.com/package/@asposecloud/aspose-tasks-cloud) | [Go.Dev](https://pkg.go.dev/github.com/aspose-tasks-cloud/aspose-tasks-cloud-go/) |
 
 [Product Page](https://products.aspose.cloud/tasks/nodejs) | [Documentation](https://docs.aspose.cloud/display/taskscloud/Home) | [API Reference](https://apireference.aspose.cloud/tasks/) | [Code Samples](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-node) | [Blog](https://blog.aspose.cloud/category/tasks/) | [Free Support](https://forum.aspose.cloud/c/tasks) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
