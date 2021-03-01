@@ -45,7 +45,6 @@ export class TasksApi {
      * @param baseUrl Base api Url.
      * @param authUrl Auth Url.
      * @param debugMode A value indicating whether debug mode. In debug mode all requests and responses are logged to console.
-     * @param version API version.
      */
     constructor(appSID: string, appKey: string, baseUrl?: string, authUrl?: string, debugMode?: boolean) {
         this.configuration = new Configuration(appSID, appKey, baseUrl, authUrl, debugMode);

@@ -4785,6 +4785,11 @@ export class Task {
             name: "warning",
             baseName: "warning",
             type: "boolean",
+        },        
+        {
+            name: "activityId",
+            baseName: "activityId",
+            type: "string",
         }    ];
 
     /**
@@ -5331,6 +5336,11 @@ export class Task {
      * Represents the flag which indicates that task has schedule discrepancies.
      */
     public warning: boolean;
+    
+    /**
+     * Represents activity id field - a task's unique identifier used by Primavera (only applicable to Primavera projects).
+     */
+    public activityId: string;
     
     public constructor(init?: Partial<Task>) {
         

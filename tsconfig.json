@@ -1,17 +1,18 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "sourceMap": false,
-        "noLib": false,
-        "declaration": true,
         "noImplicitAny": false,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "suppressImplicitAnyIndexErrors": true,
         "target": "ES6",        
         "moduleResolution": "node",
+        "strict": false,
         "removeComments": false,
-        "lib": ["es6"],
+        "sourceMap": true,
+        "noLib": false,
+        "declaration": true,
+        "lib": ["es5", "es6", "scripthost", "dom"],
         "outDir": "dist"
     },
     "include": [

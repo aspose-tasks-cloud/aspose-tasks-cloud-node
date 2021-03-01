@@ -154,30 +154,34 @@ describe("deleteResource function", () => {
     it("should return response with code 200 and correct data", async () => {
         
         const tasksApi = BaseTest.initializeTasksApi();
-        const fileName = "Home_move_plan.mpp";
+        const fileName = "Plan_with_resource.mpp";
         const localPath = BaseTest.localBaseTestDataFolder + fileName;
         const remotePath = BaseTest.remoteBaseTestDataFolder;
         const remoteFullPath = remotePath + "/" + fileName;
 
-        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);
-
-        const deleteRequest = new DeleteResourceRequest();
-        deleteRequest.name = fileName;
-        deleteRequest.folder = remotePath;
-        deleteRequest.resourceUid = 0;
-
-        const deleteResult = await tasksApi.deleteResource(deleteRequest);
-
-        expect(deleteResult.response.statusCode).to.equal(200);
-        
+        await tasksApi.uploadFileToStorage(remoteFullPath, localPath);        
 
         const getRequest = new GetResourcesRequest();
         getRequest.name = fileName;
         getRequest.folder = remotePath;
 
-        const getResult = await tasksApi.getResources(getRequest);
+        let getResult = await tasksApi.getResources(getRequest);
 
         expect(getResult.response.statusCode).to.equal(200);
-        expect(getResult.body.resources.resourceItem.length).to.equal(0);
+        const resourcesCountBeforeDelete = getResult.body.resources.resourceItem.length
+
+        const deleteRequest = new DeleteResourceRequest();
+        deleteRequest.name = fileName;
+        deleteRequest.folder = remotePath;
+        deleteRequest.resourceUid = 1;
+
+        const deleteResult = await tasksApi.deleteResource(deleteRequest);
+
+        expect(deleteResult.response.statusCode).to.equal(200);
+
+        getResult = await tasksApi.getResources(getRequest);
+
+        expect(getResult.response.statusCode).to.equal(200);
+        expect(getResult.body.resources.resourceItem.length).to.lessThan(resourcesCountBeforeDelete);
     });
 });
