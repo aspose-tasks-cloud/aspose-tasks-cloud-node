@@ -84,8 +84,6 @@ describe("putExtendedAttribute with putTask functions", () => {
         putTaskRequest.folder = remotePath;
         putTaskRequest.taskUid = 27;
         putTaskRequest.task = getTaskResult.body.task;
-        putTaskRequest.task.baselines[0].start = new Date(Date.now());
-        putTaskRequest.task.baselines[0].finish = new Date(Date.now());
 
         const putTaskResult = await tasksApi.putTask(putTaskRequest);
 
@@ -144,8 +142,6 @@ describe("putExtendedAttribute with putTask functions", () => {
         putTaskRequest.folder = remotePath;
         putTaskRequest.taskUid = 27;
         putTaskRequest.task = getTaskResult.body.task;
-        putTaskRequest.task.baselines[0].start = new Date(Date.now());
-        putTaskRequest.task.baselines[0].finish = new Date(Date.now());
 
         const putTaskResult = await tasksApi.putTask(putTaskRequest);
 
@@ -208,8 +204,6 @@ describe("putExtendedAttribute with putTask functions", () => {
         putTaskRequest.folder = remotePath;
         putTaskRequest.taskUid = 27;
         putTaskRequest.task = getTaskResult.body.task;
-        putTaskRequest.task.baselines[0].start = new Date(Date.now());
-        putTaskRequest.task.baselines[0].finish = new Date(Date.now());
 
         const putTaskResult = await tasksApi.putTask(putTaskRequest);
 
@@ -270,8 +264,6 @@ describe("putExtendedAttribute with putTask functions", () => {
         putTaskRequest.folder = remotePath;
         putTaskRequest.taskUid = 27;
         putTaskRequest.task = getTaskResult.body.task;
-        putTaskRequest.task.baselines[0].start = new Date(Date.now());
-        putTaskRequest.task.baselines[0].finish = new Date(Date.now());
 
         const putTaskResult = await tasksApi.putTask(putTaskRequest);
 
@@ -331,8 +323,6 @@ describe("putExtendedAttribute with putTask functions", () => {
         putTaskRequest.folder = remotePath;
         putTaskRequest.taskUid = 27;
         putTaskRequest.task = getTaskResult.body.task;
-        putTaskRequest.task.baselines[0].start = new Date(Date.now());
-        putTaskRequest.task.baselines[0].finish = new Date(Date.now());
 
         const putTaskResult = await tasksApi.putTask(putTaskRequest);
 
@@ -392,8 +382,6 @@ describe("putExtendedAttribute with putTask functions", () => {
         putTaskRequest.folder = remotePath;
         putTaskRequest.taskUid = 27;
         putTaskRequest.task = getTaskResult.body.task;
-        putTaskRequest.task.baselines[0].start = new Date(Date.now());
-        putTaskRequest.task.baselines[0].finish = new Date(Date.now());
 
         const putTaskResult = await tasksApi.putTask(putTaskRequest);
 
@@ -453,8 +441,6 @@ describe("putExtendedAttribute with putTask functions", () => {
         putTaskRequest.folder = remotePath;
         putTaskRequest.taskUid = 27;
         putTaskRequest.task = getTaskResult.body.task;
-        putTaskRequest.task.baselines[0].start = new Date(Date.now());
-        putTaskRequest.task.baselines[0].finish = new Date(Date.now());
 
         const putTaskResult = await tasksApi.putTask(putTaskRequest);
 
