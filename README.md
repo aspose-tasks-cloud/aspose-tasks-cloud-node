@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/api-v3.0-lightgrey) ![npm (scoped)](https://img.shields.io/npm/v/@asposecloud/aspose-tasks-cloud) ![npm bundle size](https://img.shields.io/bundlephobia/min/@asposecloud/aspose-tasks-cloud) ![node-current](https://img.shields.io/node/v/@asposecloud/aspose-tasks-cloud) [![GitHub license](https://img.shields.io/github/license/aspose-tasks-cloud/aspose-tasks-cloud-node)](LICENSE) ![GitHub last commit](https://img.shields.io/github/last-commit/Aspose-tasks-Cloud/aspose-tasks-cloud-node)
 
-# Manipulate Project Files via Node.js Cloud REST API
+# Manipulate MS Project Files in Node.js via Cloud REST API
 
-Aspose.Tasks for Cloud offers the ability to manipulate and convert Microsoft Project MPT, MPP, MPX & Oracle Primavera XER, XML, and PrimaveraP6XML files in the Cloud. [Aspose.Tasks Cloud SDK for Go](https://products.aspose.cloud/tasks/go) wraps the REST API to make it easier for the developers to integrate Task Management features in their own cloud-based Go applications.
+Aspose.Tasks for Cloud offers the ability to manipulate and convert Microsoft Project MPT, MPP, MPX & Oracle Primavera XER, XML, and PrimaveraP6XML files in Node.js. [Aspose.Tasks Cloud SDK for Node.js](https://products.aspose.cloud/tasks/nodejs) wraps the REST API to make it easier for the developers to integrate MS Project Task Management features in their own cloud-based Node.js applications on Linux, MacOS, Windows or Android.
 
 Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/taskscloud/Developer+Guide) & [API Reference](https://apireference.aspose.cloud/tasks/) to know all about Aspose.Tasks Cloud API.
 
@@ -54,19 +54,19 @@ XER, XLSX, HTML, XML, TXT, TIF, SVG, PNG, JPEG
 Register an account at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) to get you application information. Next, execute `npm i @asposecloud/aspose-tasks-cloud` from the command line to install Aspose.Tasks Cloud SDK for Node.js via NPM.
 
 
-## Get All Tasks from MPP Project File in Node.Js
+## Convert MS Project MPP to PDF in Node.Js
 
 ```js
 	// Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
 	const tasksApi = new TasksApi("MY_CLIENT_ID", "MY_CLIENT_SECRET");
 
-	const request: GetTasksRequest = { name: "template.mpp", folder: "documents", storage: ""}
+	const request: GetReportPdfRequest = { name: "template.mpp", folder: "documents", storage: "", type: ReportType.Milestones}
 
-	tasksApi.getTasks(request)
+	tasksApi.getReportPdf(request)
 		.then((result) => {
 			// Deal with a result
 			console.log(result.response.statusCode);
-			console.log(result.body);
+			console.log(result.body.buffer);
 		})
 		.catch(function(err) {
 			// Deal with an error
