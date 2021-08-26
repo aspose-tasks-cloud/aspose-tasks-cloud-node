@@ -4427,6 +4427,11 @@ export class Task {
             type: "string",
         },        
         {
+            name: "hasOverallocatedResource",
+            baseName: "hasOverallocatedResource",
+            type: "boolean",
+        },        
+        {
             name: "hideBar",
             baseName: "hideBar",
             type: "boolean",
@@ -5000,6 +5005,11 @@ export class Task {
     public freeSlack: number;
     
     public guid: string;
+    
+    /**
+     * Indicates whether the task has an resource assigned which has more work on assigned tasks than can be completed within normal working capacity.
+     */
+    public hasOverallocatedResource: boolean;
     
     /**
      * Determines whether the GANTT bar of a task is hidden when displayed in Microsoft Project.
@@ -9176,7 +9186,7 @@ public folder: string;
 public storage: string;
 
     /**
-     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     * Authorization token (SPOIDCRL) for SharePoint's PWA (Project Web Access). For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
      */
 public xProjectOnlineToken: string;
 
@@ -9554,7 +9564,7 @@ public folder: string;
 public storage: string;
 
     /**
-     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     * Authorization token (SPOIDCRL) for SharePoint's PWA (Project Web Access). For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
      */
 public xProjectOnlineToken: string;
 
@@ -9583,7 +9593,7 @@ public siteUrl: string;
 public userName: string;
 
     /**
-     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     * Authorization token (SPOIDCRL) for SharePoint's PWA (Project Web Access). For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
      */
 public xProjectOnlineToken: string;
 
@@ -9632,7 +9642,7 @@ public folder: string;
 public storage: string;
 
     /**
-     * Authorization token for the SharePoint. For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
+     * Authorization token (SPOIDCRL) for SharePoint's PWA (Project Web Access). For example, in c# it can be retrieved using SharePointOnlineCredentials class from Microsoft.SharePoint.Client.Runtime assembly
      */
 public xProjectOnlineToken: string;
 
