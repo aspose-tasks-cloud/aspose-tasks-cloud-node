@@ -841,6 +841,11 @@ export class ExtendedAttribute {
             name: "textValue",
             baseName: "textValue",
             type: "string",
+        },        
+        {
+            name: "isErrorValue",
+            baseName: "isErrorValue",
+            type: "boolean",
         }    ];
 
     /**
@@ -894,6 +899,11 @@ export class ExtendedAttribute {
      * Gets or sets a value for attributes with 'Text' type.
      */
     public textValue: string;
+    
+    /**
+     * Gets whether calculation of extended attribute's value resulted in an error.             
+     */
+    public isErrorValue: boolean;
     
     public constructor(init?: Partial<ExtendedAttribute>) {
         
