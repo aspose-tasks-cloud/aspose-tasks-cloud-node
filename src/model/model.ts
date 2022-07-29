@@ -996,6 +996,11 @@ export class ExtendedAttributeDefinition {
             type: "CalculationType",
         },        
         {
+            name: "summaryRowsCalculationType",
+            baseName: "summaryRowsCalculationType",
+            type: "SummaryRowsCalculationType",
+        },        
+        {
             name: "formula",
             baseName: "formula",
             type: "string",
@@ -1112,6 +1117,11 @@ export class ExtendedAttributeDefinition {
      * Determines whether rollups are calculated for a task and group summary rows.
      */
     public calculationType: CalculationType;
+    
+    /**
+     * Gets or sets the type of calculation of the custom attribute's value for summary rows.
+     */
+    public summaryRowsCalculationType: SummaryRowsCalculationType;
     
     /**
      * The formula that Microsoft Project uses to populate a custom task field.
@@ -2593,6 +2603,11 @@ export class Resource {
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
+            name: "isRoot",
+            baseName: "isRoot",
+            type: "boolean",
+        },        
+        {
             name: "name",
             baseName: "name",
             type: "string",
@@ -2980,6 +2995,11 @@ export class Resource {
         return Resource.attributeTypeMap;
     }
 
+    /**
+     *         Gets the flag indicating whether resource is a root resource. Root resource is         a special resource which is intended to support internals of MS Project's formats         and is not intended to be used directly from the user's code.     
+     */
+    public isRoot: boolean;
+    
     /**
      * The name of a resource.
      */
@@ -4222,6 +4242,14 @@ export class StorageFile {
     }        
 }
 
+/**
+ * Specifies the type of a calculation of the custom attribute's value for summary  rows.             
+ */
+export enum SummaryRowsCalculationType {
+    None = 'None' as any,
+    Rollup = 'Rollup' as any,
+    UseFormula = 'UseFormula' as any,
+}
 /**
  * Represents project task.
  */
@@ -7899,6 +7927,7 @@ const enumsMap = {
     "ReportType": ReportType,
     "ResourceType": ResourceType,
     "RollupType": RollupType,
+    "SummaryRowsCalculationType": SummaryRowsCalculationType,
     "TaskLinkType": TaskLinkType,
     "TaskType": TaskType,
     "TimeUnitType": TimeUnitType,
