@@ -106,7 +106,7 @@ async function invokeApiMethodInternal(requestOptions: request.Options, confgura
     //headers
     sa.set("User-Agent", "tasks nodejs sdk");
     sa.set("x-aspose-client", "nodejs sdk");  
-    sa.set("x-aspose-client-version", "22.7"); 
+    sa.set("x-aspose-client-version", "22.8"); 
 
     if (!requestOptions.headers) {
         requestOptions.headers = {};
