@@ -2780,6 +2780,46 @@ export class TasksApi {
     }
 
     /**
+     * Get primavera properties for a task with the specified Uid.
+     * @param requestObj contains request parameters
+     */
+    public async getPrimaveraTaskProperties(requestObj: model.GetPrimaveraTaskPropertiesRequest): Promise<model.TasksIncomingMessage<model.PrimaveraTaskPropertiesResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getPrimaveraTaskProperties.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/tasks/{taskUid}/primaveraProperties"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "taskUid" + "}", String(requestObj.taskUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getPrimaveraTaskProperties.');
+        }
+
+        // verify required parameter 'requestObj.taskUid' is not null or undefined
+        if (requestObj.taskUid === null || requestObj.taskUid === undefined) {
+            throw new Error('Required parameter "requestObj.taskUid" was null or undefined when calling getPrimaveraTaskProperties.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        const requestOptions: request.Options = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "PrimaveraTaskPropertiesResponse");
+		const result: model.TasksIncomingMessage<model.PrimaveraTaskPropertiesResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
      * Read project task.
      * @param requestObj contains request parameters
      */

@@ -45,7 +45,7 @@ describe("getDocumentProperties function", () => {
 
         const result = await tasksApi.getDocumentProperties(request);
         expect(result.response.statusCode).to.equal(200);
-        expect(result.body.properties.list.length).to.equal(52);
+        expect(result.body.properties.list.length).to.equal(63);
         expect(result.body.properties.list[0].name).to.equal("Title");
         expect(result.body.properties.list[0].value).to.equal("Home Move");
     });

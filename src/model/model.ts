@@ -2054,6 +2054,129 @@ export enum PresentationFormat {
     TaskSheet = 'TaskSheet' as any,
 }
 /**
+ * Represents Primavera-specific properties for a task read from Primavera format (XER of P6XML).
+ */
+export class PrimaveraTaskProperties {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "sequenceNumber",
+            baseName: "sequenceNumber",
+            type: "number",
+        },        
+        {
+            name: "activityId",
+            baseName: "activityId",
+            type: "string",
+        },        
+        {
+            name: "remainingEarlyFinish",
+            baseName: "remainingEarlyFinish",
+            type: "Date",
+        },        
+        {
+            name: "remainingEarlyStart",
+            baseName: "remainingEarlyStart",
+            type: "Date",
+        },        
+        {
+            name: "remainingLateStart",
+            baseName: "remainingLateStart",
+            type: "Date",
+        },        
+        {
+            name: "remainingLateFinish",
+            baseName: "remainingLateFinish",
+            type: "Date",
+        },        
+        {
+            name: "rawDurationType",
+            baseName: "rawDurationType",
+            type: "string",
+        },        
+        {
+            name: "rawActivityType",
+            baseName: "rawActivityType",
+            type: "string",
+        },        
+        {
+            name: "rawCompletePercentType",
+            baseName: "rawCompletePercentType",
+            type: "string",
+        },        
+        {
+            name: "rawStatus",
+            baseName: "rawStatus",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return PrimaveraTaskProperties.attributeTypeMap;
+    }
+
+    /**
+     * The sequence number of the WBS item (summary tasks). It is used to sort summary tasks in Primavera.
+     */
+    public sequenceNumber: number;
+    
+    /**
+     * Activity id field - a task's unique identifier used by Primavera.
+     */
+    public activityId: string;
+    
+    /**
+     * Remaining early finish date - the date when the remaining work for the activity is scheduled to be finished.
+     */
+    public remainingEarlyFinish: Date;
+    
+    /**
+     * Remaining early start date - the date when the remaining work for the activity is scheduled to begin.
+     */
+    public remainingEarlyStart: Date;
+    
+    /**
+     * Remaining late start date.
+     */
+    public remainingLateStart: Date;
+    
+    /**
+     * Remaining late finish date.
+     */
+    public remainingLateFinish: Date;
+    
+    /**
+     * Raw text representation (as in source file) of 'Duration Type' field of the activity.
+     */
+    public rawDurationType: string;
+    
+    /**
+     * Raw text representation (as in source file) of 'Activity Type' field of the activity.
+     */
+    public rawActivityType: string;
+    
+    /**
+     * Raw text representation (as in source file) of '% Complete Type' field of the activity.
+     */
+    public rawCompletePercentType: string;
+    
+    /**
+     * Raw text representation (as in source file) of 'Status' field of the activity.
+     */
+    public rawStatus: string;
+    
+    public constructor(init?: Partial<PrimaveraTaskProperties>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Specifies types of supported probability distributions.
  */
 export enum ProbabilityDistributionType {
@@ -7241,6 +7364,39 @@ export class PageCountResponse extends AsposeResponse {
 }
 
 /**
+ * PrimaveraProperties response.
+ */
+export class PrimaveraTaskPropertiesResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "primaveraProperties",
+            baseName: "primaveraProperties",
+            type: "PrimaveraTaskProperties",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(PrimaveraTaskPropertiesResponse.attributeTypeMap);
+    }
+
+    /**
+     * PrimaveraTaskProperties DTO
+     */
+    public primaveraProperties: PrimaveraTaskProperties;
+    
+    public constructor(init?: Partial<PrimaveraTaskPropertiesResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * ProjectIds response
  */
 export class ProjectIdsResponse extends AsposeResponse {
@@ -7964,6 +8120,7 @@ const typeMap = {
             OutlineCodeItem,
             OutlineMask,
             OutlineValue,
+            PrimaveraTaskProperties,
             ProjectInfo,
             ProjectRecalculationResult,
             ProjectServerSaveOptionsDTO,
@@ -8013,6 +8170,7 @@ const typeMap = {
             OutlineCodeItemsResponse,
             OutlineCodeResponse,
             PageCountResponse,
+            PrimaveraTaskPropertiesResponse,
             ProjectIdsResponse,
             ProjectList,
             ProjectListResponse,
@@ -10202,6 +10360,35 @@ public folder: string;
 public fileName: string;
     
     public constructor(init?: Partial<DeleteTaskRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getPrimaveraTaskProperties operation.
+ */
+export class GetPrimaveraTaskPropertiesRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Uid of task to get primavera properties for.
+     */
+public taskUid: number;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<GetPrimaveraTaskPropertiesRequest>) {        
         Object.assign(this, init);
     } 
 }
