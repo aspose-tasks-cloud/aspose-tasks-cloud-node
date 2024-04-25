@@ -140,6 +140,25 @@ export class AssignmentItem {
 }
 
 /**
+ * Specifies the background pattern.
+ */
+export enum BackgroundPattern {
+    Hollow = 'Hollow' as any,
+    SolidFill = 'SolidFill' as any,
+    LightFill = 'LightFill' as any,
+    MediumFill = 'MediumFill' as any,
+    DarkFill = 'DarkFill' as any,
+    DiagonalLeft = 'DiagonalLeft' as any,
+    DiagonalRight = 'DiagonalRight' as any,
+    DarkDiagonalLeft = 'DarkDiagonalLeft' as any,
+    DarkDiagonalRight = 'DarkDiagonalRight' as any,
+    ThinVerticalStripe = 'ThinVerticalStripe' as any,
+    MediumVerticalStripe = 'MediumVerticalStripe' as any,
+    LightDither = 'LightDither' as any,
+    MediumDither = 'MediumDither' as any,
+    DarkDither = 'DarkDither' as any,
+}
+/**
  * Represents baseline values of a resource or a task.
  */
 export class Baseline {
@@ -568,6 +587,152 @@ export class CalendarItem {
     }        
 }
 
+/**
+ * 
+ */
+export enum Colors {
+    MediumAquamarine = 'MediumAquamarine' as any,
+    MediumBlue = 'MediumBlue' as any,
+    MediumOrchid = 'MediumOrchid' as any,
+    MediumPurple = 'MediumPurple' as any,
+    MediumSeaGreen = 'MediumSeaGreen' as any,
+    MediumSlateBlue = 'MediumSlateBlue' as any,
+    MediumSpringGreen = 'MediumSpringGreen' as any,
+    Maroon = 'Maroon' as any,
+    MediumTurquoise = 'MediumTurquoise' as any,
+    MidnightBlue = 'MidnightBlue' as any,
+    MintCream = 'MintCream' as any,
+    MistyRose = 'MistyRose' as any,
+    Moccasin = 'Moccasin' as any,
+    NavajoWhite = 'NavajoWhite' as any,
+    Navy = 'Navy' as any,
+    OldLace = 'OldLace' as any,
+    MediumVioletRed = 'MediumVioletRed' as any,
+    Magenta = 'Magenta' as any,
+    Linen = 'Linen' as any,
+    LimeGreen = 'LimeGreen' as any,
+    LavenderBlush = 'LavenderBlush' as any,
+    LawnGreen = 'LawnGreen' as any,
+    LemonChiffon = 'LemonChiffon' as any,
+    LightBlue = 'LightBlue' as any,
+    LightCoral = 'LightCoral' as any,
+    LightCyan = 'LightCyan' as any,
+    LightGoldenrodYellow = 'LightGoldenrodYellow' as any,
+    LightGray = 'LightGray' as any,
+    LightGreen = 'LightGreen' as any,
+    LightPink = 'LightPink' as any,
+    LightSalmon = 'LightSalmon' as any,
+    LightSeaGreen = 'LightSeaGreen' as any,
+    LightSkyBlue = 'LightSkyBlue' as any,
+    LightSlateGray = 'LightSlateGray' as any,
+    LightSteelBlue = 'LightSteelBlue' as any,
+    LightYellow = 'LightYellow' as any,
+    Lime = 'Lime' as any,
+    Olive = 'Olive' as any,
+    OliveDrab = 'OliveDrab' as any,
+    Orange = 'Orange' as any,
+    OrangeRed = 'OrangeRed' as any,
+    Silver = 'Silver' as any,
+    SkyBlue = 'SkyBlue' as any,
+    SlateBlue = 'SlateBlue' as any,
+    SlateGray = 'SlateGray' as any,
+    Snow = 'Snow' as any,
+    SpringGreen = 'SpringGreen' as any,
+    SteelBlue = 'SteelBlue' as any,
+    Tan = 'Tan' as any,
+    Teal = 'Teal' as any,
+    Thistle = 'Thistle' as any,
+    Tomato = 'Tomato' as any,
+    Transparent = 'Transparent' as any,
+    Turquoise = 'Turquoise' as any,
+    Violet = 'Violet' as any,
+    Wheat = 'Wheat' as any,
+    White = 'White' as any,
+    WhiteSmoke = 'WhiteSmoke' as any,
+    Sienna = 'Sienna' as any,
+    Lavender = 'Lavender' as any,
+    SeaShell = 'SeaShell' as any,
+    SandyBrown = 'SandyBrown' as any,
+    Orchid = 'Orchid' as any,
+    PaleGoldenrod = 'PaleGoldenrod' as any,
+    PaleGreen = 'PaleGreen' as any,
+    PaleTurquoise = 'PaleTurquoise' as any,
+    PaleVioletRed = 'PaleVioletRed' as any,
+    PapayaWhip = 'PapayaWhip' as any,
+    PeachPuff = 'PeachPuff' as any,
+    Peru = 'Peru' as any,
+    Pink = 'Pink' as any,
+    Plum = 'Plum' as any,
+    PowderBlue = 'PowderBlue' as any,
+    Purple = 'Purple' as any,
+    Red = 'Red' as any,
+    RosyBrown = 'RosyBrown' as any,
+    RoyalBlue = 'RoyalBlue' as any,
+    SaddleBrown = 'SaddleBrown' as any,
+    Salmon = 'Salmon' as any,
+    SeaGreen = 'SeaGreen' as any,
+    Yellow = 'Yellow' as any,
+    Khaki = 'Khaki' as any,
+    Cyan = 'Cyan' as any,
+    DarkMagenta = 'DarkMagenta' as any,
+    DarkKhaki = 'DarkKhaki' as any,
+    DarkGreen = 'DarkGreen' as any,
+    DarkGray = 'DarkGray' as any,
+    DarkGoldenrod = 'DarkGoldenrod' as any,
+    DarkCyan = 'DarkCyan' as any,
+    DarkBlue = 'DarkBlue' as any,
+    Ivory = 'Ivory' as any,
+    Crimson = 'Crimson' as any,
+    Cornsilk = 'Cornsilk' as any,
+    CornflowerBlue = 'CornflowerBlue' as any,
+    Coral = 'Coral' as any,
+    Chocolate = 'Chocolate' as any,
+    DarkOliveGreen = 'DarkOliveGreen' as any,
+    Chartreuse = 'Chartreuse' as any,
+    BurlyWood = 'BurlyWood' as any,
+    Brown = 'Brown' as any,
+    BlueViolet = 'BlueViolet' as any,
+    Blue = 'Blue' as any,
+    BlanchedAlmond = 'BlanchedAlmond' as any,
+    Black = 'Black' as any,
+    Bisque = 'Bisque' as any,
+    Beige = 'Beige' as any,
+    Azure = 'Azure' as any,
+    Aquamarine = 'Aquamarine' as any,
+    Aqua = 'Aqua' as any,
+    AntiqueWhite = 'AntiqueWhite' as any,
+    AliceBlue = 'AliceBlue' as any,
+    CadetBlue = 'CadetBlue' as any,
+    DarkOrange = 'DarkOrange' as any,
+    YellowGreen = 'YellowGreen' as any,
+    DarkRed = 'DarkRed' as any,
+    Indigo = 'Indigo' as any,
+    IndianRed = 'IndianRed' as any,
+    DarkOrchid = 'DarkOrchid' as any,
+    Honeydew = 'Honeydew' as any,
+    GreenYellow = 'GreenYellow' as any,
+    Green = 'Green' as any,
+    Gray = 'Gray' as any,
+    Goldenrod = 'Goldenrod' as any,
+    Gold = 'Gold' as any,
+    GhostWhite = 'GhostWhite' as any,
+    Gainsboro = 'Gainsboro' as any,
+    Fuchsia = 'Fuchsia' as any,
+    ForestGreen = 'ForestGreen' as any,
+    HotPink = 'HotPink' as any,
+    Firebrick = 'Firebrick' as any,
+    FloralWhite = 'FloralWhite' as any,
+    DodgerBlue = 'DodgerBlue' as any,
+    DimGray = 'DimGray' as any,
+    DeepSkyBlue = 'DeepSkyBlue' as any,
+    DeepPink = 'DeepPink' as any,
+    DarkViolet = 'DarkViolet' as any,
+    DarkTurquoise = 'DarkTurquoise' as any,
+    DarkSlateGray = 'DarkSlateGray' as any,
+    DarkSlateBlue = 'DarkSlateBlue' as any,
+    DarkSeaGreen = 'DarkSeaGreen' as any,
+    DarkSalmon = 'DarkSalmon' as any,
+}
 /**
  * Specifies supported confidence levels used in risk analysis that correspond to  the percentage of the time the actual values will be within optimistic and pessimistic estimates.
  */
@@ -1220,6 +1385,1361 @@ export class ExtendedAttributeItem {
 }
 
 /**
+ * Specifies a field in the Microsoft Office Project.
+ */
+export enum Field {
+    Undefined = 'Undefined' as any,
+    TaskWork = 'TaskWork' as any,
+    TaskBaselineWork = 'TaskBaselineWork' as any,
+    TaskActualWork = 'TaskActualWork' as any,
+    TaskWorkVariance = 'TaskWorkVariance' as any,
+    TaskRemainingWork = 'TaskRemainingWork' as any,
+    TaskCost = 'TaskCost' as any,
+    TaskBaselineCost = 'TaskBaselineCost' as any,
+    TaskActualCost = 'TaskActualCost' as any,
+    TaskFixedCost = 'TaskFixedCost' as any,
+    TaskCostVariance = 'TaskCostVariance' as any,
+    TaskRemainingCost = 'TaskRemainingCost' as any,
+    TaskBCWP = 'TaskBCWP' as any,
+    TaskBCWS = 'TaskBCWS' as any,
+    TaskSV = 'TaskSV' as any,
+    TaskName = 'TaskName' as any,
+    TaskNotes = 'TaskNotes' as any,
+    TaskWBS = 'TaskWBS' as any,
+    TaskConstraintType = 'TaskConstraintType' as any,
+    TaskConstraintDate = 'TaskConstraintDate' as any,
+    TaskCritical = 'TaskCritical' as any,
+    TaskLevelDelay = 'TaskLevelDelay' as any,
+    TaskFreeSlack = 'TaskFreeSlack' as any,
+    TaskTotalSlack = 'TaskTotalSlack' as any,
+    TaskID = 'TaskID' as any,
+    TaskMilestone = 'TaskMilestone' as any,
+    TaskPriority = 'TaskPriority' as any,
+    TaskSubproject = 'TaskSubproject' as any,
+    TaskBaselineDuration = 'TaskBaselineDuration' as any,
+    TaskActualDuration = 'TaskActualDuration' as any,
+    TaskDuration = 'TaskDuration' as any,
+    TaskDurationVariance = 'TaskDurationVariance' as any,
+    TaskRemainingDuration = 'TaskRemainingDuration' as any,
+    TaskPercentComplete = 'TaskPercentComplete' as any,
+    TaskPercentWorkComplete = 'TaskPercentWorkComplete' as any,
+    TaskFixedDuration = 'TaskFixedDuration' as any,
+    TaskStart = 'TaskStart' as any,
+    TaskFinish = 'TaskFinish' as any,
+    TaskEarlyStart = 'TaskEarlyStart' as any,
+    TaskEarlyFinish = 'TaskEarlyFinish' as any,
+    TaskLateStart = 'TaskLateStart' as any,
+    TaskLateFinish = 'TaskLateFinish' as any,
+    TaskActualStart = 'TaskActualStart' as any,
+    TaskActualFinish = 'TaskActualFinish' as any,
+    TaskBaselineStart = 'TaskBaselineStart' as any,
+    TaskBaselineFinish = 'TaskBaselineFinish' as any,
+    TaskStartVariance = 'TaskStartVariance' as any,
+    TaskFinishVariance = 'TaskFinishVariance' as any,
+    TaskPredecessors = 'TaskPredecessors' as any,
+    TaskSuccessors = 'TaskSuccessors' as any,
+    TaskResourceNames = 'TaskResourceNames' as any,
+    TaskResourceInitials = 'TaskResourceInitials' as any,
+    TaskText1 = 'TaskText1' as any,
+    TaskStart1 = 'TaskStart1' as any,
+    TaskFinish1 = 'TaskFinish1' as any,
+    TaskText2 = 'TaskText2' as any,
+    TaskStart2 = 'TaskStart2' as any,
+    TaskFinish2 = 'TaskFinish2' as any,
+    TaskText3 = 'TaskText3' as any,
+    TaskStart3 = 'TaskStart3' as any,
+    TaskFinish3 = 'TaskFinish3' as any,
+    TaskText4 = 'TaskText4' as any,
+    TaskStart4 = 'TaskStart4' as any,
+    TaskFinish4 = 'TaskFinish4' as any,
+    TaskText5 = 'TaskText5' as any,
+    TaskStart5 = 'TaskStart5' as any,
+    TaskFinish5 = 'TaskFinish5' as any,
+    TaskText6 = 'TaskText6' as any,
+    TaskText7 = 'TaskText7' as any,
+    TaskText8 = 'TaskText8' as any,
+    TaskText9 = 'TaskText9' as any,
+    TaskText10 = 'TaskText10' as any,
+    TaskMarked = 'TaskMarked' as any,
+    TaskFlag1 = 'TaskFlag1' as any,
+    TaskFlag2 = 'TaskFlag2' as any,
+    TaskFlag3 = 'TaskFlag3' as any,
+    TaskFlag4 = 'TaskFlag4' as any,
+    TaskFlag5 = 'TaskFlag5' as any,
+    TaskFlag6 = 'TaskFlag6' as any,
+    TaskFlag7 = 'TaskFlag7' as any,
+    TaskFlag8 = 'TaskFlag8' as any,
+    TaskFlag9 = 'TaskFlag9' as any,
+    TaskFlag10 = 'TaskFlag10' as any,
+    TaskRollup = 'TaskRollup' as any,
+    TaskCV = 'TaskCV' as any,
+    TaskProject = 'TaskProject' as any,
+    TaskOutlineLevel = 'TaskOutlineLevel' as any,
+    TaskUniqueID = 'TaskUniqueID' as any,
+    TaskNumber1 = 'TaskNumber1' as any,
+    TaskNumber2 = 'TaskNumber2' as any,
+    TaskNumber3 = 'TaskNumber3' as any,
+    TaskNumber4 = 'TaskNumber4' as any,
+    TaskNumber5 = 'TaskNumber5' as any,
+    TaskSummary = 'TaskSummary' as any,
+    TaskCreated = 'TaskCreated' as any,
+    TaskSheetNotes = 'TaskSheetNotes' as any,
+    TaskUniquePredecessors = 'TaskUniquePredecessors' as any,
+    TaskUniqueSuccessors = 'TaskUniqueSuccessors' as any,
+    TaskObjects = 'TaskObjects' as any,
+    TaskLinkedFields = 'TaskLinkedFields' as any,
+    TaskResume = 'TaskResume' as any,
+    TaskStop = 'TaskStop' as any,
+    TaskResumeNoEarlierThan = 'TaskResumeNoEarlierThan' as any,
+    TaskOutlineNumber = 'TaskOutlineNumber' as any,
+    TaskDuration1 = 'TaskDuration1' as any,
+    TaskDuration2 = 'TaskDuration2' as any,
+    TaskDuration3 = 'TaskDuration3' as any,
+    TaskCost1 = 'TaskCost1' as any,
+    TaskCost2 = 'TaskCost2' as any,
+    TaskCost3 = 'TaskCost3' as any,
+    TaskHideBar = 'TaskHideBar' as any,
+    TaskConfirmed = 'TaskConfirmed' as any,
+    TaskUpdateNeeded = 'TaskUpdateNeeded' as any,
+    TaskContact = 'TaskContact' as any,
+    TaskResourceGroup = 'TaskResourceGroup' as any,
+    TaskCompleteThrough = 'TaskCompleteThrough' as any,
+    TaskACWP = 'TaskACWP' as any,
+    TaskType = 'TaskType' as any,
+    TaskRecurring = 'TaskRecurring' as any,
+    TaskEffortDriven = 'TaskEffortDriven' as any,
+    TaskParentTask = 'TaskParentTask' as any,
+    TaskOvertimeWork = 'TaskOvertimeWork' as any,
+    TaskActualOvertimeWork = 'TaskActualOvertimeWork' as any,
+    TaskRemainingOvertimeWork = 'TaskRemainingOvertimeWork' as any,
+    TaskRegularWork = 'TaskRegularWork' as any,
+    TaskOvertimeCost = 'TaskOvertimeCost' as any,
+    TaskActualOvertimeCost = 'TaskActualOvertimeCost' as any,
+    TaskRemainingOvertimeCost = 'TaskRemainingOvertimeCost' as any,
+    TaskFixedCostAccrual = 'TaskFixedCostAccrual' as any,
+    TaskIndicators = 'TaskIndicators' as any,
+    TaskHyperlinkId = 'TaskHyperlinkId' as any,
+    TaskHyperlink = 'TaskHyperlink' as any,
+    TaskHyperlinkAddress = 'TaskHyperlinkAddress' as any,
+    TaskHyperlinkSubAddress = 'TaskHyperlinkSubAddress' as any,
+    TaskHyperlinkHref = 'TaskHyperlinkHref' as any,
+    TaskIsAssignment = 'TaskIsAssignment' as any,
+    TaskOverallocated = 'TaskOverallocated' as any,
+    TaskExternalTask = 'TaskExternalTask' as any,
+    TaskSubprojectReadOnly = 'TaskSubprojectReadOnly' as any,
+    TaskResponsePending = 'TaskResponsePending' as any,
+    TaskTeamStatusPending = 'TaskTeamStatusPending' as any,
+    TaskLevelCanSplit = 'TaskLevelCanSplit' as any,
+    TaskLevelAssignments = 'TaskLevelAssignments' as any,
+    TaskWorkContour = 'TaskWorkContour' as any,
+    TaskCost4 = 'TaskCost4' as any,
+    TaskCost5 = 'TaskCost5' as any,
+    TaskCost6 = 'TaskCost6' as any,
+    TaskCost7 = 'TaskCost7' as any,
+    TaskCost8 = 'TaskCost8' as any,
+    TaskCost9 = 'TaskCost9' as any,
+    TaskCost10 = 'TaskCost10' as any,
+    TaskDate1 = 'TaskDate1' as any,
+    TaskDate2 = 'TaskDate2' as any,
+    TaskDate3 = 'TaskDate3' as any,
+    TaskDate4 = 'TaskDate4' as any,
+    TaskDate5 = 'TaskDate5' as any,
+    TaskDate6 = 'TaskDate6' as any,
+    TaskDate7 = 'TaskDate7' as any,
+    TaskDate8 = 'TaskDate8' as any,
+    TaskDate9 = 'TaskDate9' as any,
+    TaskDate10 = 'TaskDate10' as any,
+    TaskDuration4 = 'TaskDuration4' as any,
+    TaskDuration5 = 'TaskDuration5' as any,
+    TaskDuration6 = 'TaskDuration6' as any,
+    TaskDuration7 = 'TaskDuration7' as any,
+    TaskDuration8 = 'TaskDuration8' as any,
+    TaskDuration9 = 'TaskDuration9' as any,
+    TaskDuration10 = 'TaskDuration10' as any,
+    TaskStart6 = 'TaskStart6' as any,
+    TaskFinish6 = 'TaskFinish6' as any,
+    TaskStart7 = 'TaskStart7' as any,
+    TaskFinish7 = 'TaskFinish7' as any,
+    TaskStart8 = 'TaskStart8' as any,
+    TaskFinish8 = 'TaskFinish8' as any,
+    TaskStart9 = 'TaskStart9' as any,
+    TaskFinish9 = 'TaskFinish9' as any,
+    TaskStart10 = 'TaskStart10' as any,
+    TaskFinish10 = 'TaskFinish10' as any,
+    TaskFlag11 = 'TaskFlag11' as any,
+    TaskFlag12 = 'TaskFlag12' as any,
+    TaskFlag13 = 'TaskFlag13' as any,
+    TaskFlag14 = 'TaskFlag14' as any,
+    TaskFlag15 = 'TaskFlag15' as any,
+    TaskFlag16 = 'TaskFlag16' as any,
+    TaskFlag17 = 'TaskFlag17' as any,
+    TaskFlag18 = 'TaskFlag18' as any,
+    TaskFlag19 = 'TaskFlag19' as any,
+    TaskFlag20 = 'TaskFlag20' as any,
+    TaskNumber6 = 'TaskNumber6' as any,
+    TaskNumber7 = 'TaskNumber7' as any,
+    TaskNumber8 = 'TaskNumber8' as any,
+    TaskNumber9 = 'TaskNumber9' as any,
+    TaskNumber10 = 'TaskNumber10' as any,
+    TaskNumber11 = 'TaskNumber11' as any,
+    TaskNumber12 = 'TaskNumber12' as any,
+    TaskNumber13 = 'TaskNumber13' as any,
+    TaskNumber14 = 'TaskNumber14' as any,
+    TaskNumber15 = 'TaskNumber15' as any,
+    TaskNumber16 = 'TaskNumber16' as any,
+    TaskNumber17 = 'TaskNumber17' as any,
+    TaskNumber18 = 'TaskNumber18' as any,
+    TaskNumber19 = 'TaskNumber19' as any,
+    TaskNumber20 = 'TaskNumber20' as any,
+    TaskText11 = 'TaskText11' as any,
+    TaskText12 = 'TaskText12' as any,
+    TaskText13 = 'TaskText13' as any,
+    TaskText14 = 'TaskText14' as any,
+    TaskText15 = 'TaskText15' as any,
+    TaskText16 = 'TaskText16' as any,
+    TaskText17 = 'TaskText17' as any,
+    TaskText18 = 'TaskText18' as any,
+    TaskText19 = 'TaskText19' as any,
+    TaskText20 = 'TaskText20' as any,
+    TaskText21 = 'TaskText21' as any,
+    TaskText22 = 'TaskText22' as any,
+    TaskText23 = 'TaskText23' as any,
+    TaskText24 = 'TaskText24' as any,
+    TaskText25 = 'TaskText25' as any,
+    TaskText26 = 'TaskText26' as any,
+    TaskText27 = 'TaskText27' as any,
+    TaskText28 = 'TaskText28' as any,
+    TaskText29 = 'TaskText29' as any,
+    TaskText30 = 'TaskText30' as any,
+    TaskResourcePhonetics = 'TaskResourcePhonetics' as any,
+    TaskIndex = 'TaskIndex' as any,
+    TaskAssignmentDelay = 'TaskAssignmentDelay' as any,
+    TaskAssignmentUnits = 'TaskAssignmentUnits' as any,
+    TaskCostRateTable = 'TaskCostRateTable' as any,
+    TaskPreleveledStart = 'TaskPreleveledStart' as any,
+    TaskPreleveledFinish = 'TaskPreleveledFinish' as any,
+    TaskEstimated = 'TaskEstimated' as any,
+    TaskIgnoreResourceCalendar = 'TaskIgnoreResourceCalendar' as any,
+    TaskCalendar = 'TaskCalendar' as any,
+    TaskDuration1Estimated = 'TaskDuration1Estimated' as any,
+    TaskDuration2Estimated = 'TaskDuration2Estimated' as any,
+    TaskDuration3Estimated = 'TaskDuration3Estimated' as any,
+    TaskDuration4Estimated = 'TaskDuration4Estimated' as any,
+    TaskDuration5Estimated = 'TaskDuration5Estimated' as any,
+    TaskDuration6Estimated = 'TaskDuration6Estimated' as any,
+    TaskDuration7Estimated = 'TaskDuration7Estimated' as any,
+    TaskDuration8Estimated = 'TaskDuration8Estimated' as any,
+    TaskDuration9Estimated = 'TaskDuration9Estimated' as any,
+    TaskDuration10Estimated = 'TaskDuration10Estimated' as any,
+    TaskBaselineDurationEstimated = 'TaskBaselineDurationEstimated' as any,
+    TaskOutlineCode1 = 'TaskOutlineCode1' as any,
+    TaskOutlineCode2 = 'TaskOutlineCode2' as any,
+    TaskOutlineCode3 = 'TaskOutlineCode3' as any,
+    TaskOutlineCode4 = 'TaskOutlineCode4' as any,
+    TaskOutlineCode5 = 'TaskOutlineCode5' as any,
+    TaskOutlineCode6 = 'TaskOutlineCode6' as any,
+    TaskOutlineCode7 = 'TaskOutlineCode7' as any,
+    TaskOutlineCode8 = 'TaskOutlineCode8' as any,
+    TaskOutlineCode9 = 'TaskOutlineCode9' as any,
+    TaskOutlineCode10 = 'TaskOutlineCode10' as any,
+    TaskDeadline = 'TaskDeadline' as any,
+    TaskStartSlack = 'TaskStartSlack' as any,
+    TaskFinishSlack = 'TaskFinishSlack' as any,
+    TaskVAC = 'TaskVAC' as any,
+    TaskGroupBySummary = 'TaskGroupBySummary' as any,
+    TaskWBSPredecessors = 'TaskWBSPredecessors' as any,
+    TaskWBSSuccessors = 'TaskWBSSuccessors' as any,
+    TaskResourceType = 'TaskResourceType' as any,
+    TaskHyperlinkScreenTip = 'TaskHyperlinkScreenTip' as any,
+    TaskBaseLineFixedCost = 'TaskBaseLineFixedCost' as any,
+    TaskBaseline1Start = 'TaskBaseline1Start' as any,
+    TaskBaseline1Finish = 'TaskBaseline1Finish' as any,
+    TaskBaseline1Cost = 'TaskBaseline1Cost' as any,
+    TaskBaseline1Work = 'TaskBaseline1Work' as any,
+    TaskBaseline1Duration = 'TaskBaseline1Duration' as any,
+    TaskBaseline2Start = 'TaskBaseline2Start' as any,
+    TaskBaseline2Finish = 'TaskBaseline2Finish' as any,
+    TaskBaseline2Cost = 'TaskBaseline2Cost' as any,
+    TaskBaseline2Work = 'TaskBaseline2Work' as any,
+    TaskBaseline2Duration = 'TaskBaseline2Duration' as any,
+    TaskBaseline3Start = 'TaskBaseline3Start' as any,
+    TaskBaseline3Finish = 'TaskBaseline3Finish' as any,
+    TaskBaseline3Cost = 'TaskBaseline3Cost' as any,
+    TaskBaseline3Work = 'TaskBaseline3Work' as any,
+    TaskBaseline3Duration = 'TaskBaseline3Duration' as any,
+    TaskBaseline4Start = 'TaskBaseline4Start' as any,
+    TaskBaseline4Finish = 'TaskBaseline4Finish' as any,
+    TaskBaseline4Cost = 'TaskBaseline4Cost' as any,
+    TaskBaseline4Work = 'TaskBaseline4Work' as any,
+    TaskBaseline4Duration = 'TaskBaseline4Duration' as any,
+    TaskBaseline5Start = 'TaskBaseline5Start' as any,
+    TaskBaseline5Finish = 'TaskBaseline5Finish' as any,
+    TaskBaseline5Cost = 'TaskBaseline5Cost' as any,
+    TaskBaseline5Work = 'TaskBaseline5Work' as any,
+    TaskBaseline5Duration = 'TaskBaseline5Duration' as any,
+    TaskCPI = 'TaskCPI' as any,
+    TaskSPI = 'TaskSPI' as any,
+    TaskCVPercent = 'TaskCVPercent' as any,
+    TaskSVPercent = 'TaskSVPercent' as any,
+    TaskEAC = 'TaskEAC' as any,
+    TaskTCPI = 'TaskTCPI' as any,
+    TaskStatus = 'TaskStatus' as any,
+    TaskBaseline6Start = 'TaskBaseline6Start' as any,
+    TaskBaseline6Finish = 'TaskBaseline6Finish' as any,
+    TaskBaseline6Cost = 'TaskBaseline6Cost' as any,
+    TaskBaseline6Work = 'TaskBaseline6Work' as any,
+    TaskBaseline6Duration = 'TaskBaseline6Duration' as any,
+    TaskBaseline7Start = 'TaskBaseline7Start' as any,
+    TaskBaseline7Finish = 'TaskBaseline7Finish' as any,
+    TaskBaseline7Cost = 'TaskBaseline7Cost' as any,
+    TaskBaseline7Work = 'TaskBaseline7Work' as any,
+    TaskBaseline7Duration = 'TaskBaseline7Duration' as any,
+    TaskBaseline8Start = 'TaskBaseline8Start' as any,
+    TaskBaseline8Finish = 'TaskBaseline8Finish' as any,
+    TaskBaseline8Cost = 'TaskBaseline8Cost' as any,
+    TaskBaseline8Work = 'TaskBaseline8Work' as any,
+    TaskBaseline8Duration = 'TaskBaseline8Duration' as any,
+    TaskBaseline9Start = 'TaskBaseline9Start' as any,
+    TaskBaseline9Finish = 'TaskBaseline9Finish' as any,
+    TaskBaseline9Cost = 'TaskBaseline9Cost' as any,
+    TaskBaseline9Work = 'TaskBaseline9Work' as any,
+    TaskBaseline9Duration = 'TaskBaseline9Duration' as any,
+    TaskBaseline10Start = 'TaskBaseline10Start' as any,
+    TaskBaseline10Finish = 'TaskBaseline10Finish' as any,
+    TaskBaseline10Cost = 'TaskBaseline10Cost' as any,
+    TaskBaseline10Work = 'TaskBaseline10Work' as any,
+    TaskBaseline10Duration = 'TaskBaseline10Duration' as any,
+    TaskEnterpriseCost1 = 'TaskEnterpriseCost1' as any,
+    TaskEnterpriseCost2 = 'TaskEnterpriseCost2' as any,
+    TaskEnterpriseCost3 = 'TaskEnterpriseCost3' as any,
+    TaskEnterpriseCost4 = 'TaskEnterpriseCost4' as any,
+    TaskEnterpriseCost5 = 'TaskEnterpriseCost5' as any,
+    TaskEnterpriseCost6 = 'TaskEnterpriseCost6' as any,
+    TaskEnterpriseCost7 = 'TaskEnterpriseCost7' as any,
+    TaskEnterpriseCost8 = 'TaskEnterpriseCost8' as any,
+    TaskEnterpriseCost9 = 'TaskEnterpriseCost9' as any,
+    TaskEnterpriseCost10 = 'TaskEnterpriseCost10' as any,
+    TaskEnterpriseDate1 = 'TaskEnterpriseDate1' as any,
+    TaskEnterpriseDate2 = 'TaskEnterpriseDate2' as any,
+    TaskEnterpriseDate3 = 'TaskEnterpriseDate3' as any,
+    TaskEnterpriseDate4 = 'TaskEnterpriseDate4' as any,
+    TaskEnterpriseDate5 = 'TaskEnterpriseDate5' as any,
+    TaskEnterpriseDate6 = 'TaskEnterpriseDate6' as any,
+    TaskEnterpriseDate7 = 'TaskEnterpriseDate7' as any,
+    TaskEnterpriseDate8 = 'TaskEnterpriseDate8' as any,
+    TaskEnterpriseDate9 = 'TaskEnterpriseDate9' as any,
+    TaskEnterpriseDate10 = 'TaskEnterpriseDate10' as any,
+    TaskEnterpriseDate11 = 'TaskEnterpriseDate11' as any,
+    TaskEnterpriseDate12 = 'TaskEnterpriseDate12' as any,
+    TaskEnterpriseDate13 = 'TaskEnterpriseDate13' as any,
+    TaskEnterpriseDate14 = 'TaskEnterpriseDate14' as any,
+    TaskEnterpriseDate15 = 'TaskEnterpriseDate15' as any,
+    TaskEnterpriseDate16 = 'TaskEnterpriseDate16' as any,
+    TaskEnterpriseDate17 = 'TaskEnterpriseDate17' as any,
+    TaskEnterpriseDate18 = 'TaskEnterpriseDate18' as any,
+    TaskEnterpriseDate19 = 'TaskEnterpriseDate19' as any,
+    TaskEnterpriseDate20 = 'TaskEnterpriseDate20' as any,
+    TaskEnterpriseDate21 = 'TaskEnterpriseDate21' as any,
+    TaskEnterpriseDate22 = 'TaskEnterpriseDate22' as any,
+    TaskEnterpriseDate23 = 'TaskEnterpriseDate23' as any,
+    TaskEnterpriseDate24 = 'TaskEnterpriseDate24' as any,
+    TaskEnterpriseDate25 = 'TaskEnterpriseDate25' as any,
+    TaskEnterpriseDate26 = 'TaskEnterpriseDate26' as any,
+    TaskEnterpriseDate27 = 'TaskEnterpriseDate27' as any,
+    TaskEnterpriseDate28 = 'TaskEnterpriseDate28' as any,
+    TaskEnterpriseDate29 = 'TaskEnterpriseDate29' as any,
+    TaskEnterpriseDate30 = 'TaskEnterpriseDate30' as any,
+    TaskEnterpriseDuration1 = 'TaskEnterpriseDuration1' as any,
+    TaskEnterpriseDuration2 = 'TaskEnterpriseDuration2' as any,
+    TaskEnterpriseDuration3 = 'TaskEnterpriseDuration3' as any,
+    TaskEnterpriseDuration4 = 'TaskEnterpriseDuration4' as any,
+    TaskEnterpriseDuration5 = 'TaskEnterpriseDuration5' as any,
+    TaskEnterpriseDuration6 = 'TaskEnterpriseDuration6' as any,
+    TaskEnterpriseDuration7 = 'TaskEnterpriseDuration7' as any,
+    TaskEnterpriseDuration8 = 'TaskEnterpriseDuration8' as any,
+    TaskEnterpriseDuration9 = 'TaskEnterpriseDuration9' as any,
+    TaskEnterpriseDuration10 = 'TaskEnterpriseDuration10' as any,
+    TaskEnterpriseFlag1 = 'TaskEnterpriseFlag1' as any,
+    TaskEnterpriseFlag2 = 'TaskEnterpriseFlag2' as any,
+    TaskEnterpriseFlag3 = 'TaskEnterpriseFlag3' as any,
+    TaskEnterpriseFlag4 = 'TaskEnterpriseFlag4' as any,
+    TaskEnterpriseFlag5 = 'TaskEnterpriseFlag5' as any,
+    TaskEnterpriseFlag6 = 'TaskEnterpriseFlag6' as any,
+    TaskEnterpriseFlag7 = 'TaskEnterpriseFlag7' as any,
+    TaskEnterpriseFlag8 = 'TaskEnterpriseFlag8' as any,
+    TaskEnterpriseFlag9 = 'TaskEnterpriseFlag9' as any,
+    TaskEnterpriseFlag10 = 'TaskEnterpriseFlag10' as any,
+    TaskEnterpriseFlag11 = 'TaskEnterpriseFlag11' as any,
+    TaskEnterpriseFlag12 = 'TaskEnterpriseFlag12' as any,
+    TaskEnterpriseFlag13 = 'TaskEnterpriseFlag13' as any,
+    TaskEnterpriseFlag14 = 'TaskEnterpriseFlag14' as any,
+    TaskEnterpriseFlag15 = 'TaskEnterpriseFlag15' as any,
+    TaskEnterpriseFlag16 = 'TaskEnterpriseFlag16' as any,
+    TaskEnterpriseFlag17 = 'TaskEnterpriseFlag17' as any,
+    TaskEnterpriseFlag18 = 'TaskEnterpriseFlag18' as any,
+    TaskEnterpriseFlag19 = 'TaskEnterpriseFlag19' as any,
+    TaskEnterpriseFlag20 = 'TaskEnterpriseFlag20' as any,
+    TaskEnterpriseNumber1 = 'TaskEnterpriseNumber1' as any,
+    TaskEnterpriseNumber2 = 'TaskEnterpriseNumber2' as any,
+    TaskEnterpriseNumber3 = 'TaskEnterpriseNumber3' as any,
+    TaskEnterpriseNumber4 = 'TaskEnterpriseNumber4' as any,
+    TaskEnterpriseNumber5 = 'TaskEnterpriseNumber5' as any,
+    TaskEnterpriseNumber6 = 'TaskEnterpriseNumber6' as any,
+    TaskEnterpriseNumber7 = 'TaskEnterpriseNumber7' as any,
+    TaskEnterpriseNumber8 = 'TaskEnterpriseNumber8' as any,
+    TaskEnterpriseNumber9 = 'TaskEnterpriseNumber9' as any,
+    TaskEnterpriseNumber10 = 'TaskEnterpriseNumber10' as any,
+    TaskEnterpriseNumber11 = 'TaskEnterpriseNumber11' as any,
+    TaskEnterpriseNumber12 = 'TaskEnterpriseNumber12' as any,
+    TaskEnterpriseNumber13 = 'TaskEnterpriseNumber13' as any,
+    TaskEnterpriseNumber14 = 'TaskEnterpriseNumber14' as any,
+    TaskEnterpriseNumber15 = 'TaskEnterpriseNumber15' as any,
+    TaskEnterpriseNumber16 = 'TaskEnterpriseNumber16' as any,
+    TaskEnterpriseNumber17 = 'TaskEnterpriseNumber17' as any,
+    TaskEnterpriseNumber18 = 'TaskEnterpriseNumber18' as any,
+    TaskEnterpriseNumber19 = 'TaskEnterpriseNumber19' as any,
+    TaskEnterpriseNumber20 = 'TaskEnterpriseNumber20' as any,
+    TaskEnterpriseNumber21 = 'TaskEnterpriseNumber21' as any,
+    TaskEnterpriseNumber22 = 'TaskEnterpriseNumber22' as any,
+    TaskEnterpriseNumber23 = 'TaskEnterpriseNumber23' as any,
+    TaskEnterpriseNumber24 = 'TaskEnterpriseNumber24' as any,
+    TaskEnterpriseNumber25 = 'TaskEnterpriseNumber25' as any,
+    TaskEnterpriseNumber26 = 'TaskEnterpriseNumber26' as any,
+    TaskEnterpriseNumber27 = 'TaskEnterpriseNumber27' as any,
+    TaskEnterpriseNumber28 = 'TaskEnterpriseNumber28' as any,
+    TaskEnterpriseNumber29 = 'TaskEnterpriseNumber29' as any,
+    TaskEnterpriseNumber30 = 'TaskEnterpriseNumber30' as any,
+    TaskEnterpriseNumber31 = 'TaskEnterpriseNumber31' as any,
+    TaskEnterpriseNumber32 = 'TaskEnterpriseNumber32' as any,
+    TaskEnterpriseNumber33 = 'TaskEnterpriseNumber33' as any,
+    TaskEnterpriseNumber34 = 'TaskEnterpriseNumber34' as any,
+    TaskEnterpriseNumber35 = 'TaskEnterpriseNumber35' as any,
+    TaskEnterpriseNumber36 = 'TaskEnterpriseNumber36' as any,
+    TaskEnterpriseNumber37 = 'TaskEnterpriseNumber37' as any,
+    TaskEnterpriseNumber38 = 'TaskEnterpriseNumber38' as any,
+    TaskEnterpriseNumber39 = 'TaskEnterpriseNumber39' as any,
+    TaskEnterpriseNumber40 = 'TaskEnterpriseNumber40' as any,
+    TaskEnterpriseOutlineCode1 = 'TaskEnterpriseOutlineCode1' as any,
+    TaskEnterpriseOutlineCode2 = 'TaskEnterpriseOutlineCode2' as any,
+    TaskEnterpriseOutlineCode3 = 'TaskEnterpriseOutlineCode3' as any,
+    TaskEnterpriseOutlineCode4 = 'TaskEnterpriseOutlineCode4' as any,
+    TaskEnterpriseOutlineCode5 = 'TaskEnterpriseOutlineCode5' as any,
+    TaskEnterpriseOutlineCode6 = 'TaskEnterpriseOutlineCode6' as any,
+    TaskEnterpriseOutlineCode7 = 'TaskEnterpriseOutlineCode7' as any,
+    TaskEnterpriseOutlineCode8 = 'TaskEnterpriseOutlineCode8' as any,
+    TaskEnterpriseOutlineCode9 = 'TaskEnterpriseOutlineCode9' as any,
+    TaskEnterpriseOutlineCode10 = 'TaskEnterpriseOutlineCode10' as any,
+    TaskEnterpriseOutlineCode11 = 'TaskEnterpriseOutlineCode11' as any,
+    TaskEnterpriseOutlineCode12 = 'TaskEnterpriseOutlineCode12' as any,
+    TaskEnterpriseOutlineCode13 = 'TaskEnterpriseOutlineCode13' as any,
+    TaskEnterpriseOutlineCode14 = 'TaskEnterpriseOutlineCode14' as any,
+    TaskEnterpriseOutlineCode15 = 'TaskEnterpriseOutlineCode15' as any,
+    TaskEnterpriseOutlineCode16 = 'TaskEnterpriseOutlineCode16' as any,
+    TaskEnterpriseOutlineCode17 = 'TaskEnterpriseOutlineCode17' as any,
+    TaskEnterpriseOutlineCode18 = 'TaskEnterpriseOutlineCode18' as any,
+    TaskEnterpriseOutlineCode19 = 'TaskEnterpriseOutlineCode19' as any,
+    TaskEnterpriseOutlineCode20 = 'TaskEnterpriseOutlineCode20' as any,
+    TaskEnterpriseOutlineCode21 = 'TaskEnterpriseOutlineCode21' as any,
+    TaskEnterpriseOutlineCode22 = 'TaskEnterpriseOutlineCode22' as any,
+    TaskEnterpriseOutlineCode23 = 'TaskEnterpriseOutlineCode23' as any,
+    TaskEnterpriseOutlineCode24 = 'TaskEnterpriseOutlineCode24' as any,
+    TaskEnterpriseOutlineCode25 = 'TaskEnterpriseOutlineCode25' as any,
+    TaskEnterpriseOutlineCode26 = 'TaskEnterpriseOutlineCode26' as any,
+    TaskEnterpriseOutlineCode27 = 'TaskEnterpriseOutlineCode27' as any,
+    TaskEnterpriseOutlineCode28 = 'TaskEnterpriseOutlineCode28' as any,
+    TaskEnterpriseOutlineCode29 = 'TaskEnterpriseOutlineCode29' as any,
+    TaskEnterpriseOutlineCode30 = 'TaskEnterpriseOutlineCode30' as any,
+    TaskEnterpriseText1 = 'TaskEnterpriseText1' as any,
+    TaskEnterpriseText2 = 'TaskEnterpriseText2' as any,
+    TaskEnterpriseText3 = 'TaskEnterpriseText3' as any,
+    TaskEnterpriseText4 = 'TaskEnterpriseText4' as any,
+    TaskEnterpriseText5 = 'TaskEnterpriseText5' as any,
+    TaskEnterpriseText6 = 'TaskEnterpriseText6' as any,
+    TaskEnterpriseText7 = 'TaskEnterpriseText7' as any,
+    TaskEnterpriseText8 = 'TaskEnterpriseText8' as any,
+    TaskEnterpriseText9 = 'TaskEnterpriseText9' as any,
+    TaskEnterpriseText10 = 'TaskEnterpriseText10' as any,
+    TaskEnterpriseText11 = 'TaskEnterpriseText11' as any,
+    TaskEnterpriseText12 = 'TaskEnterpriseText12' as any,
+    TaskEnterpriseText13 = 'TaskEnterpriseText13' as any,
+    TaskEnterpriseText14 = 'TaskEnterpriseText14' as any,
+    TaskEnterpriseText15 = 'TaskEnterpriseText15' as any,
+    TaskEnterpriseText16 = 'TaskEnterpriseText16' as any,
+    TaskEnterpriseText17 = 'TaskEnterpriseText17' as any,
+    TaskEnterpriseText18 = 'TaskEnterpriseText18' as any,
+    TaskEnterpriseText19 = 'TaskEnterpriseText19' as any,
+    TaskEnterpriseText20 = 'TaskEnterpriseText20' as any,
+    TaskEnterpriseText21 = 'TaskEnterpriseText21' as any,
+    TaskEnterpriseText22 = 'TaskEnterpriseText22' as any,
+    TaskEnterpriseText23 = 'TaskEnterpriseText23' as any,
+    TaskEnterpriseText24 = 'TaskEnterpriseText24' as any,
+    TaskEnterpriseText25 = 'TaskEnterpriseText25' as any,
+    TaskEnterpriseText26 = 'TaskEnterpriseText26' as any,
+    TaskEnterpriseText27 = 'TaskEnterpriseText27' as any,
+    TaskEnterpriseText28 = 'TaskEnterpriseText28' as any,
+    TaskEnterpriseText29 = 'TaskEnterpriseText29' as any,
+    TaskEnterpriseText30 = 'TaskEnterpriseText30' as any,
+    TaskEnterpriseText31 = 'TaskEnterpriseText31' as any,
+    TaskEnterpriseText32 = 'TaskEnterpriseText32' as any,
+    TaskEnterpriseText33 = 'TaskEnterpriseText33' as any,
+    TaskEnterpriseText34 = 'TaskEnterpriseText34' as any,
+    TaskEnterpriseText35 = 'TaskEnterpriseText35' as any,
+    TaskEnterpriseText36 = 'TaskEnterpriseText36' as any,
+    TaskEnterpriseText37 = 'TaskEnterpriseText37' as any,
+    TaskEnterpriseText38 = 'TaskEnterpriseText38' as any,
+    TaskEnterpriseText39 = 'TaskEnterpriseText39' as any,
+    TaskEnterpriseText40 = 'TaskEnterpriseText40' as any,
+    TaskBaseline1DurationEstimated = 'TaskBaseline1DurationEstimated' as any,
+    TaskBaseline2DurationEstimated = 'TaskBaseline2DurationEstimated' as any,
+    TaskBaseline3DurationEstimated = 'TaskBaseline3DurationEstimated' as any,
+    TaskBaseline4DurationEstimated = 'TaskBaseline4DurationEstimated' as any,
+    TaskBaseline5DurationEstimated = 'TaskBaseline5DurationEstimated' as any,
+    TaskBaseline6DurationEstimated = 'TaskBaseline6DurationEstimated' as any,
+    TaskBaseline7DurationEstimated = 'TaskBaseline7DurationEstimated' as any,
+    TaskBaseline8DurationEstimated = 'TaskBaseline8DurationEstimated' as any,
+    TaskBaseline9DurationEstimated = 'TaskBaseline9DurationEstimated' as any,
+    TaskBaseline10DurationEstimated = 'TaskBaseline10DurationEstimated' as any,
+    TaskEnterpriseProjectCost1 = 'TaskEnterpriseProjectCost1' as any,
+    TaskEnterpriseProjectCost2 = 'TaskEnterpriseProjectCost2' as any,
+    TaskEnterpriseProjectCost3 = 'TaskEnterpriseProjectCost3' as any,
+    TaskEnterpriseProjectCost4 = 'TaskEnterpriseProjectCost4' as any,
+    TaskEnterpriseProjectCost5 = 'TaskEnterpriseProjectCost5' as any,
+    TaskEnterpriseProjectCost6 = 'TaskEnterpriseProjectCost6' as any,
+    TaskEnterpriseProjectCost7 = 'TaskEnterpriseProjectCost7' as any,
+    TaskEnterpriseProjectCost8 = 'TaskEnterpriseProjectCost8' as any,
+    TaskEnterpriseProjectCost9 = 'TaskEnterpriseProjectCost9' as any,
+    TaskEnterpriseProjectCost10 = 'TaskEnterpriseProjectCost10' as any,
+    TaskEnterpriseProjectDate1 = 'TaskEnterpriseProjectDate1' as any,
+    TaskEnterpriseProjectDate2 = 'TaskEnterpriseProjectDate2' as any,
+    TaskEnterpriseProjectDate3 = 'TaskEnterpriseProjectDate3' as any,
+    TaskEnterpriseProjectDate4 = 'TaskEnterpriseProjectDate4' as any,
+    TaskEnterpriseProjectDate5 = 'TaskEnterpriseProjectDate5' as any,
+    TaskEnterpriseProjectDate6 = 'TaskEnterpriseProjectDate6' as any,
+    TaskEnterpriseProjectDate7 = 'TaskEnterpriseProjectDate7' as any,
+    TaskEnterpriseProjectDate8 = 'TaskEnterpriseProjectDate8' as any,
+    TaskEnterpriseProjectDate9 = 'TaskEnterpriseProjectDate9' as any,
+    TaskEnterpriseProjectDate10 = 'TaskEnterpriseProjectDate10' as any,
+    TaskEnterpriseProjectDate11 = 'TaskEnterpriseProjectDate11' as any,
+    TaskEnterpriseProjectDate12 = 'TaskEnterpriseProjectDate12' as any,
+    TaskEnterpriseProjectDate13 = 'TaskEnterpriseProjectDate13' as any,
+    TaskEnterpriseProjectDate14 = 'TaskEnterpriseProjectDate14' as any,
+    TaskEnterpriseProjectDate15 = 'TaskEnterpriseProjectDate15' as any,
+    TaskEnterpriseProjectDate16 = 'TaskEnterpriseProjectDate16' as any,
+    TaskEnterpriseProjectDate17 = 'TaskEnterpriseProjectDate17' as any,
+    TaskEnterpriseProjectDate18 = 'TaskEnterpriseProjectDate18' as any,
+    TaskEnterpriseProjectDate19 = 'TaskEnterpriseProjectDate19' as any,
+    TaskEnterpriseProjectDate20 = 'TaskEnterpriseProjectDate20' as any,
+    TaskEnterpriseProjectDate21 = 'TaskEnterpriseProjectDate21' as any,
+    TaskEnterpriseProjectDate22 = 'TaskEnterpriseProjectDate22' as any,
+    TaskEnterpriseProjectDate23 = 'TaskEnterpriseProjectDate23' as any,
+    TaskEnterpriseProjectDate24 = 'TaskEnterpriseProjectDate24' as any,
+    TaskEnterpriseProjectDate25 = 'TaskEnterpriseProjectDate25' as any,
+    TaskEnterpriseProjectDate26 = 'TaskEnterpriseProjectDate26' as any,
+    TaskEnterpriseProjectDate27 = 'TaskEnterpriseProjectDate27' as any,
+    TaskEnterpriseProjectDate28 = 'TaskEnterpriseProjectDate28' as any,
+    TaskEnterpriseProjectDate29 = 'TaskEnterpriseProjectDate29' as any,
+    TaskEnterpriseProjectDate30 = 'TaskEnterpriseProjectDate30' as any,
+    TaskEnterpriseProjectDuration1 = 'TaskEnterpriseProjectDuration1' as any,
+    TaskEnterpriseProjectDuration2 = 'TaskEnterpriseProjectDuration2' as any,
+    TaskEnterpriseProjectDuration3 = 'TaskEnterpriseProjectDuration3' as any,
+    TaskEnterpriseProjectDuration4 = 'TaskEnterpriseProjectDuration4' as any,
+    TaskEnterpriseProjectDuration5 = 'TaskEnterpriseProjectDuration5' as any,
+    TaskEnterpriseProjectDuration6 = 'TaskEnterpriseProjectDuration6' as any,
+    TaskEnterpriseProjectDuration7 = 'TaskEnterpriseProjectDuration7' as any,
+    TaskEnterpriseProjectDuration8 = 'TaskEnterpriseProjectDuration8' as any,
+    TaskEnterpriseProjectDuration9 = 'TaskEnterpriseProjectDuration9' as any,
+    TaskEnterpriseProjectDuration10 = 'TaskEnterpriseProjectDuration10' as any,
+    TaskEnterpriseProjectOutlineCode1 = 'TaskEnterpriseProjectOutlineCode1' as any,
+    TaskEnterpriseProjectOutlineCode2 = 'TaskEnterpriseProjectOutlineCode2' as any,
+    TaskEnterpriseProjectOutlineCode3 = 'TaskEnterpriseProjectOutlineCode3' as any,
+    TaskEnterpriseProjectOutlineCode4 = 'TaskEnterpriseProjectOutlineCode4' as any,
+    TaskEnterpriseProjectOutlineCode5 = 'TaskEnterpriseProjectOutlineCode5' as any,
+    TaskEnterpriseProjectOutlineCode6 = 'TaskEnterpriseProjectOutlineCode6' as any,
+    TaskEnterpriseProjectOutlineCode7 = 'TaskEnterpriseProjectOutlineCode7' as any,
+    TaskEnterpriseProjectOutlineCode8 = 'TaskEnterpriseProjectOutlineCode8' as any,
+    TaskEnterpriseProjectOutlineCode9 = 'TaskEnterpriseProjectOutlineCode9' as any,
+    TaskEnterpriseProjectOutlineCode10 = 'TaskEnterpriseProjectOutlineCode10' as any,
+    TaskEnterpriseProjectOutlineCode11 = 'TaskEnterpriseProjectOutlineCode11' as any,
+    TaskEnterpriseProjectOutlineCode12 = 'TaskEnterpriseProjectOutlineCode12' as any,
+    TaskEnterpriseProjectOutlineCode13 = 'TaskEnterpriseProjectOutlineCode13' as any,
+    TaskEnterpriseProjectOutlineCode14 = 'TaskEnterpriseProjectOutlineCode14' as any,
+    TaskEnterpriseProjectOutlineCode15 = 'TaskEnterpriseProjectOutlineCode15' as any,
+    TaskEnterpriseProjectOutlineCode16 = 'TaskEnterpriseProjectOutlineCode16' as any,
+    TaskEnterpriseProjectOutlineCode17 = 'TaskEnterpriseProjectOutlineCode17' as any,
+    TaskEnterpriseProjectOutlineCode18 = 'TaskEnterpriseProjectOutlineCode18' as any,
+    TaskEnterpriseProjectOutlineCode19 = 'TaskEnterpriseProjectOutlineCode19' as any,
+    TaskEnterpriseProjectOutlineCode20 = 'TaskEnterpriseProjectOutlineCode20' as any,
+    TaskEnterpriseProjectOutlineCode21 = 'TaskEnterpriseProjectOutlineCode21' as any,
+    TaskEnterpriseProjectOutlineCode22 = 'TaskEnterpriseProjectOutlineCode22' as any,
+    TaskEnterpriseProjectOutlineCode23 = 'TaskEnterpriseProjectOutlineCode23' as any,
+    TaskEnterpriseProjectOutlineCode24 = 'TaskEnterpriseProjectOutlineCode24' as any,
+    TaskEnterpriseProjectOutlineCode25 = 'TaskEnterpriseProjectOutlineCode25' as any,
+    TaskEnterpriseProjectOutlineCode26 = 'TaskEnterpriseProjectOutlineCode26' as any,
+    TaskEnterpriseProjectOutlineCode27 = 'TaskEnterpriseProjectOutlineCode27' as any,
+    TaskEnterpriseProjectOutlineCode28 = 'TaskEnterpriseProjectOutlineCode28' as any,
+    TaskEnterpriseProjectOutlineCode29 = 'TaskEnterpriseProjectOutlineCode29' as any,
+    TaskEnterpriseProjectOutlineCode30 = 'TaskEnterpriseProjectOutlineCode30' as any,
+    TaskEnterpriseProjectFlag1 = 'TaskEnterpriseProjectFlag1' as any,
+    TaskEnterpriseProjectFlag2 = 'TaskEnterpriseProjectFlag2' as any,
+    TaskEnterpriseProjectFlag3 = 'TaskEnterpriseProjectFlag3' as any,
+    TaskEnterpriseProjectFlag4 = 'TaskEnterpriseProjectFlag4' as any,
+    TaskEnterpriseProjectFlag5 = 'TaskEnterpriseProjectFlag5' as any,
+    TaskEnterpriseProjectFlag6 = 'TaskEnterpriseProjectFlag6' as any,
+    TaskEnterpriseProjectFlag7 = 'TaskEnterpriseProjectFlag7' as any,
+    TaskEnterpriseProjectFlag8 = 'TaskEnterpriseProjectFlag8' as any,
+    TaskEnterpriseProjectFlag9 = 'TaskEnterpriseProjectFlag9' as any,
+    TaskEnterpriseProjectFlag10 = 'TaskEnterpriseProjectFlag10' as any,
+    TaskEnterpriseProjectFlag11 = 'TaskEnterpriseProjectFlag11' as any,
+    TaskEnterpriseProjectFlag12 = 'TaskEnterpriseProjectFlag12' as any,
+    TaskEnterpriseProjectFlag13 = 'TaskEnterpriseProjectFlag13' as any,
+    TaskEnterpriseProjectFlag14 = 'TaskEnterpriseProjectFlag14' as any,
+    TaskEnterpriseProjectFlag15 = 'TaskEnterpriseProjectFlag15' as any,
+    TaskEnterpriseProjectFlag16 = 'TaskEnterpriseProjectFlag16' as any,
+    TaskEnterpriseProjectFlag17 = 'TaskEnterpriseProjectFlag17' as any,
+    TaskEnterpriseProjectFlag18 = 'TaskEnterpriseProjectFlag18' as any,
+    TaskEnterpriseProjectFlag19 = 'TaskEnterpriseProjectFlag19' as any,
+    TaskEnterpriseProjectFlag20 = 'TaskEnterpriseProjectFlag20' as any,
+    TaskEnterpriseProjectNumber1 = 'TaskEnterpriseProjectNumber1' as any,
+    TaskEnterpriseProjectNumber2 = 'TaskEnterpriseProjectNumber2' as any,
+    TaskEnterpriseProjectNumber3 = 'TaskEnterpriseProjectNumber3' as any,
+    TaskEnterpriseProjectNumber4 = 'TaskEnterpriseProjectNumber4' as any,
+    TaskEnterpriseProjectNumber5 = 'TaskEnterpriseProjectNumber5' as any,
+    TaskEnterpriseProjectNumber6 = 'TaskEnterpriseProjectNumber6' as any,
+    TaskEnterpriseProjectNumber7 = 'TaskEnterpriseProjectNumber7' as any,
+    TaskEnterpriseProjectNumber8 = 'TaskEnterpriseProjectNumber8' as any,
+    TaskEnterpriseProjectNumber9 = 'TaskEnterpriseProjectNumber9' as any,
+    TaskEnterpriseProjectNumber10 = 'TaskEnterpriseProjectNumber10' as any,
+    TaskEnterpriseProjectNumber11 = 'TaskEnterpriseProjectNumber11' as any,
+    TaskEnterpriseProjectNumber12 = 'TaskEnterpriseProjectNumber12' as any,
+    TaskEnterpriseProjectNumber13 = 'TaskEnterpriseProjectNumber13' as any,
+    TaskEnterpriseProjectNumber14 = 'TaskEnterpriseProjectNumber14' as any,
+    TaskEnterpriseProjectNumber15 = 'TaskEnterpriseProjectNumber15' as any,
+    TaskEnterpriseProjectNumber16 = 'TaskEnterpriseProjectNumber16' as any,
+    TaskEnterpriseProjectNumber17 = 'TaskEnterpriseProjectNumber17' as any,
+    TaskEnterpriseProjectNumber18 = 'TaskEnterpriseProjectNumber18' as any,
+    TaskEnterpriseProjectNumber19 = 'TaskEnterpriseProjectNumber19' as any,
+    TaskEnterpriseProjectNumber20 = 'TaskEnterpriseProjectNumber20' as any,
+    TaskEnterpriseProjectNumber21 = 'TaskEnterpriseProjectNumber21' as any,
+    TaskEnterpriseProjectNumber22 = 'TaskEnterpriseProjectNumber22' as any,
+    TaskEnterpriseProjectNumber23 = 'TaskEnterpriseProjectNumber23' as any,
+    TaskEnterpriseProjectNumber24 = 'TaskEnterpriseProjectNumber24' as any,
+    TaskEnterpriseProjectNumber25 = 'TaskEnterpriseProjectNumber25' as any,
+    TaskEnterpriseProjectNumber26 = 'TaskEnterpriseProjectNumber26' as any,
+    TaskEnterpriseProjectNumber27 = 'TaskEnterpriseProjectNumber27' as any,
+    TaskEnterpriseProjectNumber28 = 'TaskEnterpriseProjectNumber28' as any,
+    TaskEnterpriseProjectNumber29 = 'TaskEnterpriseProjectNumber29' as any,
+    TaskEnterpriseProjectNumber30 = 'TaskEnterpriseProjectNumber30' as any,
+    TaskEnterpriseProjectNumber31 = 'TaskEnterpriseProjectNumber31' as any,
+    TaskEnterpriseProjectNumber32 = 'TaskEnterpriseProjectNumber32' as any,
+    TaskEnterpriseProjectNumber33 = 'TaskEnterpriseProjectNumber33' as any,
+    TaskEnterpriseProjectNumber34 = 'TaskEnterpriseProjectNumber34' as any,
+    TaskEnterpriseProjectNumber35 = 'TaskEnterpriseProjectNumber35' as any,
+    TaskEnterpriseProjectNumber36 = 'TaskEnterpriseProjectNumber36' as any,
+    TaskEnterpriseProjectNumber37 = 'TaskEnterpriseProjectNumber37' as any,
+    TaskEnterpriseProjectNumber38 = 'TaskEnterpriseProjectNumber38' as any,
+    TaskEnterpriseProjectNumber39 = 'TaskEnterpriseProjectNumber39' as any,
+    TaskEnterpriseProjectNumber40 = 'TaskEnterpriseProjectNumber40' as any,
+    TaskEnterpriseProjectText1 = 'TaskEnterpriseProjectText1' as any,
+    TaskEnterpriseProjectText2 = 'TaskEnterpriseProjectText2' as any,
+    TaskEnterpriseProjectText3 = 'TaskEnterpriseProjectText3' as any,
+    TaskEnterpriseProjectText4 = 'TaskEnterpriseProjectText4' as any,
+    TaskEnterpriseProjectText5 = 'TaskEnterpriseProjectText5' as any,
+    TaskEnterpriseProjectText6 = 'TaskEnterpriseProjectText6' as any,
+    TaskEnterpriseProjectText7 = 'TaskEnterpriseProjectText7' as any,
+    TaskEnterpriseProjectText8 = 'TaskEnterpriseProjectText8' as any,
+    TaskEnterpriseProjectText9 = 'TaskEnterpriseProjectText9' as any,
+    TaskEnterpriseProjectText10 = 'TaskEnterpriseProjectText10' as any,
+    TaskEnterpriseProjectText11 = 'TaskEnterpriseProjectText11' as any,
+    TaskEnterpriseProjectText12 = 'TaskEnterpriseProjectText12' as any,
+    TaskEnterpriseProjectText13 = 'TaskEnterpriseProjectText13' as any,
+    TaskEnterpriseProjectText14 = 'TaskEnterpriseProjectText14' as any,
+    TaskEnterpriseProjectText15 = 'TaskEnterpriseProjectText15' as any,
+    TaskEnterpriseProjectText16 = 'TaskEnterpriseProjectText16' as any,
+    TaskEnterpriseProjectText17 = 'TaskEnterpriseProjectText17' as any,
+    TaskEnterpriseProjectText18 = 'TaskEnterpriseProjectText18' as any,
+    TaskEnterpriseProjectText19 = 'TaskEnterpriseProjectText19' as any,
+    TaskEnterpriseProjectText20 = 'TaskEnterpriseProjectText20' as any,
+    TaskEnterpriseProjectText21 = 'TaskEnterpriseProjectText21' as any,
+    TaskEnterpriseProjectText22 = 'TaskEnterpriseProjectText22' as any,
+    TaskEnterpriseProjectText23 = 'TaskEnterpriseProjectText23' as any,
+    TaskEnterpriseProjectText24 = 'TaskEnterpriseProjectText24' as any,
+    TaskEnterpriseProjectText25 = 'TaskEnterpriseProjectText25' as any,
+    TaskEnterpriseProjectText26 = 'TaskEnterpriseProjectText26' as any,
+    TaskEnterpriseProjectText27 = 'TaskEnterpriseProjectText27' as any,
+    TaskEnterpriseProjectText28 = 'TaskEnterpriseProjectText28' as any,
+    TaskEnterpriseProjectText29 = 'TaskEnterpriseProjectText29' as any,
+    TaskEnterpriseProjectText30 = 'TaskEnterpriseProjectText30' as any,
+    TaskEnterpriseProjectText31 = 'TaskEnterpriseProjectText31' as any,
+    TaskEnterpriseProjectText32 = 'TaskEnterpriseProjectText32' as any,
+    TaskEnterpriseProjectText33 = 'TaskEnterpriseProjectText33' as any,
+    TaskEnterpriseProjectText34 = 'TaskEnterpriseProjectText34' as any,
+    TaskEnterpriseProjectText35 = 'TaskEnterpriseProjectText35' as any,
+    TaskEnterpriseProjectText36 = 'TaskEnterpriseProjectText36' as any,
+    TaskEnterpriseProjectText37 = 'TaskEnterpriseProjectText37' as any,
+    TaskEnterpriseProjectText38 = 'TaskEnterpriseProjectText38' as any,
+    TaskEnterpriseProjectText39 = 'TaskEnterpriseProjectText39' as any,
+    TaskEnterpriseProjectText40 = 'TaskEnterpriseProjectText40' as any,
+    TaskResourceEnterpriseOutlineCode1 = 'TaskResourceEnterpriseOutlineCode1' as any,
+    TaskResourceEnterpriseOutlineCode2 = 'TaskResourceEnterpriseOutlineCode2' as any,
+    TaskResourceEnterpriseOutlineCode3 = 'TaskResourceEnterpriseOutlineCode3' as any,
+    TaskResourceEnterpriseOutlineCode4 = 'TaskResourceEnterpriseOutlineCode4' as any,
+    TaskResourceEnterpriseOutlineCode5 = 'TaskResourceEnterpriseOutlineCode5' as any,
+    TaskResourceEnterpriseOutlineCode6 = 'TaskResourceEnterpriseOutlineCode6' as any,
+    TaskResourceEnterpriseOutlineCode7 = 'TaskResourceEnterpriseOutlineCode7' as any,
+    TaskResourceEnterpriseOutlineCode8 = 'TaskResourceEnterpriseOutlineCode8' as any,
+    TaskResourceEnterpriseOutlineCode9 = 'TaskResourceEnterpriseOutlineCode9' as any,
+    TaskResourceEnterpriseOutlineCode10 = 'TaskResourceEnterpriseOutlineCode10' as any,
+    TaskResourceEnterpriseOutlineCode11 = 'TaskResourceEnterpriseOutlineCode11' as any,
+    TaskResourceEnterpriseOutlineCode12 = 'TaskResourceEnterpriseOutlineCode12' as any,
+    TaskResourceEnterpriseOutlineCode13 = 'TaskResourceEnterpriseOutlineCode13' as any,
+    TaskResourceEnterpriseOutlineCode14 = 'TaskResourceEnterpriseOutlineCode14' as any,
+    TaskResourceEnterpriseOutlineCode15 = 'TaskResourceEnterpriseOutlineCode15' as any,
+    TaskResourceEnterpriseOutlineCode16 = 'TaskResourceEnterpriseOutlineCode16' as any,
+    TaskResourceEnterpriseOutlineCode17 = 'TaskResourceEnterpriseOutlineCode17' as any,
+    TaskResourceEnterpriseOutlineCode18 = 'TaskResourceEnterpriseOutlineCode18' as any,
+    TaskResourceEnterpriseOutlineCode19 = 'TaskResourceEnterpriseOutlineCode19' as any,
+    TaskResourceEnterpriseOutlineCode20 = 'TaskResourceEnterpriseOutlineCode20' as any,
+    TaskResourceEnterpriseOutlineCode21 = 'TaskResourceEnterpriseOutlineCode21' as any,
+    TaskResourceEnterpriseOutlineCode22 = 'TaskResourceEnterpriseOutlineCode22' as any,
+    TaskResourceEnterpriseOutlineCode23 = 'TaskResourceEnterpriseOutlineCode23' as any,
+    TaskResourceEnterpriseOutlineCode24 = 'TaskResourceEnterpriseOutlineCode24' as any,
+    TaskResourceEnterpriseOutlineCode25 = 'TaskResourceEnterpriseOutlineCode25' as any,
+    TaskResourceEnterpriseOutlineCode26 = 'TaskResourceEnterpriseOutlineCode26' as any,
+    TaskResourceEnterpriseOutlineCode27 = 'TaskResourceEnterpriseOutlineCode27' as any,
+    TaskResourceEnterpriseOutlineCode28 = 'TaskResourceEnterpriseOutlineCode28' as any,
+    TaskResourceEnterpriseOutlineCode29 = 'TaskResourceEnterpriseOutlineCode29' as any,
+    TaskResourceEnterpriseRBS = 'TaskResourceEnterpriseRBS' as any,
+    TaskPhysicalPercentComplete = 'TaskPhysicalPercentComplete' as any,
+    TaskDemandedRequested = 'TaskDemandedRequested' as any,
+    TaskStatusIndicator = 'TaskStatusIndicator' as any,
+    TaskEarnedValueMethod = 'TaskEarnedValueMethod' as any,
+    TaskResourceEnterpriseMultiValueCode20 = 'TaskResourceEnterpriseMultiValueCode20' as any,
+    TaskResourceEnterpriseMultiValueCode21 = 'TaskResourceEnterpriseMultiValueCode21' as any,
+    TaskResourceEnterpriseMultiValueCode22 = 'TaskResourceEnterpriseMultiValueCode22' as any,
+    TaskResourceEnterpriseMultiValueCode23 = 'TaskResourceEnterpriseMultiValueCode23' as any,
+    TaskResourceEnterpriseMultiValueCode24 = 'TaskResourceEnterpriseMultiValueCode24' as any,
+    TaskResourceEnterpriseMultiValueCode25 = 'TaskResourceEnterpriseMultiValueCode25' as any,
+    TaskResourceEnterpriseMultiValueCode26 = 'TaskResourceEnterpriseMultiValueCode26' as any,
+    TaskResourceEnterpriseMultiValueCode27 = 'TaskResourceEnterpriseMultiValueCode27' as any,
+    TaskResourceEnterpriseMultiValueCode28 = 'TaskResourceEnterpriseMultiValueCode28' as any,
+    TaskResourceEnterpriseMultiValueCode29 = 'TaskResourceEnterpriseMultiValueCode29' as any,
+    TaskActualWorkProtected = 'TaskActualWorkProtected' as any,
+    TaskActualOvertimeWorkProtected = 'TaskActualOvertimeWorkProtected' as any,
+    TaskGuid = 'TaskGuid' as any,
+    TaskCalendarGuid = 'TaskCalendarGuid' as any,
+    TaskDeliverableGuid = 'TaskDeliverableGuid' as any,
+    TaskDeliverableType = 'TaskDeliverableType' as any,
+    TaskDeliverableStart = 'TaskDeliverableStart' as any,
+    TaskDeliverableFinish = 'TaskDeliverableFinish' as any,
+    TaskIsPublished = 'TaskIsPublished' as any,
+    TaskStatusManagerName = 'TaskStatusManagerName' as any,
+    TaskErrorMessage = 'TaskErrorMessage' as any,
+    TaskAssignmentOwner = 'TaskAssignmentOwner' as any,
+    TaskBudgetWork = 'TaskBudgetWork' as any,
+    TaskBudgetCost = 'TaskBudgetCost' as any,
+    TaskBaselineFixedCostAccrual = 'TaskBaselineFixedCostAccrual' as any,
+    TaskBaselineDeliverableStart = 'TaskBaselineDeliverableStart' as any,
+    TaskBaselineDeliverableFinish = 'TaskBaselineDeliverableFinish' as any,
+    TaskBaselineBudgetWork = 'TaskBaselineBudgetWork' as any,
+    TaskBaselineBudgetCost = 'TaskBaselineBudgetCost' as any,
+    TaskBaseline1FixedCostAccrual = 'TaskBaseline1FixedCostAccrual' as any,
+    TaskBaseline1DeliverableStart = 'TaskBaseline1DeliverableStart' as any,
+    TaskBaseline1DeliverableFinish = 'TaskBaseline1DeliverableFinish' as any,
+    TaskBaseline1BudgetWork = 'TaskBaseline1BudgetWork' as any,
+    TaskBaseline1BudgetCost = 'TaskBaseline1BudgetCost' as any,
+    TaskBaseline2FixedCostAccrual = 'TaskBaseline2FixedCostAccrual' as any,
+    TaskBaseline2DeliverableStart = 'TaskBaseline2DeliverableStart' as any,
+    TaskBaseline2DeliverableFinish = 'TaskBaseline2DeliverableFinish' as any,
+    TaskBaseline2BudgetWork = 'TaskBaseline2BudgetWork' as any,
+    TaskBaseline2BudgetCost = 'TaskBaseline2BudgetCost' as any,
+    TaskBaseline3FixedCostAccrual = 'TaskBaseline3FixedCostAccrual' as any,
+    TaskBaseline3DeliverableStart = 'TaskBaseline3DeliverableStart' as any,
+    TaskBaseline3DeliverableFinish = 'TaskBaseline3DeliverableFinish' as any,
+    TaskBaseline3BudgetWork = 'TaskBaseline3BudgetWork' as any,
+    TaskBaseline3BudgetCost = 'TaskBaseline3BudgetCost' as any,
+    TaskBaseline4FixedCostAccrual = 'TaskBaseline4FixedCostAccrual' as any,
+    TaskBaseline4DeliverableStart = 'TaskBaseline4DeliverableStart' as any,
+    TaskBaseline4DeliverableFinish = 'TaskBaseline4DeliverableFinish' as any,
+    TaskBaseline4BudgetWork = 'TaskBaseline4BudgetWork' as any,
+    TaskBaseline4BudgetCost = 'TaskBaseline4BudgetCost' as any,
+    TaskBaseline5FixedCostAccrual = 'TaskBaseline5FixedCostAccrual' as any,
+    TaskBaseline5DeliverableStart = 'TaskBaseline5DeliverableStart' as any,
+    TaskBaseline5DeliverableFinish = 'TaskBaseline5DeliverableFinish' as any,
+    TaskBaseline5BudgetWork = 'TaskBaseline5BudgetWork' as any,
+    TaskBaseline5BudgetCost = 'TaskBaseline5BudgetCost' as any,
+    TaskBaseline6FixedCostAccrual = 'TaskBaseline6FixedCostAccrual' as any,
+    TaskBaseline6DeliverableStart = 'TaskBaseline6DeliverableStart' as any,
+    TaskBaseline6DeliverableFinish = 'TaskBaseline6DeliverableFinish' as any,
+    TaskBaseline6BudgetWork = 'TaskBaseline6BudgetWork' as any,
+    TaskBaseline6BudgetCost = 'TaskBaseline6BudgetCost' as any,
+    TaskBaseline7FixedCostAccrual = 'TaskBaseline7FixedCostAccrual' as any,
+    TaskBaseline7DeliverableStart = 'TaskBaseline7DeliverableStart' as any,
+    TaskBaseline7DeliverableFinish = 'TaskBaseline7DeliverableFinish' as any,
+    TaskBaseline7BudgetWork = 'TaskBaseline7BudgetWork' as any,
+    TaskBaseline7BudgetCost = 'TaskBaseline7BudgetCost' as any,
+    TaskBaseline8FixedCostAccrual = 'TaskBaseline8FixedCostAccrual' as any,
+    TaskBaseline8DeliverableStart = 'TaskBaseline8DeliverableStart' as any,
+    TaskBaseline8DeliverableFinish = 'TaskBaseline8DeliverableFinish' as any,
+    TaskBaseline8BudgetWork = 'TaskBaseline8BudgetWork' as any,
+    TaskBaseline8BudgetCost = 'TaskBaseline8BudgetCost' as any,
+    TaskBaseline9FixedCostAccrual = 'TaskBaseline9FixedCostAccrual' as any,
+    TaskBaseline9DeliverableStart = 'TaskBaseline9DeliverableStart' as any,
+    TaskBaseline9DeliverableFinish = 'TaskBaseline9DeliverableFinish' as any,
+    TaskBaseline9BudgetWork = 'TaskBaseline9BudgetWork' as any,
+    TaskBaseline9BudgetCost = 'TaskBaseline9BudgetCost' as any,
+    TaskBaseline10FixedCostAccrual = 'TaskBaseline10FixedCostAccrual' as any,
+    TaskBaseline10DeliverableStart = 'TaskBaseline10DeliverableStart' as any,
+    TaskBaseline10DeliverableFinish = 'TaskBaseline10DeliverableFinish' as any,
+    TaskBaseline10BudgetWork = 'TaskBaseline10BudgetWork' as any,
+    TaskBaseline10BudgetCost = 'TaskBaseline10BudgetCost' as any,
+    TaskRecalcFlags = 'TaskRecalcFlags' as any,
+    TaskDeliverableName = 'TaskDeliverableName' as any,
+    TaskActive = 'TaskActive' as any,
+    TaskManual = 'TaskManual' as any,
+    TaskPlaceholder = 'TaskPlaceholder' as any,
+    TaskWarning = 'TaskWarning' as any,
+    TaskStartText = 'TaskStartText' as any,
+    TaskFinishText = 'TaskFinishText' as any,
+    TaskDurationText = 'TaskDurationText' as any,
+    TaskIsStartValid = 'TaskIsStartValid' as any,
+    TaskIsFinishValid = 'TaskIsFinishValid' as any,
+    TaskIsDurationValid = 'TaskIsDurationValid' as any,
+    TaskBaselineStartText = 'TaskBaselineStartText' as any,
+    TaskBaselineFinishText = 'TaskBaselineFinishText' as any,
+    TaskBaselineDurationText = 'TaskBaselineDurationText' as any,
+    TaskBaseline1StartText = 'TaskBaseline1StartText' as any,
+    TaskBaseline1FinishText = 'TaskBaseline1FinishText' as any,
+    TaskBaseline1DurationText = 'TaskBaseline1DurationText' as any,
+    TaskBaseline2StartText = 'TaskBaseline2StartText' as any,
+    TaskBaseline2FinishText = 'TaskBaseline2FinishText' as any,
+    TaskBaseline2DurationText = 'TaskBaseline2DurationText' as any,
+    TaskBaseline3StartText = 'TaskBaseline3StartText' as any,
+    TaskBaseline3FinishText = 'TaskBaseline3FinishText' as any,
+    TaskBaseline3DurationText = 'TaskBaseline3DurationText' as any,
+    TaskBaseline4StartText = 'TaskBaseline4StartText' as any,
+    TaskBaseline4FinishText = 'TaskBaseline4FinishText' as any,
+    TaskBaseline4DurationText = 'TaskBaseline4DurationText' as any,
+    TaskBaseline5StartText = 'TaskBaseline5StartText' as any,
+    TaskBaseline5FinishText = 'TaskBaseline5FinishText' as any,
+    TaskBaseline5DurationText = 'TaskBaseline5DurationText' as any,
+    TaskBaseline6StartText = 'TaskBaseline6StartText' as any,
+    TaskBaseline6FinishText = 'TaskBaseline6FinishText' as any,
+    TaskBaseline6DurationText = 'TaskBaseline6DurationText' as any,
+    TaskBaseline7StartText = 'TaskBaseline7StartText' as any,
+    TaskBaseline7FinishText = 'TaskBaseline7FinishText' as any,
+    TaskBaseline7DurationText = 'TaskBaseline7DurationText' as any,
+    TaskBaseline8StartText = 'TaskBaseline8StartText' as any,
+    TaskBaseline8FinishText = 'TaskBaseline8FinishText' as any,
+    TaskBaseline8DurationText = 'TaskBaseline8DurationText' as any,
+    TaskBaseline9StartText = 'TaskBaseline9StartText' as any,
+    TaskBaseline9FinishText = 'TaskBaseline9FinishText' as any,
+    TaskBaseline9DurationText = 'TaskBaseline9DurationText' as any,
+    TaskBaseline10StartText = 'TaskBaseline10StartText' as any,
+    TaskBaseline10FinishText = 'TaskBaseline10FinishText' as any,
+    TaskBaseline10DurationText = 'TaskBaseline10DurationText' as any,
+    TaskIgnoreWarnings = 'TaskIgnoreWarnings' as any,
+    TaskAssignmentPeakUnits = 'TaskAssignmentPeakUnits' as any,
+    TaskScheduledStart = 'TaskScheduledStart' as any,
+    TaskScheduledFinish = 'TaskScheduledFinish' as any,
+    TaskScheduledDuration = 'TaskScheduledDuration' as any,
+    TaskPathDrivingPredecessor = 'TaskPathDrivingPredecessor' as any,
+    TaskPathPredecessor = 'TaskPathPredecessor' as any,
+    TaskPathDrivenSuccessor = 'TaskPathDrivenSuccessor' as any,
+    TaskPathSuccessor = 'TaskPathSuccessor' as any,
+    TaskSummaryName = 'TaskSummaryName' as any,
+    ResourceID = 'ResourceID' as any,
+    ResourceName = 'ResourceName' as any,
+    ResourceInitials = 'ResourceInitials' as any,
+    ResourceGroup = 'ResourceGroup' as any,
+    ResourceMaxUnits = 'ResourceMaxUnits' as any,
+    ResourceBaseCalendar = 'ResourceBaseCalendar' as any,
+    ResourceStandardRate = 'ResourceStandardRate' as any,
+    ResourceOvertimeRate = 'ResourceOvertimeRate' as any,
+    ResourceText1 = 'ResourceText1' as any,
+    ResourceText2 = 'ResourceText2' as any,
+    ResourceCode = 'ResourceCode' as any,
+    ResourceActualCost = 'ResourceActualCost' as any,
+    ResourceCost = 'ResourceCost' as any,
+    ResourceWork = 'ResourceWork' as any,
+    ResourceActualWork = 'ResourceActualWork' as any,
+    ResourceBaselineWork = 'ResourceBaselineWork' as any,
+    ResourceOvertimeWork = 'ResourceOvertimeWork' as any,
+    ResourceBaselineCost = 'ResourceBaselineCost' as any,
+    ResourceCostPerUse = 'ResourceCostPerUse' as any,
+    ResourceAccrueAt = 'ResourceAccrueAt' as any,
+    ResourceNotes = 'ResourceNotes' as any,
+    ResourceRemainingCost = 'ResourceRemainingCost' as any,
+    ResourceRemainingWork = 'ResourceRemainingWork' as any,
+    ResourceWorkVariance = 'ResourceWorkVariance' as any,
+    ResourceCostVariance = 'ResourceCostVariance' as any,
+    ResourceOverallocated = 'ResourceOverallocated' as any,
+    ResourcePeakUnits = 'ResourcePeakUnits' as any,
+    ResourceUniqueID = 'ResourceUniqueID' as any,
+    ResourceSheetNotes = 'ResourceSheetNotes' as any,
+    ResourcePercentWorkComplete = 'ResourcePercentWorkComplete' as any,
+    ResourceText3 = 'ResourceText3' as any,
+    ResourceText4 = 'ResourceText4' as any,
+    ResourceText5 = 'ResourceText5' as any,
+    ResourceObjects = 'ResourceObjects' as any,
+    ResourceLinkedFields = 'ResourceLinkedFields' as any,
+    ResourceEMailAddress = 'ResourceEMailAddress' as any,
+    ResourceRegularWork = 'ResourceRegularWork' as any,
+    ResourceActualOvertimeWork = 'ResourceActualOvertimeWork' as any,
+    ResourceRemainingOvertimeWork = 'ResourceRemainingOvertimeWork' as any,
+    ResourceOvertimeCost = 'ResourceOvertimeCost' as any,
+    ResourceActualOvertimeCost = 'ResourceActualOvertimeCost' as any,
+    ResourceRemainingOvertimeCost = 'ResourceRemainingOvertimeCost' as any,
+    ResourceBCWS = 'ResourceBCWS' as any,
+    ResourceBCWP = 'ResourceBCWP' as any,
+    ResourceACWP = 'ResourceACWP' as any,
+    ResourceSV = 'ResourceSV' as any,
+    ResourceAvailableFrom = 'ResourceAvailableFrom' as any,
+    ResourceAvailableTo = 'ResourceAvailableTo' as any,
+    ResourceIndicators = 'ResourceIndicators' as any,
+    ResourceText6 = 'ResourceText6' as any,
+    ResourceText7 = 'ResourceText7' as any,
+    ResourceText8 = 'ResourceText8' as any,
+    ResourceText9 = 'ResourceText9' as any,
+    ResourceText10 = 'ResourceText10' as any,
+    ResourceStart1 = 'ResourceStart1' as any,
+    ResourceStart2 = 'ResourceStart2' as any,
+    ResourceStart3 = 'ResourceStart3' as any,
+    ResourceStart4 = 'ResourceStart4' as any,
+    ResourceStart5 = 'ResourceStart5' as any,
+    ResourceFinish1 = 'ResourceFinish1' as any,
+    ResourceFinish2 = 'ResourceFinish2' as any,
+    ResourceFinish3 = 'ResourceFinish3' as any,
+    ResourceFinish4 = 'ResourceFinish4' as any,
+    ResourceFinish5 = 'ResourceFinish5' as any,
+    ResourceNumber1 = 'ResourceNumber1' as any,
+    ResourceNumber2 = 'ResourceNumber2' as any,
+    ResourceNumber3 = 'ResourceNumber3' as any,
+    ResourceNumber4 = 'ResourceNumber4' as any,
+    ResourceNumber5 = 'ResourceNumber5' as any,
+    ResourceDuration1 = 'ResourceDuration1' as any,
+    ResourceDuration2 = 'ResourceDuration2' as any,
+    ResourceDuration3 = 'ResourceDuration3' as any,
+    ResourceCost1 = 'ResourceCost1' as any,
+    ResourceCost2 = 'ResourceCost2' as any,
+    ResourceCost3 = 'ResourceCost3' as any,
+    ResourceFlag10 = 'ResourceFlag10' as any,
+    ResourceFlag1 = 'ResourceFlag1' as any,
+    ResourceFlag2 = 'ResourceFlag2' as any,
+    ResourceFlag3 = 'ResourceFlag3' as any,
+    ResourceFlag4 = 'ResourceFlag4' as any,
+    ResourceFlag5 = 'ResourceFlag5' as any,
+    ResourceFlag6 = 'ResourceFlag6' as any,
+    ResourceFlag7 = 'ResourceFlag7' as any,
+    ResourceFlag8 = 'ResourceFlag8' as any,
+    ResourceFlag9 = 'ResourceFlag9' as any,
+    ResourceHyperlink = 'ResourceHyperlink' as any,
+    ResourceHyperlinkAddress = 'ResourceHyperlinkAddress' as any,
+    ResourceHyperlinkSubAddress = 'ResourceHyperlinkSubAddress' as any,
+    ResourceHyperlinkHref = 'ResourceHyperlinkHref' as any,
+    ResourceIsAssignment = 'ResourceIsAssignment' as any,
+    ResourceTaskSummaryName = 'ResourceTaskSummaryName' as any,
+    ResourceCanLevel = 'ResourceCanLevel' as any,
+    ResourceWorkContour = 'ResourceWorkContour' as any,
+    ResourceCost4 = 'ResourceCost4' as any,
+    ResourceCost5 = 'ResourceCost5' as any,
+    ResourceCost6 = 'ResourceCost6' as any,
+    ResourceCost7 = 'ResourceCost7' as any,
+    ResourceCost8 = 'ResourceCost8' as any,
+    ResourceCost9 = 'ResourceCost9' as any,
+    ResourceCost10 = 'ResourceCost10' as any,
+    ResourceDate1 = 'ResourceDate1' as any,
+    ResourceDate2 = 'ResourceDate2' as any,
+    ResourceDate3 = 'ResourceDate3' as any,
+    ResourceDate4 = 'ResourceDate4' as any,
+    ResourceDate5 = 'ResourceDate5' as any,
+    ResourceDate6 = 'ResourceDate6' as any,
+    ResourceDate7 = 'ResourceDate7' as any,
+    ResourceDate8 = 'ResourceDate8' as any,
+    ResourceDate9 = 'ResourceDate9' as any,
+    ResourceDate10 = 'ResourceDate10' as any,
+    ResourceDuration4 = 'ResourceDuration4' as any,
+    ResourceDuration5 = 'ResourceDuration5' as any,
+    ResourceDuration6 = 'ResourceDuration6' as any,
+    ResourceDuration7 = 'ResourceDuration7' as any,
+    ResourceDuration8 = 'ResourceDuration8' as any,
+    ResourceDuration9 = 'ResourceDuration9' as any,
+    ResourceDuration10 = 'ResourceDuration10' as any,
+    ResourceFinish6 = 'ResourceFinish6' as any,
+    ResourceFinish7 = 'ResourceFinish7' as any,
+    ResourceFinish8 = 'ResourceFinish8' as any,
+    ResourceFinish9 = 'ResourceFinish9' as any,
+    ResourceFinish10 = 'ResourceFinish10' as any,
+    ResourceFlag11 = 'ResourceFlag11' as any,
+    ResourceFlag12 = 'ResourceFlag12' as any,
+    ResourceFlag13 = 'ResourceFlag13' as any,
+    ResourceFlag14 = 'ResourceFlag14' as any,
+    ResourceFlag15 = 'ResourceFlag15' as any,
+    ResourceFlag16 = 'ResourceFlag16' as any,
+    ResourceFlag17 = 'ResourceFlag17' as any,
+    ResourceFlag18 = 'ResourceFlag18' as any,
+    ResourceFlag19 = 'ResourceFlag19' as any,
+    ResourceFlag20 = 'ResourceFlag20' as any,
+    ResourceNumber6 = 'ResourceNumber6' as any,
+    ResourceNumber7 = 'ResourceNumber7' as any,
+    ResourceNumber8 = 'ResourceNumber8' as any,
+    ResourceNumber9 = 'ResourceNumber9' as any,
+    ResourceNumber10 = 'ResourceNumber10' as any,
+    ResourceNumber11 = 'ResourceNumber11' as any,
+    ResourceNumber12 = 'ResourceNumber12' as any,
+    ResourceNumber13 = 'ResourceNumber13' as any,
+    ResourceNumber14 = 'ResourceNumber14' as any,
+    ResourceNumber15 = 'ResourceNumber15' as any,
+    ResourceNumber16 = 'ResourceNumber16' as any,
+    ResourceNumber17 = 'ResourceNumber17' as any,
+    ResourceNumber18 = 'ResourceNumber18' as any,
+    ResourceNumber19 = 'ResourceNumber19' as any,
+    ResourceNumber20 = 'ResourceNumber20' as any,
+    ResourceStart6 = 'ResourceStart6' as any,
+    ResourceStart7 = 'ResourceStart7' as any,
+    ResourceStart8 = 'ResourceStart8' as any,
+    ResourceStart9 = 'ResourceStart9' as any,
+    ResourceStart10 = 'ResourceStart10' as any,
+    ResourceText11 = 'ResourceText11' as any,
+    ResourceText12 = 'ResourceText12' as any,
+    ResourceText13 = 'ResourceText13' as any,
+    ResourceText14 = 'ResourceText14' as any,
+    ResourceText15 = 'ResourceText15' as any,
+    ResourceText16 = 'ResourceText16' as any,
+    ResourceText17 = 'ResourceText17' as any,
+    ResourceText18 = 'ResourceText18' as any,
+    ResourceText19 = 'ResourceText19' as any,
+    ResourceText20 = 'ResourceText20' as any,
+    ResourceText21 = 'ResourceText21' as any,
+    ResourceText22 = 'ResourceText22' as any,
+    ResourceText23 = 'ResourceText23' as any,
+    ResourceText24 = 'ResourceText24' as any,
+    ResourceText25 = 'ResourceText25' as any,
+    ResourceText26 = 'ResourceText26' as any,
+    ResourceText27 = 'ResourceText27' as any,
+    ResourceText28 = 'ResourceText28' as any,
+    ResourceText29 = 'ResourceText29' as any,
+    ResourceText30 = 'ResourceText30' as any,
+    ResourcePhonetics = 'ResourcePhonetics' as any,
+    ResourceIndex = 'ResourceIndex' as any,
+    ResourceAssignmentDelay = 'ResourceAssignmentDelay' as any,
+    ResourceAssignmentUnits = 'ResourceAssignmentUnits' as any,
+    ResourceBaselineStart = 'ResourceBaselineStart' as any,
+    ResourceBaselineFinish = 'ResourceBaselineFinish' as any,
+    ResourceConfirmed = 'ResourceConfirmed' as any,
+    ResourceFinish = 'ResourceFinish' as any,
+    ResourceLevelingDelay = 'ResourceLevelingDelay' as any,
+    ResourceResponsePending = 'ResourceResponsePending' as any,
+    ResourceStart = 'ResourceStart' as any,
+    ResourceTeamStatusPending = 'ResourceTeamStatusPending' as any,
+    ResourceUpdateNeeded = 'ResourceUpdateNeeded' as any,
+    ResourceCV = 'ResourceCV' as any,
+    ResourceCostRateTable = 'ResourceCostRateTable' as any,
+    ResourceWorkgroup = 'ResourceWorkgroup' as any,
+    ResourceProject = 'ResourceProject' as any,
+    ResourceOutlineCode1 = 'ResourceOutlineCode1' as any,
+    ResourceOutlineCode2 = 'ResourceOutlineCode2' as any,
+    ResourceOutlineCode3 = 'ResourceOutlineCode3' as any,
+    ResourceOutlineCode4 = 'ResourceOutlineCode4' as any,
+    ResourceOutlineCode5 = 'ResourceOutlineCode5' as any,
+    ResourceOutlineCode6 = 'ResourceOutlineCode6' as any,
+    ResourceOutlineCode7 = 'ResourceOutlineCode7' as any,
+    ResourceOutlineCode8 = 'ResourceOutlineCode8' as any,
+    ResourceOutlineCode9 = 'ResourceOutlineCode9' as any,
+    ResourceOutlineCode10 = 'ResourceOutlineCode10' as any,
+    ResourceMaterialLabel = 'ResourceMaterialLabel' as any,
+    ResourceType = 'ResourceType' as any,
+    ResourceVAC = 'ResourceVAC' as any,
+    ResourceGroupBySummary = 'ResourceGroupBySummary' as any,
+    ResourceWindowsUserAccount = 'ResourceWindowsUserAccount' as any,
+    ResourceHyperlinkScreenTip = 'ResourceHyperlinkScreenTip' as any,
+    ResourceWBS = 'ResourceWBS' as any,
+    ResourceBaseline1Work = 'ResourceBaseline1Work' as any,
+    ResourceBaseline1Cost = 'ResourceBaseline1Cost' as any,
+    ResourceBaseline1Start = 'ResourceBaseline1Start' as any,
+    ResourceBaseline1Finish = 'ResourceBaseline1Finish' as any,
+    ResourceBaseline2Work = 'ResourceBaseline2Work' as any,
+    ResourceBaseline2Cost = 'ResourceBaseline2Cost' as any,
+    ResourceBaseline2Start = 'ResourceBaseline2Start' as any,
+    ResourceBaseline2Finish = 'ResourceBaseline2Finish' as any,
+    ResourceBaseline3Work = 'ResourceBaseline3Work' as any,
+    ResourceBaseline3Cost = 'ResourceBaseline3Cost' as any,
+    ResourceBaseline3Start = 'ResourceBaseline3Start' as any,
+    ResourceBaseline3Finish = 'ResourceBaseline3Finish' as any,
+    ResourceBaseline4Work = 'ResourceBaseline4Work' as any,
+    ResourceBaseline4Cost = 'ResourceBaseline4Cost' as any,
+    ResourceBaseline4Start = 'ResourceBaseline4Start' as any,
+    ResourceBaseline4Finish = 'ResourceBaseline4Finish' as any,
+    ResourceBaseline5Work = 'ResourceBaseline5Work' as any,
+    ResourceBaseline5Cost = 'ResourceBaseline5Cost' as any,
+    ResourceBaseline5Start = 'ResourceBaseline5Start' as any,
+    ResourceBaseline5Finish = 'ResourceBaseline5Finish' as any,
+    ResourceBaseline6Work = 'ResourceBaseline6Work' as any,
+    ResourceBaseline6Cost = 'ResourceBaseline6Cost' as any,
+    ResourceBaseline6Start = 'ResourceBaseline6Start' as any,
+    ResourceBaseline6Finish = 'ResourceBaseline6Finish' as any,
+    ResourceBaseline7Work = 'ResourceBaseline7Work' as any,
+    ResourceBaseline7Cost = 'ResourceBaseline7Cost' as any,
+    ResourceBaseline7Start = 'ResourceBaseline7Start' as any,
+    ResourceBaseline7Finish = 'ResourceBaseline7Finish' as any,
+    ResourceBaseline8Work = 'ResourceBaseline8Work' as any,
+    ResourceBaseline8Cost = 'ResourceBaseline8Cost' as any,
+    ResourceBaseline8Start = 'ResourceBaseline8Start' as any,
+    ResourceBaseline8Finish = 'ResourceBaseline8Finish' as any,
+    ResourceBaseline9Work = 'ResourceBaseline9Work' as any,
+    ResourceBaseline9Cost = 'ResourceBaseline9Cost' as any,
+    ResourceBaseline9Start = 'ResourceBaseline9Start' as any,
+    ResourceBaseline9Finish = 'ResourceBaseline9Finish' as any,
+    ResourceBaseline10Work = 'ResourceBaseline10Work' as any,
+    ResourceBaseline10Cost = 'ResourceBaseline10Cost' as any,
+    ResourceBaseline10Start = 'ResourceBaseline10Start' as any,
+    ResourceBaseline10Finish = 'ResourceBaseline10Finish' as any,
+    ResourceEnterpriseUniqueID = 'ResourceEnterpriseUniqueID' as any,
+    ResourceEnterpriseCost1 = 'ResourceEnterpriseCost1' as any,
+    ResourceEnterpriseCost2 = 'ResourceEnterpriseCost2' as any,
+    ResourceEnterpriseCost3 = 'ResourceEnterpriseCost3' as any,
+    ResourceEnterpriseCost4 = 'ResourceEnterpriseCost4' as any,
+    ResourceEnterpriseCost5 = 'ResourceEnterpriseCost5' as any,
+    ResourceEnterpriseCost6 = 'ResourceEnterpriseCost6' as any,
+    ResourceEnterpriseCost7 = 'ResourceEnterpriseCost7' as any,
+    ResourceEnterpriseCost8 = 'ResourceEnterpriseCost8' as any,
+    ResourceEnterpriseCost9 = 'ResourceEnterpriseCost9' as any,
+    ResourceEnterpriseCost10 = 'ResourceEnterpriseCost10' as any,
+    ResourceEnterpriseDate1 = 'ResourceEnterpriseDate1' as any,
+    ResourceEnterpriseDate2 = 'ResourceEnterpriseDate2' as any,
+    ResourceEnterpriseDate3 = 'ResourceEnterpriseDate3' as any,
+    ResourceEnterpriseDate4 = 'ResourceEnterpriseDate4' as any,
+    ResourceEnterpriseDate5 = 'ResourceEnterpriseDate5' as any,
+    ResourceEnterpriseDate6 = 'ResourceEnterpriseDate6' as any,
+    ResourceEnterpriseDate7 = 'ResourceEnterpriseDate7' as any,
+    ResourceEnterpriseDate8 = 'ResourceEnterpriseDate8' as any,
+    ResourceEnterpriseDate9 = 'ResourceEnterpriseDate9' as any,
+    ResourceEnterpriseDate10 = 'ResourceEnterpriseDate10' as any,
+    ResourceEnterpriseDate11 = 'ResourceEnterpriseDate11' as any,
+    ResourceEnterpriseDate12 = 'ResourceEnterpriseDate12' as any,
+    ResourceEnterpriseDate13 = 'ResourceEnterpriseDate13' as any,
+    ResourceEnterpriseDate14 = 'ResourceEnterpriseDate14' as any,
+    ResourceEnterpriseDate15 = 'ResourceEnterpriseDate15' as any,
+    ResourceEnterpriseDate16 = 'ResourceEnterpriseDate16' as any,
+    ResourceEnterpriseDate17 = 'ResourceEnterpriseDate17' as any,
+    ResourceEnterpriseDate18 = 'ResourceEnterpriseDate18' as any,
+    ResourceEnterpriseDate19 = 'ResourceEnterpriseDate19' as any,
+    ResourceEnterpriseDate20 = 'ResourceEnterpriseDate20' as any,
+    ResourceEnterpriseDate21 = 'ResourceEnterpriseDate21' as any,
+    ResourceEnterpriseDate22 = 'ResourceEnterpriseDate22' as any,
+    ResourceEnterpriseDate23 = 'ResourceEnterpriseDate23' as any,
+    ResourceEnterpriseDate24 = 'ResourceEnterpriseDate24' as any,
+    ResourceEnterpriseDate25 = 'ResourceEnterpriseDate25' as any,
+    ResourceEnterpriseDate26 = 'ResourceEnterpriseDate26' as any,
+    ResourceEnterpriseDate27 = 'ResourceEnterpriseDate27' as any,
+    ResourceEnterpriseDate28 = 'ResourceEnterpriseDate28' as any,
+    ResourceEnterpriseDate29 = 'ResourceEnterpriseDate29' as any,
+    ResourceEnterpriseDate30 = 'ResourceEnterpriseDate30' as any,
+    ResourceEnterpriseDuration1 = 'ResourceEnterpriseDuration1' as any,
+    ResourceEnterpriseDuration2 = 'ResourceEnterpriseDuration2' as any,
+    ResourceEnterpriseDuration3 = 'ResourceEnterpriseDuration3' as any,
+    ResourceEnterpriseDuration4 = 'ResourceEnterpriseDuration4' as any,
+    ResourceEnterpriseDuration5 = 'ResourceEnterpriseDuration5' as any,
+    ResourceEnterpriseDuration6 = 'ResourceEnterpriseDuration6' as any,
+    ResourceEnterpriseDuration7 = 'ResourceEnterpriseDuration7' as any,
+    ResourceEnterpriseDuration8 = 'ResourceEnterpriseDuration8' as any,
+    ResourceEnterpriseDuration9 = 'ResourceEnterpriseDuration9' as any,
+    ResourceEnterpriseDuration10 = 'ResourceEnterpriseDuration10' as any,
+    ResourceEnterpriseFlag1 = 'ResourceEnterpriseFlag1' as any,
+    ResourceEnterpriseFlag2 = 'ResourceEnterpriseFlag2' as any,
+    ResourceEnterpriseFlag3 = 'ResourceEnterpriseFlag3' as any,
+    ResourceEnterpriseFlag4 = 'ResourceEnterpriseFlag4' as any,
+    ResourceEnterpriseFlag5 = 'ResourceEnterpriseFlag5' as any,
+    ResourceEnterpriseFlag6 = 'ResourceEnterpriseFlag6' as any,
+    ResourceEnterpriseFlag7 = 'ResourceEnterpriseFlag7' as any,
+    ResourceEnterpriseFlag8 = 'ResourceEnterpriseFlag8' as any,
+    ResourceEnterpriseFlag9 = 'ResourceEnterpriseFlag9' as any,
+    ResourceEnterpriseFlag10 = 'ResourceEnterpriseFlag10' as any,
+    ResourceEnterpriseFlag11 = 'ResourceEnterpriseFlag11' as any,
+    ResourceEnterpriseFlag12 = 'ResourceEnterpriseFlag12' as any,
+    ResourceEnterpriseFlag13 = 'ResourceEnterpriseFlag13' as any,
+    ResourceEnterpriseFlag14 = 'ResourceEnterpriseFlag14' as any,
+    ResourceEnterpriseFlag15 = 'ResourceEnterpriseFlag15' as any,
+    ResourceEnterpriseFlag16 = 'ResourceEnterpriseFlag16' as any,
+    ResourceEnterpriseFlag17 = 'ResourceEnterpriseFlag17' as any,
+    ResourceEnterpriseFlag18 = 'ResourceEnterpriseFlag18' as any,
+    ResourceEnterpriseFlag19 = 'ResourceEnterpriseFlag19' as any,
+    ResourceEnterpriseFlag20 = 'ResourceEnterpriseFlag20' as any,
+    ResourceEnterpriseNumber1 = 'ResourceEnterpriseNumber1' as any,
+    ResourceEnterpriseNumber2 = 'ResourceEnterpriseNumber2' as any,
+    ResourceEnterpriseNumber3 = 'ResourceEnterpriseNumber3' as any,
+    ResourceEnterpriseNumber4 = 'ResourceEnterpriseNumber4' as any,
+    ResourceEnterpriseNumber5 = 'ResourceEnterpriseNumber5' as any,
+    ResourceEnterpriseNumber6 = 'ResourceEnterpriseNumber6' as any,
+    ResourceEnterpriseNumber7 = 'ResourceEnterpriseNumber7' as any,
+    ResourceEnterpriseNumber8 = 'ResourceEnterpriseNumber8' as any,
+    ResourceEnterpriseNumber9 = 'ResourceEnterpriseNumber9' as any,
+    ResourceEnterpriseNumber10 = 'ResourceEnterpriseNumber10' as any,
+    ResourceEnterpriseNumber11 = 'ResourceEnterpriseNumber11' as any,
+    ResourceEnterpriseNumber12 = 'ResourceEnterpriseNumber12' as any,
+    ResourceEnterpriseNumber13 = 'ResourceEnterpriseNumber13' as any,
+    ResourceEnterpriseNumber14 = 'ResourceEnterpriseNumber14' as any,
+    ResourceEnterpriseNumber15 = 'ResourceEnterpriseNumber15' as any,
+    ResourceEnterpriseNumber16 = 'ResourceEnterpriseNumber16' as any,
+    ResourceEnterpriseNumber17 = 'ResourceEnterpriseNumber17' as any,
+    ResourceEnterpriseNumber18 = 'ResourceEnterpriseNumber18' as any,
+    ResourceEnterpriseNumber19 = 'ResourceEnterpriseNumber19' as any,
+    ResourceEnterpriseNumber20 = 'ResourceEnterpriseNumber20' as any,
+    ResourceEnterpriseNumber21 = 'ResourceEnterpriseNumber21' as any,
+    ResourceEnterpriseNumber22 = 'ResourceEnterpriseNumber22' as any,
+    ResourceEnterpriseNumber23 = 'ResourceEnterpriseNumber23' as any,
+    ResourceEnterpriseNumber24 = 'ResourceEnterpriseNumber24' as any,
+    ResourceEnterpriseNumber25 = 'ResourceEnterpriseNumber25' as any,
+    ResourceEnterpriseNumber26 = 'ResourceEnterpriseNumber26' as any,
+    ResourceEnterpriseNumber27 = 'ResourceEnterpriseNumber27' as any,
+    ResourceEnterpriseNumber28 = 'ResourceEnterpriseNumber28' as any,
+    ResourceEnterpriseNumber29 = 'ResourceEnterpriseNumber29' as any,
+    ResourceEnterpriseNumber30 = 'ResourceEnterpriseNumber30' as any,
+    ResourceEnterpriseNumber31 = 'ResourceEnterpriseNumber31' as any,
+    ResourceEnterpriseNumber32 = 'ResourceEnterpriseNumber32' as any,
+    ResourceEnterpriseNumber33 = 'ResourceEnterpriseNumber33' as any,
+    ResourceEnterpriseNumber34 = 'ResourceEnterpriseNumber34' as any,
+    ResourceEnterpriseNumber35 = 'ResourceEnterpriseNumber35' as any,
+    ResourceEnterpriseNumber36 = 'ResourceEnterpriseNumber36' as any,
+    ResourceEnterpriseNumber37 = 'ResourceEnterpriseNumber37' as any,
+    ResourceEnterpriseNumber38 = 'ResourceEnterpriseNumber38' as any,
+    ResourceEnterpriseNumber39 = 'ResourceEnterpriseNumber39' as any,
+    ResourceEnterpriseNumber40 = 'ResourceEnterpriseNumber40' as any,
+    ResourceEnterpriseOutlineCode1 = 'ResourceEnterpriseOutlineCode1' as any,
+    ResourceEnterpriseOutlineCode2 = 'ResourceEnterpriseOutlineCode2' as any,
+    ResourceEnterpriseOutlineCode3 = 'ResourceEnterpriseOutlineCode3' as any,
+    ResourceEnterpriseOutlineCode4 = 'ResourceEnterpriseOutlineCode4' as any,
+    ResourceEnterpriseOutlineCode5 = 'ResourceEnterpriseOutlineCode5' as any,
+    ResourceEnterpriseOutlineCode6 = 'ResourceEnterpriseOutlineCode6' as any,
+    ResourceEnterpriseOutlineCode7 = 'ResourceEnterpriseOutlineCode7' as any,
+    ResourceEnterpriseOutlineCode8 = 'ResourceEnterpriseOutlineCode8' as any,
+    ResourceEnterpriseOutlineCode9 = 'ResourceEnterpriseOutlineCode9' as any,
+    ResourceEnterpriseOutlineCode10 = 'ResourceEnterpriseOutlineCode10' as any,
+    ResourceEnterpriseOutlineCode11 = 'ResourceEnterpriseOutlineCode11' as any,
+    ResourceEnterpriseOutlineCode12 = 'ResourceEnterpriseOutlineCode12' as any,
+    ResourceEnterpriseOutlineCode13 = 'ResourceEnterpriseOutlineCode13' as any,
+    ResourceEnterpriseOutlineCode14 = 'ResourceEnterpriseOutlineCode14' as any,
+    ResourceEnterpriseOutlineCode15 = 'ResourceEnterpriseOutlineCode15' as any,
+    ResourceEnterpriseOutlineCode16 = 'ResourceEnterpriseOutlineCode16' as any,
+    ResourceEnterpriseOutlineCode17 = 'ResourceEnterpriseOutlineCode17' as any,
+    ResourceEnterpriseOutlineCode18 = 'ResourceEnterpriseOutlineCode18' as any,
+    ResourceEnterpriseOutlineCode19 = 'ResourceEnterpriseOutlineCode19' as any,
+    ResourceEnterpriseOutlineCode20 = 'ResourceEnterpriseOutlineCode20' as any,
+    ResourceEnterpriseOutlineCode21 = 'ResourceEnterpriseOutlineCode21' as any,
+    ResourceEnterpriseOutlineCode22 = 'ResourceEnterpriseOutlineCode22' as any,
+    ResourceEnterpriseOutlineCode23 = 'ResourceEnterpriseOutlineCode23' as any,
+    ResourceEnterpriseOutlineCode24 = 'ResourceEnterpriseOutlineCode24' as any,
+    ResourceEnterpriseOutlineCode25 = 'ResourceEnterpriseOutlineCode25' as any,
+    ResourceEnterpriseOutlineCode26 = 'ResourceEnterpriseOutlineCode26' as any,
+    ResourceEnterpriseOutlineCode27 = 'ResourceEnterpriseOutlineCode27' as any,
+    ResourceEnterpriseOutlineCode28 = 'ResourceEnterpriseOutlineCode28' as any,
+    ResourceEnterpriseOutlineCode29 = 'ResourceEnterpriseOutlineCode29' as any,
+    ResourceEnterpriseRBS = 'ResourceEnterpriseRBS' as any,
+    ResourceEnterpriseText1 = 'ResourceEnterpriseText1' as any,
+    ResourceEnterpriseText2 = 'ResourceEnterpriseText2' as any,
+    ResourceEnterpriseText3 = 'ResourceEnterpriseText3' as any,
+    ResourceEnterpriseText4 = 'ResourceEnterpriseText4' as any,
+    ResourceEnterpriseText5 = 'ResourceEnterpriseText5' as any,
+    ResourceEnterpriseText6 = 'ResourceEnterpriseText6' as any,
+    ResourceEnterpriseText7 = 'ResourceEnterpriseText7' as any,
+    ResourceEnterpriseText8 = 'ResourceEnterpriseText8' as any,
+    ResourceEnterpriseText9 = 'ResourceEnterpriseText9' as any,
+    ResourceEnterpriseText10 = 'ResourceEnterpriseText10' as any,
+    ResourceEnterpriseText11 = 'ResourceEnterpriseText11' as any,
+    ResourceEnterpriseText12 = 'ResourceEnterpriseText12' as any,
+    ResourceEnterpriseText13 = 'ResourceEnterpriseText13' as any,
+    ResourceEnterpriseText14 = 'ResourceEnterpriseText14' as any,
+    ResourceEnterpriseText15 = 'ResourceEnterpriseText15' as any,
+    ResourceEnterpriseText16 = 'ResourceEnterpriseText16' as any,
+    ResourceEnterpriseText17 = 'ResourceEnterpriseText17' as any,
+    ResourceEnterpriseText18 = 'ResourceEnterpriseText18' as any,
+    ResourceEnterpriseText19 = 'ResourceEnterpriseText19' as any,
+    ResourceEnterpriseText20 = 'ResourceEnterpriseText20' as any,
+    ResourceEnterpriseText21 = 'ResourceEnterpriseText21' as any,
+    ResourceEnterpriseText22 = 'ResourceEnterpriseText22' as any,
+    ResourceEnterpriseText23 = 'ResourceEnterpriseText23' as any,
+    ResourceEnterpriseText24 = 'ResourceEnterpriseText24' as any,
+    ResourceEnterpriseText25 = 'ResourceEnterpriseText25' as any,
+    ResourceEnterpriseText26 = 'ResourceEnterpriseText26' as any,
+    ResourceEnterpriseText27 = 'ResourceEnterpriseText27' as any,
+    ResourceEnterpriseText28 = 'ResourceEnterpriseText28' as any,
+    ResourceEnterpriseText29 = 'ResourceEnterpriseText29' as any,
+    ResourceEnterpriseText30 = 'ResourceEnterpriseText30' as any,
+    ResourceEnterpriseText31 = 'ResourceEnterpriseText31' as any,
+    ResourceEnterpriseText32 = 'ResourceEnterpriseText32' as any,
+    ResourceEnterpriseText33 = 'ResourceEnterpriseText33' as any,
+    ResourceEnterpriseText34 = 'ResourceEnterpriseText34' as any,
+    ResourceEnterpriseText35 = 'ResourceEnterpriseText35' as any,
+    ResourceEnterpriseText36 = 'ResourceEnterpriseText36' as any,
+    ResourceEnterpriseText37 = 'ResourceEnterpriseText37' as any,
+    ResourceEnterpriseText38 = 'ResourceEnterpriseText38' as any,
+    ResourceEnterpriseText39 = 'ResourceEnterpriseText39' as any,
+    ResourceEnterpriseText40 = 'ResourceEnterpriseText40' as any,
+    ResourceEnterpriseGeneric = 'ResourceEnterpriseGeneric' as any,
+    ResourceEnterpriseBaseCalendar = 'ResourceEnterpriseBaseCalendar' as any,
+    ResourceEnterpriseRequiredValues = 'ResourceEnterpriseRequiredValues' as any,
+    ResourceEnterpriseNameUsed = 'ResourceEnterpriseNameUsed' as any,
+    ResourceDemandedRequested = 'ResourceDemandedRequested' as any,
+    ResourceEnterprise = 'ResourceEnterprise' as any,
+    ResourceEnterpriseIsCheckedOut = 'ResourceEnterpriseIsCheckedOut' as any,
+    ResourceEnterpriseCheckedOutBy = 'ResourceEnterpriseCheckedOutBy' as any,
+    ResourceEnterpriseLastModifiedDate = 'ResourceEnterpriseLastModifiedDate' as any,
+    ResourceEnterpriseTeamMember = 'ResourceEnterpriseTeamMember' as any,
+    ResourceEnterpriseInactive = 'ResourceEnterpriseInactive' as any,
+    ResourceBookingType = 'ResourceBookingType' as any,
+    ResourceEnterpriseMultiValue20 = 'ResourceEnterpriseMultiValue20' as any,
+    ResourceEnterpriseMultiValue21 = 'ResourceEnterpriseMultiValue21' as any,
+    ResourceEnterpriseMultiValue22 = 'ResourceEnterpriseMultiValue22' as any,
+    ResourceEnterpriseMultiValue23 = 'ResourceEnterpriseMultiValue23' as any,
+    ResourceEnterpriseMultiValue24 = 'ResourceEnterpriseMultiValue24' as any,
+    ResourceEnterpriseMultiValue25 = 'ResourceEnterpriseMultiValue25' as any,
+    ResourceEnterpriseMultiValue26 = 'ResourceEnterpriseMultiValue26' as any,
+    ResourceEnterpriseMultiValue27 = 'ResourceEnterpriseMultiValue27' as any,
+    ResourceEnterpriseMultiValue28 = 'ResourceEnterpriseMultiValue28' as any,
+    ResourceEnterpriseMultiValue29 = 'ResourceEnterpriseMultiValue29' as any,
+    ResourceActualWorkProtected = 'ResourceActualWorkProtected' as any,
+    ResourceActualOvertimeWorkProtected = 'ResourceActualOvertimeWorkProtected' as any,
+    ResourceCreated = 'ResourceCreated' as any,
+    ResourceGuid = 'ResourceGuid' as any,
+    ResourceCalendarGuid = 'ResourceCalendarGuid' as any,
+    ResourceTypeIsCost = 'ResourceTypeIsCost' as any,
+    ResourceErrorMessage = 'ResourceErrorMessage' as any,
+    ResourceDefaultAssignmentOwner = 'ResourceDefaultAssignmentOwner' as any,
+    ResourceBudget = 'ResourceBudget' as any,
+    ResourceBudgetWork = 'ResourceBudgetWork' as any,
+    ResourceBudgetCost = 'ResourceBudgetCost' as any,
+    ImportResource = 'ImportResource' as any,
+    ResourceBaselineBudgetWork = 'ResourceBaselineBudgetWork' as any,
+    ResourceBaselineBudgetCost = 'ResourceBaselineBudgetCost' as any,
+    ResourceBaseline1BudgetWork = 'ResourceBaseline1BudgetWork' as any,
+    ResourceBaseline1BudgetCost = 'ResourceBaseline1BudgetCost' as any,
+    ResourceBaseline2BudgetWork = 'ResourceBaseline2BudgetWork' as any,
+    ResourceBaseline2BudgetCost = 'ResourceBaseline2BudgetCost' as any,
+    ResourceBaseline3BudgetWork = 'ResourceBaseline3BudgetWork' as any,
+    ResourceBaseline3BudgetCost = 'ResourceBaseline3BudgetCost' as any,
+    ResourceBaseline4BudgetWork = 'ResourceBaseline4BudgetWork' as any,
+    ResourceBaseline4BudgetCost = 'ResourceBaseline4BudgetCost' as any,
+    ResourceBaseline5BudgetWork = 'ResourceBaseline5BudgetWork' as any,
+    ResourceBaseline5BudgetCost = 'ResourceBaseline5BudgetCost' as any,
+    ResourceBaseline6BudgetWork = 'ResourceBaseline6BudgetWork' as any,
+    ResourceBaseline6BudgetCost = 'ResourceBaseline6BudgetCost' as any,
+    ResourceBaseline7BudgetWork = 'ResourceBaseline7BudgetWork' as any,
+    ResourceBaseline7BudgetCost = 'ResourceBaseline7BudgetCost' as any,
+    ResourceBaseline8BudgetWork = 'ResourceBaseline8BudgetWork' as any,
+    ResourceBaseline8BudgetCost = 'ResourceBaseline8BudgetCost' as any,
+    ResourceBaseline9BudgetWork = 'ResourceBaseline9BudgetWork' as any,
+    ResourceBaseline9BudgetCost = 'ResourceBaseline9BudgetCost' as any,
+    ResourceBaseline10BudgetWork = 'ResourceBaseline10BudgetWork' as any,
+    ResourceBaseline10BudgetCost = 'ResourceBaseline10BudgetCost' as any,
+    ResourceIsTeam = 'ResourceIsTeam' as any,
+    ResourceCostCenter = 'ResourceCostCenter' as any,
+    ResourceAssignmentBaseLineWork = 'ResourceAssignmentBaseLineWork' as any,
+    ResourceAssignmentBaseLineCost = 'ResourceAssignmentBaseLineCost' as any,
+    ResourceAssignmentBaseLineStart = 'ResourceAssignmentBaseLineStart' as any,
+    ResourceAssignmentBaseLineFinish = 'ResourceAssignmentBaseLineFinish' as any,
+    ResourceAssignmentBaseLineCostPerUse = 'ResourceAssignmentBaseLineCostPerUse' as any,
+    ResourceAssignmentGuid = 'ResourceAssignmentGuid' as any,
+}
+/**
  * File versions FileVersion.
  */
 export class FileVersions {
@@ -1335,6 +2855,14 @@ export enum ImportedProjectType {
     None = 'None' as any,
     PrimaveraSqliteDb = 'PrimaveraSqliteDb' as any,
     PrimaveraXml = 'PrimaveraXml' as any,
+}
+/**
+ * Specifies the type of an item.
+ */
+export enum ItemType {
+    TaskItem = 'TaskItem' as any,
+    ResourceItem = 'ResourceItem' as any,
+    OtherItem = 'OtherItem' as any,
 }
 /**
  * Provides information for the object link. This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7
@@ -4374,6 +5902,89 @@ export enum SummaryRowsCalculationType {
     UseFormula = 'UseFormula' as any,
 }
 /**
+ * Represents a text style in a view table.
+ */
+export class TableTextStyle {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "rowUid",
+            baseName: "rowUid",
+            type: "number",
+        },        
+        {
+            name: "field",
+            baseName: "field",
+            type: "Field",
+        },        
+        {
+            name: "itemType",
+            baseName: "itemType",
+            type: "TextItemType",
+        },        
+        {
+            name: "color",
+            baseName: "color",
+            type: "Colors",
+        },        
+        {
+            name: "backgroundPattern",
+            baseName: "backgroundPattern",
+            type: "BackgroundPattern",
+        },        
+        {
+            name: "backgroundColor",
+            baseName: "backgroundColor",
+            type: "Colors",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return TableTextStyle.attributeTypeMap;
+    }
+
+    /**
+     * Gets a row unique id. Return -1 if the style is to be applied to all rows of a view.
+     */
+    public rowUid: number;
+    
+    /**
+     * Gets or sets a field the style is to be applied to.
+     */
+    public field: Field;
+    
+    /**
+     * Returns a value of the TextItemType enum.
+     */
+    public itemType: TextItemType;
+    
+    /**
+     * Gets or sets color of the text.
+     */
+    public color: Colors;
+    
+    /**
+     * Gets or sets background pattern of the text style.
+     */
+    public backgroundPattern: BackgroundPattern;
+    
+    /**
+     * Gets or sets background color of the text style.
+     */
+    public backgroundColor: Colors;
+    
+    public constructor(init?: Partial<TableTextStyle>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Represents project task.
  */
 export class Task {
@@ -5732,6 +7343,34 @@ export enum TaskType {
     Undefined = 'Undefined' as any,
 }
 /**
+ * Item type to change a text style for.
+ */
+export enum TextItemType {
+    RowColumnTitles = 'RowColumnTitles' as any,
+    CriticalTasks = 'CriticalTasks' as any,
+    NoncriticalTasks = 'NoncriticalTasks' as any,
+    MilestoneTasks = 'MilestoneTasks' as any,
+    InactiveTasks = 'InactiveTasks' as any,
+    SummaryTasks = 'SummaryTasks' as any,
+    AssignmentRow = 'AssignmentRow' as any,
+    TopTimescaleTier = 'TopTimescaleTier' as any,
+    BottomTimescaleTier = 'BottomTimescaleTier' as any,
+    MiddleTimescaleTier = 'MiddleTimescaleTier' as any,
+    Resources = 'Resources' as any,
+    OverallocatedResources = 'OverallocatedResources' as any,
+    TaskFilterHighlight = 'TaskFilterHighlight' as any,
+    BarTextBottom = 'BarTextBottom' as any,
+    BarTextInside = 'BarTextInside' as any,
+    BarTextLeft = 'BarTextLeft' as any,
+    BarTextRight = 'BarTextRight' as any,
+    BarTextTop = 'BarTextTop' as any,
+    MarkedTasks = 'MarkedTasks' as any,
+    ProjectSummary = 'ProjectSummary' as any,
+    ExternalTasks = 'ExternalTasks' as any,
+    Allocated = 'Allocated' as any,
+    ChangedCells = 'ChangedCells' as any,
+}
+/**
  * Specifies the type of a time unit.
  */
 export enum TimeUnitType {
@@ -6253,6 +7892,98 @@ export class VbaReference {
     }        
 }
 
+/**
+ * Represents a view in Project
+ */
+export class View {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "showInMenu",
+            baseName: "showInMenu",
+            type: "boolean",
+        },        
+        {
+            name: "type",
+            baseName: "type",
+            type: "ItemType",
+        },        
+        {
+            name: "screen",
+            baseName: "screen",
+            type: "ViewScreen",
+        },        
+        {
+            name: "name",
+            baseName: "name",
+            type: "string",
+        },        
+        {
+            name: "uid",
+            baseName: "uid",
+            type: "number",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return View.attributeTypeMap;
+    }
+
+    /**
+     * Gets or sets a value indicating whether Microsoft Project shows the single view  name in the View or the Other Views drop-down lists in the Ribbon
+     */
+    public showInMenu: boolean;
+    
+    /**
+     * Gets the type of item in the single view, such as tasks or resources. Read-only.
+     */
+    public type: ItemType;
+    
+    /**
+     * Gets the screen type for the single view. Read-only.
+     */
+    public screen: ViewScreen;
+    
+    /**
+     * Gets or sets the name of a View object.
+     */
+    public name: string;
+    
+    /**
+     * Gets the unique identifier of a view.
+     */
+    public uid: number;
+    
+    public constructor(init?: Partial<View>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Specifies the screen type for a view.
+ */
+export enum ViewScreen {
+    Gantt = 'Gantt' as any,
+    NetworkDiagram = 'NetworkDiagram' as any,
+    RelationshipDiagram = 'RelationshipDiagram' as any,
+    TaskForm = 'TaskForm' as any,
+    TaskSheet = 'TaskSheet' as any,
+    ResourceForm = 'ResourceForm' as any,
+    ResourceSheet = 'ResourceSheet' as any,
+    ResourceGraph = 'ResourceGraph' as any,
+    TaskDetailsForm = 'TaskDetailsForm' as any,
+    TaskNameForm = 'TaskNameForm' as any,
+    ResourceNameForm = 'ResourceNameForm' as any,
+    Calendar = 'Calendar' as any,
+    TaskUsage = 'TaskUsage' as any,
+    ResourceUsage = 'ResourceUsage' as any,
+}
 export class WBSCodeMask {
 
     /**
@@ -7419,7 +9150,7 @@ export class ProjectIdsResponse extends AsposeResponse {
     }
 
     /**
-     * UIds of the projects
+     * UIds of the project
      */
     public projectIds: Array<string>;
     
@@ -7685,6 +9416,72 @@ export class ResourceResponse extends AsposeResponse {
     public resource: Resource;
     
     public constructor(init?: Partial<ResourceResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * TableTextStyle Response
+ */
+export class TableTextStyleResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "tableTextStyle",
+            baseName: "tableTextStyle",
+            type: "TableTextStyle",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(TableTextStyleResponse.attributeTypeMap);
+    }
+
+    /**
+     * Table text style of specified view
+     */
+    public tableTextStyle: TableTextStyle;
+    
+    public constructor(init?: Partial<TableTextStyleResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * TableTextStyles Response
+ */
+export class TableTextStylesResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "items",
+            baseName: "items",
+            type: "Array<TableTextStyle>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(TableTextStylesResponse.attributeTypeMap);
+    }
+
+    /**
+     * Array of table text styles of specified view
+     */
+    public items: Array<TableTextStyle>;
+    
+    public constructor(init?: Partial<TableTextStylesResponse>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -8017,6 +9814,39 @@ export class VbaProjectResponse extends AsposeResponse {
 }
 
 /**
+ * Views Response.
+ */
+export class ViewsResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "views",
+            baseName: "views",
+            type: "Array<View>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(ViewsResponse.attributeTypeMap);
+    }
+
+    /**
+     * Views of the project
+     */
+    public views: Array<View>;
+    
+    public constructor(init?: Partial<ViewsResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * WBSDefinition response
  */
 export class WBSDefinitionResponse extends AsposeResponse {
@@ -8050,11 +9880,13 @@ export class WBSDefinitionResponse extends AsposeResponse {
 }
 
 const enumsMap = {
+    "BackgroundPattern": BackgroundPattern,
     "BaselineType": BaselineType,
     "BookingType": BookingType,
     "CalculationMode": CalculationMode,
     "CalculationType": CalculationType,
     "CalendarExceptionType": CalendarExceptionType,
+    "Colors": Colors,
     "ConfidenceLevel": ConfidenceLevel,
     "ConstraintType": ConstraintType,
     "CostAccrualType": CostAccrualType,
@@ -8063,7 +9895,9 @@ const enumsMap = {
     "DayType": DayType,
     "EarnedValueMethodType": EarnedValueMethodType,
     "ElementType": ElementType,
+    "Field": Field,
     "ImportedProjectType": ImportedProjectType,
+    "ItemType": ItemType,
     "MaskType": MaskType,
     "Month": Month,
     "MonthItemType": MonthItemType,
@@ -8086,9 +9920,11 @@ const enumsMap = {
     "SummaryRowsCalculationType": SummaryRowsCalculationType,
     "TaskLinkType": TaskLinkType,
     "TaskType": TaskType,
+    "TextItemType": TextItemType,
     "TimeUnitType": TimeUnitType,
     "TimephasedDataType": TimephasedDataType,
     "Timescale": Timescale,
+    "ViewScreen": ViewScreen,
     "WBSSequence": WBSSequence,
     "WeekDayType": WeekDayType,
     "WorkContourType": WorkContourType,
@@ -8130,6 +9966,7 @@ const typeMap = {
             ResourceItem,
             StorageExist,
             StorageFile,
+            TableTextStyle,
             Task,
             TaskCreationRequest,
             TaskItem,
@@ -8140,6 +9977,7 @@ const typeMap = {
             VbaModuleAttribute,
             VbaProject,
             VbaReference,
+            View,
             WBSCodeMask,
             WBSDefinition,
             WeekDay,
@@ -8181,6 +10019,8 @@ const typeMap = {
             ResourceItems,
             ResourceItemsResponse,
             ResourceResponse,
+            TableTextStyleResponse,
+            TableTextStylesResponse,
             TaskBaseline,
             TaskItemResponse,
             TaskItems,
@@ -8190,6 +10030,7 @@ const typeMap = {
             TaskResponse,
             TimephasedDataResponse,
             VbaProjectResponse,
+            ViewsResponse,
             WBSDefinitionResponse,
 };
 
@@ -10987,6 +12828,220 @@ public folder: string;
 public storage: string;
     
     public constructor(init?: Partial<GetVbaProjectRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for createTableTextStyle operation.
+ */
+export class CreateTableTextStyleRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Uid of the view.
+     */
+public viewUid: number;
+
+    /**
+     * A DTO of TableTextStyle to create
+     */
+public tableTextStyle: TableTextStyle;
+
+    /**
+     * File name to save changes to.
+     */
+public fileName: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<CreateTableTextStyleRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for deleteTableTextStyle operation.
+ */
+export class DeleteTableTextStyleRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Uid of the view.
+     */
+public viewUid: number;
+
+    /**
+     * Uid of the row.
+     */
+public rowUid: number;
+
+    /**
+     * Specifies exact field of the row
+     */
+public field: Field;
+
+    /**
+     * File name to save changes to.
+     */
+public fileName: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<DeleteTableTextStyleRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getAllTableTextStyles operation.
+ */
+export class GetAllTableTextStylesRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Uid of the view.
+     */
+public viewUid: number;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetAllTableTextStylesRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getTableTextStyle operation.
+ */
+export class GetTableTextStyleRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Uid of the view.
+     */
+public viewUid: number;
+
+    /**
+     * Uid of the row.
+     */
+public rowUid: number;
+
+    /**
+     * Specifies exact field of the row
+     */
+public field: Field;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetTableTextStyleRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getViews operation.
+ */
+export class GetViewsRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetViewsRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for updateTableTextStyle operation.
+ */
+export class UpdateTableTextStyleRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Uid of the view.
+     */
+public viewUid: number;
+
+    /**
+     * A DTO of TableTextStyle to update
+     */
+public tableTextStyle: TableTextStyle;
+
+    /**
+     * File name to save changes to.
+     */
+public fileName: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<UpdateTableTextStyleRequest>) {        
         Object.assign(this, init);
     } 
 }

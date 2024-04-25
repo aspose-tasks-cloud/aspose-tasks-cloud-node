@@ -3574,6 +3574,280 @@ export class TasksApi {
 
 
     /**
+     * Create table text style in specified view.
+     * @param requestObj contains request parameters
+     */
+    public async createTableTextStyle(requestObj: model.CreateTableTextStyleRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling createTableTextStyle.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/views/{viewUid}/tabletextstyles"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "viewUid" + "}", String(requestObj.viewUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling createTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.viewUid' is not null or undefined
+        if (requestObj.viewUid === null || requestObj.viewUid === undefined) {
+            throw new Error('Required parameter "requestObj.viewUid" was null or undefined when calling createTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.tableTextStyle' is not null or undefined
+        if (requestObj.tableTextStyle === null || requestObj.tableTextStyle === undefined) {
+            throw new Error('Required parameter "requestObj.tableTextStyle" was null or undefined when calling createTableTextStyle.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.tableTextStyle) {
+            requestBody = ObjectSerializer.serialize(requestObj.tableTextStyle, requestObj.tableTextStyle.constructor.name === "Object" ? "TableTextStyle" : requestObj.tableTextStyle.constructor.name);
+        }
+
+        const requestOptions: request.Options = {
+            method: "POST",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Delete specified table text style from specified view.
+     * @param requestObj contains request parameters
+     */
+    public async deleteTableTextStyle(requestObj: model.DeleteTableTextStyleRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling deleteTableTextStyle.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/views/{viewUid}/tabletextstyles/{rowUid}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "viewUid" + "}", String(requestObj.viewUid))
+            .replace("{" + "rowUid" + "}", String(requestObj.rowUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling deleteTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.viewUid' is not null or undefined
+        if (requestObj.viewUid === null || requestObj.viewUid === undefined) {
+            throw new Error('Required parameter "requestObj.viewUid" was null or undefined when calling deleteTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.rowUid' is not null or undefined
+        if (requestObj.rowUid === null || requestObj.rowUid === undefined) {
+            throw new Error('Required parameter "requestObj.rowUid" was null or undefined when calling deleteTableTextStyle.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "field", requestObj.field);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: request.Options = {
+            method: "DELETE",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Read all table text styles from specified view.
+     * @param requestObj contains request parameters
+     */
+    public async getAllTableTextStyles(requestObj: model.GetAllTableTextStylesRequest): Promise<model.TasksIncomingMessage<model.TableTextStylesResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getAllTableTextStyles.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/views/{viewUid}/tabletextstyles"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "viewUid" + "}", String(requestObj.viewUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getAllTableTextStyles.');
+        }
+
+        // verify required parameter 'requestObj.viewUid' is not null or undefined
+        if (requestObj.viewUid === null || requestObj.viewUid === undefined) {
+            throw new Error('Required parameter "requestObj.viewUid" was null or undefined when calling getAllTableTextStyles.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: request.Options = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "TableTextStylesResponse");
+		const result: model.TasksIncomingMessage<model.TableTextStylesResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Read specified table text style from specified view.
+     * @param requestObj contains request parameters
+     */
+    public async getTableTextStyle(requestObj: model.GetTableTextStyleRequest): Promise<model.TasksIncomingMessage<model.TableTextStyleResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getTableTextStyle.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/views/{viewUid}/tabletextstyles/{rowUid}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "viewUid" + "}", String(requestObj.viewUid))
+            .replace("{" + "rowUid" + "}", String(requestObj.rowUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.viewUid' is not null or undefined
+        if (requestObj.viewUid === null || requestObj.viewUid === undefined) {
+            throw new Error('Required parameter "requestObj.viewUid" was null or undefined when calling getTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.rowUid' is not null or undefined
+        if (requestObj.rowUid === null || requestObj.rowUid === undefined) {
+            throw new Error('Required parameter "requestObj.rowUid" was null or undefined when calling getTableTextStyle.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "field", requestObj.field);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: request.Options = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "TableTextStyleResponse");
+		const result: model.TasksIncomingMessage<model.TableTextStyleResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Read all project views.
+     * @param requestObj contains request parameters
+     */
+    public async getViews(requestObj: model.GetViewsRequest): Promise<model.TasksIncomingMessage<model.ViewsResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getViews.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/views"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getViews.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: request.Options = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "ViewsResponse");
+		const result: model.TasksIncomingMessage<model.ViewsResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Update table text style in specified view.
+     * @param requestObj contains request parameters
+     */
+    public async updateTableTextStyle(requestObj: model.UpdateTableTextStyleRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling updateTableTextStyle.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/views/{viewUid}/tabletextstyles"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "viewUid" + "}", String(requestObj.viewUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling updateTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.viewUid' is not null or undefined
+        if (requestObj.viewUid === null || requestObj.viewUid === undefined) {
+            throw new Error('Required parameter "requestObj.viewUid" was null or undefined when calling updateTableTextStyle.');
+        }
+
+        // verify required parameter 'requestObj.tableTextStyle' is not null or undefined
+        if (requestObj.tableTextStyle === null || requestObj.tableTextStyle === undefined) {
+            throw new Error('Required parameter "requestObj.tableTextStyle" was null or undefined when calling updateTableTextStyle.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        let requestBody : any;
+        if(requestObj.tableTextStyle) {
+            requestBody = ObjectSerializer.serialize(requestObj.tableTextStyle, requestObj.tableTextStyle.constructor.name === "Object" ? "TableTextStyle" : requestObj.tableTextStyle.constructor.name);
+        }
+
+        const requestOptions: request.Options = {
+            method: "PUT",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+
+    /**
      * Get a project's WBS Definition.
      * @param requestObj contains request parameters
      */
