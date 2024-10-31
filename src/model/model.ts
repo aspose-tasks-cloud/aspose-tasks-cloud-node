@@ -283,6 +283,11 @@ export class Calendar {
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
+            name: "guid",
+            baseName: "guid",
+            type: "string",
+        },        
+        {
             name: "name",
             baseName: "name",
             type: "string",
@@ -320,6 +325,11 @@ export class Calendar {
         return Calendar.attributeTypeMap;
     }
 
+    /**
+     * Gets calendar's Guid.
+     */
+    public guid: string;
+    
     /**
      * The name of the calendar.
      */
@@ -3582,6 +3592,37 @@ export enum PresentationFormat {
     TaskSheet = 'TaskSheet' as any,
 }
 /**
+ * Specifies type of Primavera activity.
+ */
+export enum PrimaveraActivityType {
+    None = 'None' as any,
+    StartMilestone = 'StartMilestone' as any,
+    FinishMilestone = 'FinishMilestone' as any,
+    TaskDependent = 'TaskDependent' as any,
+    ResourceDependent = 'ResourceDependent' as any,
+    LevelOfEffort = 'LevelOfEffort' as any,
+    WbsSummary = 'WbsSummary' as any,
+}
+/**
+ * Specifies duration type of Primavera activity.
+ */
+export enum PrimaveraDurationType {
+    None = 'None' as any,
+    FixedDurationUnits = 'FixedDurationUnits' as any,
+    FixedDurationUnitsTime = 'FixedDurationUnitsTime' as any,
+    FixedUnits = 'FixedUnits' as any,
+    FixedUnitsTime = 'FixedUnitsTime' as any,
+}
+/**
+ * Specifies value of '% Complete Type' field for Primavera activities.
+ */
+export enum PrimaveraPercentCompleteType {
+    None = 'None' as any,
+    Duration = 'Duration' as any,
+    Physical = 'Physical' as any,
+    Units = 'Units' as any,
+}
+/**
  * Represents Primavera-specific properties for a task read from Primavera format (XER of P6XML).
  */
 export class PrimaveraTaskProperties {
@@ -3639,6 +3680,111 @@ export class PrimaveraTaskProperties {
             name: "rawStatus",
             baseName: "rawStatus",
             type: "string",
+        },        
+        {
+            name: "durationPercentComplete",
+            baseName: "durationPercentComplete",
+            type: "number",
+        },        
+        {
+            name: "physicalPercentComplete",
+            baseName: "physicalPercentComplete",
+            type: "number",
+        },        
+        {
+            name: "actualNonLaborUnits",
+            baseName: "actualNonLaborUnits",
+            type: "number",
+        },        
+        {
+            name: "actualLaborUnits",
+            baseName: "actualLaborUnits",
+            type: "number",
+        },        
+        {
+            name: "unitsPercentComplete",
+            baseName: "unitsPercentComplete",
+            type: "number",
+        },        
+        {
+            name: "remainingLaborUnits",
+            baseName: "remainingLaborUnits",
+            type: "number",
+        },        
+        {
+            name: "remainingNonLaborUnits",
+            baseName: "remainingNonLaborUnits",
+            type: "number",
+        },        
+        {
+            name: "durationType",
+            baseName: "durationType",
+            type: "PrimaveraDurationType",
+        },        
+        {
+            name: "activityType",
+            baseName: "activityType",
+            type: "PrimaveraActivityType",
+        },        
+        {
+            name: "percentCompleteType",
+            baseName: "percentCompleteType",
+            type: "PrimaveraPercentCompleteType",
+        },        
+        {
+            name: "actualLaborCost",
+            baseName: "actualLaborCost",
+            type: "number",
+        },        
+        {
+            name: "actualNonlaborCost",
+            baseName: "actualNonlaborCost",
+            type: "number",
+        },        
+        {
+            name: "actualMaterialCost",
+            baseName: "actualMaterialCost",
+            type: "number",
+        },        
+        {
+            name: "actualExpenseCost",
+            baseName: "actualExpenseCost",
+            type: "number",
+        },        
+        {
+            name: "remainingExpenseCost",
+            baseName: "remainingExpenseCost",
+            type: "number",
+        },        
+        {
+            name: "actualTotalCost",
+            baseName: "actualTotalCost",
+            type: "number",
+        },        
+        {
+            name: "budgetedTotalCost",
+            baseName: "budgetedTotalCost",
+            type: "number",
+        },        
+        {
+            name: "budgetedLaborCost",
+            baseName: "budgetedLaborCost",
+            type: "number",
+        },        
+        {
+            name: "budgetedNonlaborCost",
+            baseName: "budgetedNonlaborCost",
+            type: "number",
+        },        
+        {
+            name: "budgetedMaterialCost",
+            baseName: "budgetedMaterialCost",
+            type: "number",
+        },        
+        {
+            name: "budgetedExpenseCost",
+            baseName: "budgetedExpenseCost",
+            type: "number",
         }    ];
 
     /**
@@ -3697,6 +3843,111 @@ export class PrimaveraTaskProperties {
      * Raw text representation (as in source file) of 'Status' field of the activity.
      */
     public rawStatus: string;
+    
+    /**
+     * Gets the value of duration percent complete.
+     */
+    public durationPercentComplete: number;
+    
+    /**
+     * Gets the value of Physical Percent Complete.
+     */
+    public physicalPercentComplete: number;
+    
+    /**
+     * Gets the value of actual non labor units.
+     */
+    public actualNonLaborUnits: number;
+    
+    /**
+     * Gets the value of actual labor units.
+     */
+    public actualLaborUnits: number;
+    
+    /**
+     * Gets the value of units percent complete.
+     */
+    public unitsPercentComplete: number;
+    
+    /**
+     * Gets the value of remaining labor units.
+     */
+    public remainingLaborUnits: number;
+    
+    /**
+     * Gets the value of remaining non labor units.
+     */
+    public remainingNonLaborUnits: number;
+    
+    /**
+     * Gets the value of 'Duration Type' field of the activity.
+     */
+    public durationType: PrimaveraDurationType;
+    
+    /**
+     * Gets the value of 'Activity Type' field.
+     */
+    public activityType: PrimaveraActivityType;
+    
+    /**
+     * Gets the value of '% Complete Type' field of the activity.
+     */
+    public percentCompleteType: PrimaveraPercentCompleteType;
+    
+    /**
+     * Gets the value of actual labor cost.
+     */
+    public actualLaborCost: number;
+    
+    /**
+     * Gets the value of actual non labor cost.
+     */
+    public actualNonlaborCost: number;
+    
+    /**
+     * Gets the value of actual material cost.             
+     */
+    public actualMaterialCost: number;
+    
+    /**
+     * Gets the value of actual expense cost.
+     */
+    public actualExpenseCost: number;
+    
+    /**
+     * Gets the value of remaining expense cost.
+     */
+    public remainingExpenseCost: number;
+    
+    /**
+     * Gets the total value of actual costs.
+     */
+    public actualTotalCost: number;
+    
+    /**
+     * Gets the total value of budgeted (or planned) costs.
+     */
+    public budgetedTotalCost: number;
+    
+    /**
+     * Gets the value of budgeted (or planned) labor cost.
+     */
+    public budgetedLaborCost: number;
+    
+    /**
+     * Gets the value of budgeted (or planned) non labor cost.
+     */
+    public budgetedNonlaborCost: number;
+    
+    /**
+     * Gets the value of of budgeted (or planned) material cost.
+     */
+    public budgetedMaterialCost: number;
+    
+    /**
+     * Gets the value of budgeted (or planned) expense cost.
+     */
+    public budgetedExpenseCost: number;
     
     public constructor(init?: Partial<PrimaveraTaskProperties>) {
         
@@ -7950,7 +8201,7 @@ export class View {
     public screen: ViewScreen;
     
     /**
-     * Gets or sets the name of a View object.
+     * Gets or sets the name of a view object.
      */
     public name: string;
     
@@ -9906,6 +10157,9 @@ const enumsMap = {
     "OutlineValueType": OutlineValueType,
     "PageSize": PageSize,
     "PresentationFormat": PresentationFormat,
+    "PrimaveraActivityType": PrimaveraActivityType,
+    "PrimaveraDurationType": PrimaveraDurationType,
+    "PrimaveraPercentCompleteType": PrimaveraPercentCompleteType,
     "ProbabilityDistributionType": ProbabilityDistributionType,
     "ProjectDatabaseType": ProjectDatabaseType,
     "ProjectFileFormat": ProjectFileFormat,

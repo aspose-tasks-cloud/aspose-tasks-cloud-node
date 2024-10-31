@@ -33,6 +33,8 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/t
 ## Save Project Data As
 XER, XLSX, HTML, XML, TXT, TIF, SVG, PNG, JPEG
 
+## Enhancements in Version 24.10
+- Enhanced reading data from Primavera-specific task's properties.
 
 ## Enhancements in Version 24.4
 - Added new ability to get views information

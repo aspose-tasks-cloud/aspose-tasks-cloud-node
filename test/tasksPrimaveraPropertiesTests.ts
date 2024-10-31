@@ -24,7 +24,7 @@
 
 import { expect } from "chai";
 import "mocha";
-import { GetPrimaveraTaskPropertiesRequest } from "../src";
+import { GetPrimaveraTaskPropertiesRequest, PrimaveraActivityType, PrimaveraDurationType, PrimaveraPercentCompleteType } from "../src";
 
 import * as BaseTest from "./baseTest";
 
@@ -59,5 +59,8 @@ describe("getPrimaveraTaskProperties function", () => {
         expect(result.body.primaveraProperties.rawActivityType).to.equal("Task Dependent");
         expect(result.body.primaveraProperties.rawCompletePercentType).to.equal("Units");
         expect(result.body.primaveraProperties.rawStatus).to.equal("Not Started");
+        expect(result.body.primaveraProperties.durationType).to.eql(PrimaveraDurationType.FixedUnits); 
+        expect(result.body.primaveraProperties.activityType).to.eql(PrimaveraActivityType.TaskDependent); 
+        expect(result.body.primaveraProperties.percentCompleteType).to.eql(PrimaveraPercentCompleteType.Units);
     });
 });

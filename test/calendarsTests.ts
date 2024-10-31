@@ -69,6 +69,7 @@ describe("getCalendar function", () => {
         const result = await tasksApi.getCalendar(request);    
 
         expect(result.response.statusCode).to.equal(200);
+        expect(result.body.calendar.guid).to.equal("3F979F74-B9D3-4E5F-98DC-5E08060A0C30"); 
         expect(result.body.calendar.name).to.equal("Standard"); 
         expect(result.body.calendar.uid).to.equal(1);   
         expect(result.body.calendar.isBaseCalendar).is.true  
