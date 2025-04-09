@@ -117,6 +117,7 @@ describe("putTaskLinks function", () => {
         expect(getResult.body.taskLinks[0].linkType).to.equal(TaskLinkType.StartToFinish);
         expect(getResult.body.taskLinks[0].lag).to.equal(9600);
         expect(getResult.body.taskLinks[0].lagFormat).to.equal(TimeUnitType.Day);
+        expect(getResult.body.taskLinks[0].linkLagTimeSpan).to.equal("16:00:00");
     });
 });
 

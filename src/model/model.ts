@@ -4104,6 +4104,11 @@ export class ProjectRecalculationResult {
             name: "validationErrorMessage",
             baseName: "validationErrorMessage",
             type: "string",
+        },        
+        {
+            name: "failedTaskUid",
+            baseName: "failedTaskUid",
+            type: "number",
         }    ];
 
     /**
@@ -4116,6 +4121,11 @@ export class ProjectRecalculationResult {
     public validationState: ProjectValidationState;
     
     public validationErrorMessage: string;
+    
+    /**
+     * Gets the task uid which caused the validation error.
+     */
+    public failedTaskUid: number;
     
     public constructor(init?: Partial<ProjectRecalculationResult>) {
         
@@ -6375,6 +6385,11 @@ export class Task {
             type: "number",
         },        
         {
+            name: "outlineNumber",
+            baseName: "outlineNumber",
+            type: "string",
+        },        
+        {
             name: "cv",
             baseName: "cv",
             type: "number",
@@ -6818,6 +6833,11 @@ export class Task {
             name: "activityId",
             baseName: "activityId",
             type: "string",
+        },        
+        {
+            name: "externalUid",
+            baseName: "externalUid",
+            type: "number",
         }    ];
 
     /**
@@ -6956,6 +6976,11 @@ export class Task {
      * The projected or scheduled cost of a task.
      */
     public cost: number;
+    
+    /**
+     * Gets or sets a value of OutlineNumber.
+     */
+    public outlineNumber: string;
     
     /**
      * The difference between the baseline cost and total cost for a task.
@@ -7375,6 +7400,11 @@ export class Task {
      */
     public activityId: string;
     
+    /**
+     * Contains the external task's Unique identifier when the task is external.
+     */
+    public externalUid: number;
+    
     public constructor(init?: Partial<Task>) {
         
         Object.assign(this, init);
@@ -7546,6 +7576,11 @@ export class TaskLink {
             name: "lagFormat",
             baseName: "lagFormat",
             type: "TimeUnitType",
+        },        
+        {
+            name: "linkLagTimeSpan",
+            baseName: "linkLagTimeSpan",
+            type: "string",
         }    ];
 
     /**
@@ -7568,6 +7603,11 @@ export class TaskLink {
     public lag: number;
     
     public lagFormat: TimeUnitType;
+    
+    /**
+     * Gets or sets lag duration, depending on LagFormat.
+     */
+    public linkLagTimeSpan: string;
     
     public constructor(init?: Partial<TaskLink>) {
         
