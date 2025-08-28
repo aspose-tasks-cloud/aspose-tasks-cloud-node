@@ -2874,6 +2874,74 @@ export enum ItemType {
     ResourceItem = 'ResourceItem' as any,
     OtherItem = 'OtherItem' as any,
 }
+export class LevelingOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "startDate",
+            baseName: "startDate",
+            type: "Date",
+        },        
+        {
+            name: "finishDate",
+            baseName: "finishDate",
+            type: "Date",
+        },        
+        {
+            name: "resourceUids",
+            baseName: "resourceUids",
+            type: "Array<number>",
+        },        
+        {
+            name: "levelingOrder",
+            baseName: "levelingOrder",
+            type: "LevelingOrder",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return LevelingOptions.attributeTypeMap;
+    }
+
+    /**
+     * Leveling period start date. The default value is the project`s start date.
+     */
+    public startDate: Date;
+    
+    /**
+     * Leveling period end date. The default value is the project`s finish date.
+     */
+    public finishDate: Date;
+    
+    /**
+     * The list of the resource uids which will be leveled. If null is set,  all project resources will be leveled.
+     */
+    public resourceUids: Array<number>;
+    
+    /**
+     * The order in which the leveling algorithm delays tasks that have overallocations. After determination of tasks causing the overallocation and which tasks can be delayed, the specified order is used which task should be delayed first.
+     */
+    public levelingOrder: LevelingOrder;
+    
+    public constructor(init?: Partial<LevelingOptions>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Defines the possible values of leveling order.
+ */
+export enum LevelingOrder {
+    Standard = 'Standard' as any,
+    IdOnly = 'IdOnly' as any,
+    PriorityThenStandard = 'PriorityThenStandard' as any,
+}
 /**
  * Provides information for the object link. This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7
  */
@@ -9268,6 +9336,39 @@ export class FileVersion extends StorageFile {
     }        
 }
 
+/**
+ * Represents the results of resource leveling.
+ */
+export class LevelingResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "affectedTaskUids",
+            baseName: "affectedTaskUids",
+            type: "Array<number>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(LevelingResponse.attributeTypeMap);
+    }
+
+    /**
+     * Gets a set of task uids affected by resource leveling.
+     */
+    public affectedTaskUids: Array<number>;
+    
+    public constructor(init?: Partial<LevelingResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
 export class OutlineCodeItems extends LinkElement {
 
     /**
@@ -10189,6 +10290,7 @@ const enumsMap = {
     "Field": Field,
     "ImportedProjectType": ImportedProjectType,
     "ItemType": ItemType,
+    "LevelingOrder": LevelingOrder,
     "MaskType": MaskType,
     "Month": Month,
     "MonthItemType": MonthItemType,
@@ -10241,6 +10343,7 @@ const typeMap = {
             FileVersions,
             FilesList,
             FilesUploadResult,
+            LevelingOptions,
             Link,
             LinkElement,
             ModelError,
@@ -10298,6 +10401,7 @@ const typeMap = {
             ExtendedAttributeItemsResponse,
             ExtendedAttributeResponse,
             FileVersion,
+            LevelingResponse,
             OutlineCodeItems,
             OutlineCodeItemsResponse,
             OutlineCodeResponse,
@@ -12154,6 +12258,74 @@ public storage: string;
 public folder: string;
     
     public constructor(init?: Partial<GetReportPdfRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for clearLeveling operation.
+ */
+export class ClearLevelingRequest {
+    /**
+     * The name of the file
+     */
+public name: string;
+
+    /**
+     * The array containing task uids              for which leveling delay should be cleared.              If not specified, all leveling delays will be cleared. 
+     */
+public taskUids: Array<number>;
+
+    /**
+     * The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
+     */
+public fileName: string;
+
+    /**
+     * The folder storage
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<ClearLevelingRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for levelTasks operation.
+ */
+export class LevelTasksRequest {
+    /**
+     * The name of the file
+     */
+public name: string;
+
+    /**
+     * Options which specifies how to level resources.              If not specified, default leveling options will be used. 
+     */
+public options: LevelingOptions;
+
+    /**
+     * The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
+     */
+public fileName: string;
+
+    /**
+     * The folder storage
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<LevelTasksRequest>) {        
         Object.assign(this, init);
     } 
 }

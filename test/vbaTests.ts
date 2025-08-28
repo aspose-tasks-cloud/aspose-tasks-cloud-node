@@ -48,8 +48,8 @@ describe("getVbaProject function", () => {
         expect(result.response.statusCode).to.equal(200);
         expect(result.body.vbaProject).is.not.undefined.and.not.null;
         expect(result.body.vbaProject.modules).is.not.undefined.and.not.null;
-        expect(result.body.vbaProject.modules.length).to.equal(7);
-        expect(result.body.vbaProject.modules[0].name).to.equal("Module1");
-        expect(result.body.vbaProject.modules[0].sourceCode).to.satisfy(c => c.startsWith("Type MEMORYSTATUS"));
+        expect(result.body.vbaProject.modules.length).to.equal(8);
+        expect(result.body.vbaProject.modules[1].name).to.equal("Module1");
+        expect(result.body.vbaProject.modules[1].sourceCode).to.satisfy(c => c.startsWith("Type MEMORYSTATUS"));
     });
 });

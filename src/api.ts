@@ -2402,6 +2402,89 @@ export class TasksApi {
 
 
     /**
+     * Clears leveling delays that was previously added to the project during resource leveling.  If request body is empty, all leveling delays will be cleared.
+     * @param requestObj contains request parameters
+     */
+    public async clearLeveling(requestObj: model.ClearLevelingRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling clearLeveling.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/resourceLevel"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling clearLeveling.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        let requestBody : any;
+        if(requestObj.taskUids) {
+            requestBody = ObjectSerializer.serialize(requestObj.taskUids, requestObj.taskUids.constructor.name === "Object" ? "Array<number>" : requestObj.taskUids.constructor.name);
+        }
+
+        const requestOptions: request.Options = {
+            method: "DELETE",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Levels tasks for project’s resources. If request body is empty,  all project's resources with default leveling options will be leveled.
+     * @param requestObj contains request parameters
+     */
+    public async levelTasks(requestObj: model.LevelTasksRequest): Promise<model.TasksIncomingMessage<model.LevelingResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling levelTasks.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/resourceLevel"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling levelTasks.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        let requestBody : any;
+        if(requestObj.options) {
+            requestBody = ObjectSerializer.serialize(requestObj.options, requestObj.options.constructor.name === "Object" ? "LevelingOptions" : requestObj.options.constructor.name);
+        }
+
+        const requestOptions: request.Options = {
+            method: "PUT",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "LevelingResponse");
+		const result: model.TasksIncomingMessage<model.LevelingResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+
+    /**
      * Deletes a project resource with all references to it
      * @param requestObj contains request parameters
      */
