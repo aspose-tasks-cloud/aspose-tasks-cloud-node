@@ -3672,6 +3672,21 @@ export enum PrimaveraActivityType {
     WbsSummary = 'WbsSummary' as any,
 }
 /**
+ * Specifies a type of activity's constraint.
+ */
+export enum PrimaveraConstraintType {
+    None = 'None' as any,
+    FinishOn = 'FinishOn' as any,
+    FinishOnOrAfter = 'FinishOnOrAfter' as any,
+    FinishOnOrBefore = 'FinishOnOrBefore' as any,
+    MandatoryFinish = 'MandatoryFinish' as any,
+    MandatoryStart = 'MandatoryStart' as any,
+    StartOn = 'StartOn' as any,
+    StartOnOrAfter = 'StartOnOrAfter' as any,
+    StartOnOrBefore = 'StartOnOrBefore' as any,
+    AsLateAsPossible = 'AsLateAsPossible' as any,
+}
+/**
  * Specifies duration type of Primavera activity.
  */
 export enum PrimaveraDurationType {
@@ -3853,6 +3868,26 @@ export class PrimaveraTaskProperties {
             name: "budgetedExpenseCost",
             baseName: "budgetedExpenseCost",
             type: "number",
+        },        
+        {
+            name: "primaryConstraintType",
+            baseName: "primaryConstraintType",
+            type: "PrimaveraConstraintType",
+        },        
+        {
+            name: "primaryConstraintDate",
+            baseName: "primaryConstraintDate",
+            type: "Date",
+        },        
+        {
+            name: "secondaryConstraintType",
+            baseName: "secondaryConstraintType",
+            type: "PrimaveraConstraintType",
+        },        
+        {
+            name: "secondaryConstraintDate",
+            baseName: "secondaryConstraintDate",
+            type: "Date",
         }    ];
 
     /**
@@ -4016,6 +4051,26 @@ export class PrimaveraTaskProperties {
      * Gets the value of budgeted (or planned) expense cost.
      */
     public budgetedExpenseCost: number;
+    
+    /**
+     * Gets a type of primary constraint.
+     */
+    public primaryConstraintType: PrimaveraConstraintType;
+    
+    /**
+     * Gets the date of primary constraint.
+     */
+    public primaryConstraintDate: Date;
+    
+    /**
+     * Gets a type of secondary constraint.
+     */
+    public secondaryConstraintType: PrimaveraConstraintType;
+    
+    /**
+     * Gets the date of secondary constraint.
+     */
+    public secondaryConstraintDate: Date;
     
     public constructor(init?: Partial<PrimaveraTaskProperties>) {
         
@@ -10300,6 +10355,7 @@ const enumsMap = {
     "PageSize": PageSize,
     "PresentationFormat": PresentationFormat,
     "PrimaveraActivityType": PrimaveraActivityType,
+    "PrimaveraConstraintType": PrimaveraConstraintType,
     "PrimaveraDurationType": PrimaveraDurationType,
     "PrimaveraPercentCompleteType": PrimaveraPercentCompleteType,
     "ProbabilityDistributionType": ProbabilityDistributionType,
