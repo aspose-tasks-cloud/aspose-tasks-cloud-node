@@ -23,7 +23,6 @@
 */
 
 import http = require("http");
-import request = require("request");
 
 import { Configuration } from "./internal/configuration";
 import { ObjectSerializer } from "./internal/objectSerializer";
@@ -78,7 +77,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -110,7 +109,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -142,7 +141,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -183,7 +182,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -223,7 +222,7 @@ export class TasksApi {
             formParams.File = requestObj.file;
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -265,7 +264,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -296,7 +295,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -328,7 +327,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "recursive", requestObj.recursive);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -359,7 +358,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -399,7 +398,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -425,7 +424,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -458,7 +457,7 @@ export class TasksApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -492,7 +491,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -524,7 +523,7 @@ export class TasksApi {
         }
         
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -566,7 +565,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -606,7 +605,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -649,7 +648,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -683,7 +682,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -732,7 +731,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -785,7 +784,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.assignment, requestObj.assignment.constructor.name === "Object" ? "ResourceAssignment" : requestObj.assignment.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -828,7 +827,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -875,7 +874,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -915,7 +914,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -955,7 +954,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -995,7 +994,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1029,7 +1028,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1074,7 +1073,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.calendar, requestObj.calendar.constructor.name === "Object" ? "Calendar" : requestObj.calendar.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -1126,7 +1125,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.calendarException, requestObj.calendarException.constructor.name === "Object" ? "CalendarException" : requestObj.calendarException.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -1178,7 +1177,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.calendar, requestObj.calendar.constructor.name === "Object" ? "Calendar" : requestObj.calendar.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -1236,7 +1235,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.calendarException, requestObj.calendarException.constructor.name === "Object" ? "CalendarException" : requestObj.calendarException.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -1272,7 +1271,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1312,7 +1311,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1346,7 +1345,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1380,7 +1379,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1421,7 +1420,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1479,7 +1478,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.connectionString, requestObj.connectionString.constructor.name === "Object" ? "string" : requestObj.connectionString.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -1528,7 +1527,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "outputFileFormat", requestObj.outputFileFormat);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -1583,7 +1582,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.guid, requestObj.guid.constructor.name === "Object" ? "string" : requestObj.guid.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             headers: headerParams,
@@ -1620,7 +1619,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1660,7 +1659,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1711,7 +1710,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.property, requestObj.property.constructor.name === "Object" ? "DocumentProperty" : requestObj.property.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -1763,7 +1762,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.property, requestObj.property.constructor.name === "Object" ? "DocumentProperty" : requestObj.property.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -1805,7 +1804,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -1845,7 +1844,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1879,7 +1878,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -1924,7 +1923,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.extendedAttribute, requestObj.extendedAttribute.constructor.name === "Object" ? "ExtendedAttributeDefinition" : requestObj.extendedAttribute.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -1966,7 +1965,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -2006,7 +2005,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2040,7 +2039,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2090,7 +2089,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.saveOptions, requestObj.saveOptions.constructor.name === "Object" ? "ProjectServerSaveOptionsDTO" : requestObj.saveOptions.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             headers: headerParams,
@@ -2128,7 +2127,7 @@ export class TasksApi {
         headerParams["x-project-online-token"] = ObjectSerializer.serialize(requestObj.xProjectOnlineToken, "string");
         headerParams["x-sharepoint-password"] = ObjectSerializer.serialize(requestObj.xSharepointPassword, "string");
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             headers: headerParams,
@@ -2178,7 +2177,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.saveOptions, requestObj.saveOptions.constructor.name === "Object" ? "ProjectServerSaveOptionsDTO" : requestObj.saveOptions.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             headers: headerParams,
@@ -2218,7 +2217,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -2253,7 +2252,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -2298,7 +2297,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.after, requestObj.after.constructor.name === "Object" ? "Date" : requestObj.after.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -2345,7 +2344,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.completeThrough, requestObj.completeThrough.constructor.name === "Object" ? "Date" : requestObj.completeThrough.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -2387,7 +2386,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2428,7 +2427,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.taskUids, requestObj.taskUids.constructor.name === "Object" ? "Array<number>" : requestObj.taskUids.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -2469,7 +2468,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.options, requestObj.options.constructor.name === "Object" ? "LevelingOptions" : requestObj.options.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -2512,7 +2511,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -2552,7 +2551,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2592,7 +2591,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2635,7 +2634,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2669,7 +2668,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2706,7 +2705,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -2759,7 +2758,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.resource, requestObj.resource.constructor.name === "Object" ? "Resource" : requestObj.resource.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -2807,7 +2806,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2849,7 +2848,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -2889,7 +2888,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2929,7 +2928,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -2969,7 +2968,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3009,7 +3008,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3052,7 +3051,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3086,7 +3085,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3123,7 +3122,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -3186,7 +3185,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.recurringInfo, requestObj.recurringInfo.constructor.name === "Object" ? "RecurringInfo" : requestObj.recurringInfo.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -3232,7 +3231,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.requests, requestObj.requests.constructor.name === "Object" ? "Array<TaskCreationRequest>" : requestObj.requests.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -3280,7 +3279,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -3327,7 +3326,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -3380,7 +3379,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.task, requestObj.task.constructor.name === "Object" ? "Task" : requestObj.task.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -3432,7 +3431,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.recurringInfo, requestObj.recurringInfo.constructor.name === "Object" ? "RecurringInfo" : requestObj.recurringInfo.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -3475,7 +3474,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -3509,7 +3508,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3554,7 +3553,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.taskLink, requestObj.taskLink.constructor.name === "Object" ? "TaskLink" : requestObj.taskLink.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -3606,7 +3605,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.taskLink, requestObj.taskLink.constructor.name === "Object" ? "TaskLink" : requestObj.taskLink.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -3642,7 +3641,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3694,7 +3693,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.tableTextStyle, requestObj.tableTextStyle.constructor.name === "Object" ? "TableTextStyle" : requestObj.tableTextStyle.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,
@@ -3743,7 +3742,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "DELETE",
             qs: queryParameters,
             uri: localVarPath,
@@ -3783,7 +3782,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3830,7 +3829,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3864,7 +3863,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3915,7 +3914,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.tableTextStyle, requestObj.tableTextStyle.constructor.name === "Object" ? "TableTextStyle" : requestObj.tableTextStyle.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -3951,7 +3950,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "GET",
             qs: queryParameters,
             uri: localVarPath,
@@ -3996,7 +3995,7 @@ export class TasksApi {
             requestBody = ObjectSerializer.serialize(requestObj.taskUids, requestObj.taskUids.constructor.name === "Object" ? "Array<number>" : requestObj.taskUids.constructor.name);
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
@@ -4042,7 +4041,7 @@ export class TasksApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "returnAsZipArchive", requestObj.returnAsZipArchive);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             qs: queryParameters,
             uri: localVarPath,

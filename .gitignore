@@ -3,3 +3,4 @@
 *.js.map
 node_modules
 typings
+dist

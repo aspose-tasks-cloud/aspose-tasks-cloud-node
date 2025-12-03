@@ -53,16 +53,17 @@ export function getTimeOnly(arg :Date): Date {
     return new Date(0, 0, 0, arg.getHours(), arg.getMinutes(), arg.getSeconds());
 }
 
-export function convertArrayBufferToStrings(buffer: ArrayBuffer): string[] {
-    const uintArray = new Uint8Array(buffer);
+export function convertArrayBufferToStrings(buffer: ArrayBufferLike): string[] {
+    const uintArray = buffer instanceof Uint8Array
+        ? buffer
+        : new Uint8Array(buffer as ArrayBuffer);
     const string = String.fromCharCode.apply(this, uintArray);
-    if(string.indexOf("\r\n") >= 0)
-    {        
+    if (string.indexOf("\r\n") >= 0) {
         return string.split("\r\n");
     } else {
         return string.split("\n");
     }
-  }
+}
 
 /**
  * TasksApi class with simplified file uploading

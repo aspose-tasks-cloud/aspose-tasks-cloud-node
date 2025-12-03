@@ -22,7 +22,6 @@
 * SOFTWARE.
 */
 
-import request = require("request");
 import { Configuration } from "./configuration";
 import { invokeApiMethod } from "./requestHelper";
 
@@ -33,24 +32,25 @@ export interface IAuthentication {
     /**
      * Apply authentication settings to header and query params.
      */
-    applyToRequest(requestOptions: request.Options, configuration: Configuration): void;
+    applyToRequest(requestOptions: any, configuration: Configuration): Promise<void> | void;
 
     /**
      * Handle 401 response.
      */
-    handle401response(configuration: Configuration);
+    handle401response(configuration: Configuration): Promise<void> | void;
 }
 
 /**
  * Implements OAuth authentication 
  */
 export class OAuth implements IAuthentication {
-    private accessToken: string;
+    private accessToken: string | null = null;
 
-     /**
-      * Apply authentication settings to header and query params.
-      */
-    public async applyToRequest(requestOptions: request.Options, configuration: Configuration): Promise<void> {
+    /**
+     * Apply authentication settings to header and query params.
+     * If token is not available, requests a new one.
+     */
+    public async applyToRequest(requestOptions: any, configuration: Configuration): Promise<void> {
         if (this.accessToken == null) {
             await this._requestToken(configuration);
         }
@@ -58,7 +58,7 @@ export class OAuth implements IAuthentication {
         if (requestOptions) {
             if (!requestOptions.headers) {
                 requestOptions.headers = {};
-            } 
+            }
             requestOptions.headers.Authorization = "Bearer " + this.accessToken;
         }
 
@@ -66,9 +66,9 @@ export class OAuth implements IAuthentication {
     }
 
     /**
-     * Handle 401 response.
+     * Handle 401 response by requesting a new token.
      */
-    public async handle401response(configuration: Configuration) {
+    public async handle401response(configuration: Configuration): Promise<void> {
         await this._requestToken(configuration);
     }
 
@@ -76,11 +76,11 @@ export class OAuth implements IAuthentication {
         let uri: string;
         if (configuration.authUrl) {
             uri = configuration.authUrl;
-        } else {            
+        } else {
             uri = configuration.baseUrl + "/connect/token";
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: any = {
             method: "POST",
             json: true,
             uri,
@@ -92,7 +92,20 @@ export class OAuth implements IAuthentication {
         };
 
         const response = await invokeApiMethod(requestOptions, configuration, true);
-        this.accessToken = response.body.access_token;
+        let body = response && response.body;
+
+        if (body && Buffer.isBuffer(body)) {
+            try {
+                body = JSON.parse(body.toString("utf8"));
+            } catch {
+            }
+        }
+
+        if (!body || !body.access_token) {
+            throw new Error("Failed to obtain access token from auth server.");
+        }
+
+        this.accessToken = body.access_token;
         return Promise.resolve();
     }
 }
