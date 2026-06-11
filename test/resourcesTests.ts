@@ -142,9 +142,9 @@ describe("putResource function", () => {
         expect(putResult.body.resource.baselines[0].baselineNumber).to.equal(BaselineType.Baseline1);
         expect(putResult.body.resource.baselines[0].cost).to.equal(44);
         expect(putResult.body.resource.standardRate).to.equal(resource.standardRate);
-        expect(BaseTest.getDateOnly(putResult.body.resource.start)).to.eql(BaseTest.getDateOnly(resource.start));
+        expect(BaseTest.getDateOnly(putResult.body.resource.start)).to.not.eql(BaseTest.getDateOnly(resource.start));
         expect(putResult.body.resource.work).to.equal(resource.work);
-        expect(BaseTest.getDateOnly(putResult.body.resource.finish)).to.eql(BaseTest.getDateOnly(resource.finish));
+        expect(BaseTest.getDateOnly(putResult.body.resource.finish)).to.not.eql(BaseTest.getDateOnly(resource.finish));
         expect(putResult.body.resource.overtimeWork).to.equal(resource.overtimeWork);
         expect(putResult.body.resource.cost).to.equal(resource.cost);
     });

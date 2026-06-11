@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 
-import http = require("http");
+import * as http from 'http';
 
 import { Configuration } from "./internal/configuration";
 import { ObjectSerializer } from "./internal/objectSerializer";

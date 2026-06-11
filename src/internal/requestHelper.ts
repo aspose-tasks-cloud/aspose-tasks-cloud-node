@@ -20,7 +20,7 @@
  */
 
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import * as FormData from "form-data";
+import FormData = require("form-data");
 import * as querystring from "querystring";
 import * as https from "https";
 import { URL } from "url";
@@ -105,7 +105,7 @@ async function invokeApiMethodInternal(requestOptions: any, configuration: Confi
     const defaultHeaders: any = {
         "User-Agent": "tasks nodejs sdk",
         "x-aspose-client": "nodejs sdk",
-        "x-aspose-client-version": "25.12",
+        "x-aspose-client-version": "26.6",
     };
 
     axiosConfig.headers = Object.assign({}, defaultHeaders, requestOptions.headers || {});

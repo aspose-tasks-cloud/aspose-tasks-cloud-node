@@ -22,8 +22,6 @@
 * SOFTWARE.
 */
 
-import "mocha";
-
 import { fail } from "assert";
 import * as fs from "fs";
 import { initializeTasksApi } from "./baseTest";

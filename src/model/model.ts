@@ -5145,12 +5145,12 @@ export class Resource {
     public availableTo: Date;
     
     /**
-     * The scheduled start date of a resource.
+     * The scheduled start date of a resource. This property is calculated on demand and cannot be set directly.
      */
     public start: Date;
     
     /**
-     * The scheduled finish date of a resource.
+     * The scheduled finish date of a resource. This property is calculated on demand and cannot be set directly.
      */
     public finish: Date;
     
@@ -7627,6 +7627,11 @@ export class TaskItem {
             name: "duration",
             baseName: "duration",
             type: "string",
+        },        
+        {
+            name: "activityId",
+            baseName: "activityId",
+            type: "string",
         }    ];
 
     /**
@@ -7652,6 +7657,11 @@ export class TaskItem {
      * The duration of a task.
      */
     public duration: string;
+    
+    /**
+     * Represents activity id field - a task's unique identifier used by Primavera.     (only applicable to Primavera projects)
+     */
+    public activityId: string;
     
     public constructor(init?: Partial<TaskItem>) {
         

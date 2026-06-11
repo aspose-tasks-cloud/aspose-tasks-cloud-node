@@ -24,7 +24,7 @@
 
 import { TasksApi } from "../src/api";
 import { FilesUploadResult, UploadFileRequest, TasksIncomingMessage } from "../src/model/model";
-import fs = require('fs');
+import * as fs from 'fs';
 
 let apiInstance : TestTasksApi;
 const uploadedFiles = new Set<string>();

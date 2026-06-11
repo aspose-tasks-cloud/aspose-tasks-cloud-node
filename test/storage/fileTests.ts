@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 
-import fs = require("fs");
+import * as fs from 'fs';
 import "mocha";
 
 import { expect } from "chai";

@@ -5,7 +5,6 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "target": "ES6",
-        "moduleResolution": "node",
         "skipLibCheck": true,
         "strict": false,
         "removeComments": false,
