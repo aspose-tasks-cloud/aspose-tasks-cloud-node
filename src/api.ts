@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 
-import * as http from 'http';
+import http = require("http");
 
 import { Configuration } from "./internal/configuration";
 import { ObjectSerializer } from "./internal/objectSerializer";
@@ -1934,6 +1934,235 @@ export class TasksApi {
         const response = await invokeApiMethod(requestOptions, this.configuration);
         const body =  ObjectSerializer.deserialize(response.body, "ExtendedAttributeItemResponse");
 		const result: model.TasksIncomingMessage<model.ExtendedAttributeItemResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+
+    /**
+     * Returns the project resources grouped according to the specified resource group definition.
+     * @param requestObj contains request parameters
+     */
+    public async getGroupedResources(requestObj: model.GetGroupedResourcesRequest): Promise<model.TasksIncomingMessage<model.GroupedResourcesResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getGroupedResources.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/resourceGroups/{groupUid}/resources"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "groupUid" + "}", String(requestObj.groupUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getGroupedResources.');
+        }
+
+        // verify required parameter 'requestObj.groupUid' is not null or undefined
+        if (requestObj.groupUid === null || requestObj.groupUid === undefined) {
+            throw new Error('Required parameter "requestObj.groupUid" was null or undefined when calling getGroupedResources.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: any = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "GroupedResourcesResponse");
+		const result: model.TasksIncomingMessage<model.GroupedResourcesResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Returns the project tasks grouped according to the specified task group definition.
+     * @param requestObj contains request parameters
+     */
+    public async getGroupedTasks(requestObj: model.GetGroupedTasksRequest): Promise<model.TasksIncomingMessage<model.GroupedTasksResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getGroupedTasks.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/taskGroups/{groupUid}/tasks"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "groupUid" + "}", String(requestObj.groupUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getGroupedTasks.');
+        }
+
+        // verify required parameter 'requestObj.groupUid' is not null or undefined
+        if (requestObj.groupUid === null || requestObj.groupUid === undefined) {
+            throw new Error('Required parameter "requestObj.groupUid" was null or undefined when calling getGroupedTasks.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: any = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "GroupedTasksResponse");
+		const result: model.TasksIncomingMessage<model.GroupedTasksResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Read a project's resource group definition with the specified Uid.
+     * @param requestObj contains request parameters
+     */
+    public async getResourceGroup(requestObj: model.GetResourceGroupRequest): Promise<model.TasksIncomingMessage<model.GroupResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getResourceGroup.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/resourceGroups/{groupUid}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "groupUid" + "}", String(requestObj.groupUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getResourceGroup.');
+        }
+
+        // verify required parameter 'requestObj.groupUid' is not null or undefined
+        if (requestObj.groupUid === null || requestObj.groupUid === undefined) {
+            throw new Error('Required parameter "requestObj.groupUid" was null or undefined when calling getResourceGroup.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: any = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "GroupResponse");
+		const result: model.TasksIncomingMessage<model.GroupResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Read the resource group definitions of a project.
+     * @param requestObj contains request parameters
+     */
+    public async getResourceGroups(requestObj: model.GetResourceGroupsRequest): Promise<model.TasksIncomingMessage<model.GroupItemsResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getResourceGroups.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/resourceGroups"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getResourceGroups.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: any = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "GroupItemsResponse");
+		const result: model.TasksIncomingMessage<model.GroupItemsResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Read a project's task group definition with the specified Uid.
+     * @param requestObj contains request parameters
+     */
+    public async getTaskGroup(requestObj: model.GetTaskGroupRequest): Promise<model.TasksIncomingMessage<model.GroupResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getTaskGroup.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/taskGroups/{groupUid}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "groupUid" + "}", String(requestObj.groupUid));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getTaskGroup.');
+        }
+
+        // verify required parameter 'requestObj.groupUid' is not null or undefined
+        if (requestObj.groupUid === null || requestObj.groupUid === undefined) {
+            throw new Error('Required parameter "requestObj.groupUid" was null or undefined when calling getTaskGroup.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: any = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "GroupResponse");
+		const result: model.TasksIncomingMessage<model.GroupResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Read the task group definitions of a project.
+     * @param requestObj contains request parameters
+     */
+    public async getTaskGroups(requestObj: model.GetTaskGroupsRequest): Promise<model.TasksIncomingMessage<model.GroupItemsResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getTaskGroups.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/taskGroups"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getTaskGroups.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+
+        const requestOptions: any = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "GroupItemsResponse");
+		const result: model.TasksIncomingMessage<model.GroupItemsResponse> = {body, response};
         return Promise.resolve(result);
     }
 

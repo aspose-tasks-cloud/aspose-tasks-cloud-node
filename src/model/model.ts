@@ -2859,6 +2859,341 @@ export class FilesUploadResult {
 }
 
 /**
+ * Represents a brief read-only information about a font used in a group criterion.
+ */
+export class FontInfo {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "fontFamily",
+            baseName: "fontFamily",
+            type: "string",
+        },        
+        {
+            name: "size",
+            baseName: "size",
+            type: "number",
+        },        
+        {
+            name: "style",
+            baseName: "style",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return FontInfo.attributeTypeMap;
+    }
+
+    /**
+     * Gets or sets the font family name.
+     */
+    public fontFamily: string;
+    
+    /**
+     * Gets or sets the em-size of the font.
+     */
+    public size: number;
+    
+    /**
+     * Gets or sets the style information applied to the font.
+     */
+    public style: string;
+    
+    public constructor(init?: Partial<FontInfo>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Represents a group definition. A Group object is a member of the ResourceGroups collection or the TaskGroups collection.
+ */
+export class Group {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "uid",
+            baseName: "uid",
+            type: "number",
+        },        
+        {
+            name: "name",
+            baseName: "name",
+            type: "string",
+        },        
+        {
+            name: "showInMenu",
+            baseName: "showInMenu",
+            type: "boolean",
+        },        
+        {
+            name: "showSummary",
+            baseName: "showSummary",
+            type: "boolean",
+        },        
+        {
+            name: "maintainHierarchy",
+            baseName: "maintainHierarchy",
+            type: "boolean",
+        },        
+        {
+            name: "groupAssignments",
+            baseName: "groupAssignments",
+            type: "boolean",
+        },        
+        {
+            name: "groupCriteria",
+            baseName: "groupCriteria",
+            type: "Array<GroupCriterion>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return Group.attributeTypeMap;
+    }
+
+    /**
+     * Gets or sets a unique identifier of a group.
+     */
+    public uid: number;
+    
+    /**
+     * Gets or sets a name of a Group object.
+     */
+    public name: string;
+    
+    /**
+     * Gets or sets a value indicating whether Project shows the group name in the Group drop-down list in the Ribbon.
+     */
+    public showInMenu: boolean;
+    
+    /**
+     * Gets or sets a value indicating whether summary rows are displayed for the group.
+     */
+    public showSummary: boolean;
+    
+    /**
+     * Gets or sets a value indicating whether to show all the levels of summary tasks for subtasks within group.
+     */
+    public maintainHierarchy: boolean;
+    
+    /**
+     * Gets or sets a value indicating whether assignments should be grouped instead of tasks.
+     */
+    public groupAssignments: boolean;
+    
+    /**
+     * Gets or sets a collection of criteria representing the fields in a group definition.
+     */
+    public groupCriteria: Array<GroupCriterion>;
+    
+    public constructor(init?: Partial<Group>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Represents a criterion in a group definition.
+ */
+export class GroupCriterion {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "field",
+            baseName: "field",
+            type: "Field",
+        },        
+        {
+            name: "ascending",
+            baseName: "ascending",
+            type: "boolean",
+        },        
+        {
+            name: "groupOn",
+            baseName: "groupOn",
+            type: "GroupOn",
+        },        
+        {
+            name: "groupInterval",
+            baseName: "groupInterval",
+            type: "string",
+        },        
+        {
+            name: "startAt",
+            baseName: "startAt",
+            type: "string",
+        },        
+        {
+            name: "cellColor",
+            baseName: "cellColor",
+            type: "Colors",
+        },        
+        {
+            name: "fontColor",
+            baseName: "fontColor",
+            type: "Colors",
+        },        
+        {
+            name: "pattern",
+            baseName: "pattern",
+            type: "BackgroundPattern",
+        },        
+        {
+            name: "font",
+            baseName: "font",
+            type: "FontInfo",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return GroupCriterion.attributeTypeMap;
+    }
+
+    /**
+     * Gets or sets the field being grouped by.
+     */
+    public field: Field;
+    
+    /**
+     * Gets or sets a value indicating whether a field used as a criterion in a group definition is sorted in ascending order. False if the field is sorted in descending order.
+     */
+    public ascending: boolean;
+    
+    /**
+     * Gets or sets the type of grouping for a field used as a criterion in a group definition.
+     */
+    public groupOn: GroupOn;
+    
+    /**
+     * Gets or sets the interval for a field used as a criterion in a group definition.
+     */
+    public groupInterval: string;
+    
+    /**
+     * Gets or sets the start of the intervals for a field used as a criterion in a group definition.
+     */
+    public startAt: string;
+    
+    /**
+     * Gets or sets the color of the cell background for a field used as a criterion in a group definition.
+     */
+    public cellColor: Colors;
+    
+    /**
+     * Gets or sets the color of the font for a field used as a criterion in a group definition.
+     */
+    public fontColor: Colors;
+    
+    /**
+     * Gets or sets the pattern of the cell for a field used as a criterion in a group definition.
+     */
+    public pattern: BackgroundPattern;
+    
+    /**
+     * Gets or sets the font for a criterion in a group definition.
+     */
+    public font: FontInfo;
+    
+    public constructor(init?: Partial<GroupCriterion>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Represents a group definition's brief info.
+ */
+export class GroupItem {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "link",
+            baseName: "link",
+            type: "Link",
+        },        
+        {
+            name: "uid",
+            baseName: "uid",
+            type: "number",
+        },        
+        {
+            name: "name",
+            baseName: "name",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return GroupItem.attributeTypeMap;
+    }
+
+    public link: Link;
+    
+    public uid: number;
+    
+    public name: string;
+    
+    public constructor(init?: Partial<GroupItem>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Specifies the type of grouping for a field used as a criterion in a group definition.
+ */
+export enum GroupOn {
+    EachValue = 'EachValue' as any,
+    Interval = 'Interval' as any,
+    DateEachValue = 'DateEachValue' as any,
+    DateMinute = 'DateMinute' as any,
+    DateHour = 'DateHour' as any,
+    DateDay = 'DateDay' as any,
+    DateWeek = 'DateWeek' as any,
+    DateThirdOfMonth = 'DateThirdOfMonth' as any,
+    DateMonth = 'DateMonth' as any,
+    DateQtr = 'DateQtr' as any,
+    DateYear = 'DateYear' as any,
+    DurationEachValue = 'DurationEachValue' as any,
+    DurationMinutes = 'DurationMinutes' as any,
+    DurationHours = 'DurationHours' as any,
+    DurationDays = 'DurationDays' as any,
+    DurationWeeks = 'DurationWeeks' as any,
+    DurationMonths = 'DurationMonths' as any,
+    OutlineEachValue = 'OutlineEachValue' as any,
+    OutlineLevel = 'OutlineLevel' as any,
+    PctEachValue = 'PctEachValue' as any,
+    PctInterval = 'PctInterval' as any,
+    Pct199 = 'Pct199' as any,
+    Pct150 = 'Pct150' as any,
+    Pct125 = 'Pct125' as any,
+    Pct110 = 'Pct110' as any,
+    TextEachValue = 'TextEachValue' as any,
+    TextPrefix = 'TextPrefix' as any,
+}
+/**
  * Specifies the type of a database file to import a project from
  */
 export enum ImportedProjectType {
@@ -6099,6 +6434,49 @@ export class ResourceAssignment {
 }
 
 /**
+ * Represents a single bucket of a resource grouping result: the resources sharing the same group key.
+ */
+export class ResourceGroupBucket {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "key",
+            baseName: "key",
+            type: "string",
+        },        
+        {
+            name: "resources",
+            baseName: "resources",
+            type: "Array<ResourceItem>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return ResourceGroupBucket.attributeTypeMap;
+    }
+
+    /**
+     * The group key the bucketed resources share.
+     */
+    public key: string;
+    
+    /**
+     * Resources falling into this bucket.
+     */
+    public resources: Array<ResourceItem>;
+    
+    public constructor(init?: Partial<ResourceGroupBucket>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Resource's brief info
  */
 export class ResourceItem {
@@ -7579,6 +7957,49 @@ export class TaskCreationRequest {
     public beforeTaskId: number;
     
     public constructor(init?: Partial<TaskCreationRequest>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Represents a single bucket of a task grouping result: the tasks sharing the same group key.
+ */
+export class TaskGroupBucket {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "key",
+            baseName: "key",
+            type: "string",
+        },        
+        {
+            name: "tasks",
+            baseName: "tasks",
+            type: "Array<TaskItem>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return TaskGroupBucket.attributeTypeMap;
+    }
+
+    /**
+     * The group key the bucketed tasks share.
+     */
+    public key: string;
+    
+    /**
+     * Tasks falling into this bucket.
+     */
+    public tasks: Array<TaskItem>;
+    
+    public constructor(init?: Partial<TaskGroupBucket>) {
         
         Object.assign(this, init);
     }        
@@ -9401,6 +9822,147 @@ export class FileVersion extends StorageFile {
     }        
 }
 
+export class GroupItems extends LinkElement {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "list",
+            baseName: "list",
+            type: "Array<GroupItem>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(GroupItems.attributeTypeMap);
+    }
+
+    public list: Array<GroupItem>;
+    
+    public constructor(init?: Partial<GroupItems>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+export class GroupItemsResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "groups",
+            baseName: "groups",
+            type: "GroupItems",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(GroupItemsResponse.attributeTypeMap);
+    }
+
+    public groups: GroupItems;
+    
+    public constructor(init?: Partial<GroupItemsResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Group response.
+ */
+export class GroupResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "group",
+            baseName: "group",
+            type: "Group",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(GroupResponse.attributeTypeMap);
+    }
+
+    /**
+     * Group DTO.
+     */
+    public group: Group;
+    
+    public constructor(init?: Partial<GroupResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+export class GroupedResourcesResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "buckets",
+            baseName: "buckets",
+            type: "Array<ResourceGroupBucket>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(GroupedResourcesResponse.attributeTypeMap);
+    }
+
+    public buckets: Array<ResourceGroupBucket>;
+    
+    public constructor(init?: Partial<GroupedResourcesResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+export class GroupedTasksResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "buckets",
+            baseName: "buckets",
+            type: "Array<TaskGroupBucket>",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(GroupedTasksResponse.attributeTypeMap);
+    }
+
+    public buckets: Array<TaskGroupBucket>;
+    
+    public constructor(init?: Partial<GroupedTasksResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
 /**
  * Represents the results of resource leveling.
  */
@@ -10353,6 +10915,7 @@ const enumsMap = {
     "EarnedValueMethodType": EarnedValueMethodType,
     "ElementType": ElementType,
     "Field": Field,
+    "GroupOn": GroupOn,
     "ImportedProjectType": ImportedProjectType,
     "ItemType": ItemType,
     "LevelingOrder": LevelingOrder,
@@ -10409,6 +10972,10 @@ const typeMap = {
             FileVersions,
             FilesList,
             FilesUploadResult,
+            FontInfo,
+            Group,
+            GroupCriterion,
+            GroupItem,
             LevelingOptions,
             Link,
             LinkElement,
@@ -10426,12 +10993,14 @@ const typeMap = {
             RecurringInfo,
             Resource,
             ResourceAssignment,
+            ResourceGroupBucket,
             ResourceItem,
             StorageExist,
             StorageFile,
             TableTextStyle,
             Task,
             TaskCreationRequest,
+            TaskGroupBucket,
             TaskItem,
             TaskLink,
             TimephasedData,
@@ -10467,6 +11036,11 @@ const typeMap = {
             ExtendedAttributeItemsResponse,
             ExtendedAttributeResponse,
             FileVersion,
+            GroupItems,
+            GroupItemsResponse,
+            GroupResponse,
+            GroupedResourcesResponse,
+            GroupedTasksResponse,
             LevelingResponse,
             OutlineCodeItems,
             OutlineCodeItemsResponse,
@@ -11945,6 +12519,170 @@ public storage: string;
 public folder: string;
     
     public constructor(init?: Partial<PutExtendedAttributeRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getGroupedResources operation.
+ */
+export class GetGroupedResourcesRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Group's Uid
+     */
+public groupUid: number;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetGroupedResourcesRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getGroupedTasks operation.
+ */
+export class GetGroupedTasksRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Group's Uid
+     */
+public groupUid: number;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetGroupedTasksRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getResourceGroup operation.
+ */
+export class GetResourceGroupRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Group's Uid
+     */
+public groupUid: number;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetResourceGroupRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getResourceGroups operation.
+ */
+export class GetResourceGroupsRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetResourceGroupsRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getTaskGroup operation.
+ */
+export class GetTaskGroupRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * Group's Uid
+     */
+public groupUid: number;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetTaskGroupRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getTaskGroups operation.
+ */
+export class GetTaskGroupsRequest {
+    /**
+     * The name of the file.
+     */
+public name: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+
+    /**
+     * The document folder.
+     */
+public folder: string;
+    
+    public constructor(init?: Partial<GetTaskGroupsRequest>) {        
         Object.assign(this, init);
     } 
 }
