@@ -3850,6 +3850,122 @@ export class TasksApi {
 
 
     /**
+     * Clears all VBA macros from the project.
+     * @param requestObj contains request parameters
+     */
+    public async clearVba(requestObj: model.ClearVbaRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling clearVba.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/vbaproject"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling clearVba.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        const requestOptions: any = {
+            method: "DELETE",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Deletes a VBA module.
+     * @param requestObj contains request parameters
+     */
+    public async deleteVbaModule(requestObj: model.DeleteVbaModuleRequest): Promise<model.TasksIncomingMessage<model.AsposeResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling deleteVbaModule.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/vbaproject/modules/{module}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "module" + "}", String(requestObj.module));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling deleteVbaModule.');
+        }
+
+        // verify required parameter 'requestObj.module' is not null or undefined
+        if (requestObj.module === null || requestObj.module === undefined) {
+            throw new Error('Required parameter "requestObj.module" was null or undefined when calling deleteVbaModule.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        const requestOptions: any = {
+            method: "DELETE",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "AsposeResponse");
+		const result: model.TasksIncomingMessage<model.AsposeResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Returns VBA module by name or index.
+     * @param requestObj contains request parameters
+     */
+    public async getVbaModule(requestObj: model.GetVbaModuleRequest): Promise<model.TasksIncomingMessage<model.VbaModuleResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getVbaModule.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/vbaproject/modules/{module}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "module" + "}", String(requestObj.module));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling getVbaModule.');
+        }
+
+        // verify required parameter 'requestObj.module' is not null or undefined
+        if (requestObj.module === null || requestObj.module === undefined) {
+            throw new Error('Required parameter "requestObj.module" was null or undefined when calling getVbaModule.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        const requestOptions: any = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "VbaModuleResponse");
+		const result: model.TasksIncomingMessage<model.VbaModuleResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
      * Returns VBA project.
      * @param requestObj contains request parameters
      */
@@ -3880,6 +3996,104 @@ export class TasksApi {
         const response = await invokeApiMethod(requestOptions, this.configuration);
         const body =  ObjectSerializer.deserialize(response.body, "VbaProjectResponse");
 		const result: model.TasksIncomingMessage<model.VbaProjectResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Adds a new VBA module.
+     * @param requestObj contains request parameters
+     */
+    public async postVbaModule(requestObj: model.PostVbaModuleRequest): Promise<model.TasksIncomingMessage<model.VbaModuleResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling postVbaModule.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/vbaproject/modules"
+            .replace("{" + "name" + "}", String(requestObj.name));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling postVbaModule.');
+        }
+
+        // verify required parameter 'requestObj.module' is not null or undefined
+        if (requestObj.module === null || requestObj.module === undefined) {
+            throw new Error('Required parameter "requestObj.module" was null or undefined when calling postVbaModule.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        let requestBody : any;
+        if(requestObj.module) {
+            requestBody = ObjectSerializer.serialize(requestObj.module, requestObj.module.constructor.name === "Object" ? "CreateVbaModuleRequest" : requestObj.module.constructor.name);
+        }
+
+        const requestOptions: any = {
+            method: "POST",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "VbaModuleResponse");
+		const result: model.TasksIncomingMessage<model.VbaModuleResponse> = {body, response};
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Updates a VBA module's source code.
+     * @param requestObj contains request parameters
+     */
+    public async putVbaModule(requestObj: model.PutVbaModuleRequest): Promise<model.TasksIncomingMessage<model.VbaModuleResponse>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling putVbaModule.');
+        }
+
+        let localVarPath = this.configuration.getApiBaseUrl() + "/tasks/{name}/vbaproject/modules/{module}"
+            .replace("{" + "name" + "}", String(requestObj.name))
+            .replace("{" + "module" + "}", String(requestObj.module));
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.name' is not null or undefined
+        if (requestObj.name === null || requestObj.name === undefined) {
+            throw new Error('Required parameter "requestObj.name" was null or undefined when calling putVbaModule.');
+        }
+
+        // verify required parameter 'requestObj.module' is not null or undefined
+        if (requestObj.module === null || requestObj.module === undefined) {
+            throw new Error('Required parameter "requestObj.module" was null or undefined when calling putVbaModule.');
+        }
+
+        // verify required parameter 'requestObj.updateRequest' is not null or undefined
+        if (requestObj.updateRequest === null || requestObj.updateRequest === undefined) {
+            throw new Error('Required parameter "requestObj.updateRequest" was null or undefined when calling putVbaModule.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fileName", requestObj.fileName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "folder", requestObj.folder);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storage", requestObj.storage);
+
+        let requestBody : any;
+        if(requestObj.updateRequest) {
+            requestBody = ObjectSerializer.serialize(requestObj.updateRequest, requestObj.updateRequest.constructor.name === "Object" ? "UpdateVbaModuleRequest" : requestObj.updateRequest.constructor.name);
+        }
+
+        const requestOptions: any = {
+            method: "PUT",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+            body: requestBody,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const body =  ObjectSerializer.deserialize(response.body, "VbaModuleResponse");
+		const result: model.TasksIncomingMessage<model.VbaModuleResponse> = {body, response};
         return Promise.resolve(result);
     }
 

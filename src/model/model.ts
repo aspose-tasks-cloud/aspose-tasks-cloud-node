@@ -778,6 +778,59 @@ export enum CostAccrualType {
     Undefined = 'Undefined' as any,
 }
 /**
+ * Represents the body of a request that creates a new VBA module.
+ */
+export class CreateVbaModuleRequest {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "name",
+            baseName: "name",
+            type: "string",
+        },        
+        {
+            name: "type",
+            baseName: "type",
+            type: "VbaModuleType",
+        },        
+        {
+            name: "sourceCode",
+            baseName: "sourceCode",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return CreateVbaModuleRequest.attributeTypeMap;
+    }
+
+    /**
+     * Gets or sets the name of the VBA module to create.
+     */
+    public name: string;
+    
+    /**
+     * Gets or sets the type of the VBA module to create. Only ProceduralModule and ClassModule can be created; other values are rejected.
+     */
+    public type: VbaModuleType;
+    
+    /**
+     * Gets or sets the source code to store in the new VBA module.
+     */
+    public sourceCode: string;
+    
+    public constructor(init?: Partial<CreateVbaModuleRequest>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Specifies the type of a custom field.
  */
 export enum CustomFieldType {
@@ -4223,6 +4276,11 @@ export class PrimaveraTaskProperties {
             name: "secondaryConstraintDate",
             baseName: "secondaryConstraintDate",
             type: "Date",
+        },        
+        {
+            name: "plannedDuration",
+            baseName: "plannedDuration",
+            type: "string",
         }    ];
 
     /**
@@ -4406,6 +4464,11 @@ export class PrimaveraTaskProperties {
      * Gets the date of secondary constraint.
      */
     public secondaryConstraintDate: Date;
+    
+    /**
+     * Gets the original or planned duration -- the total working time from the task planned start date to the planned finish date.
+     */
+    public plannedDuration: string;
     
     public constructor(init?: Partial<PrimaveraTaskProperties>) {
         
@@ -8423,6 +8486,39 @@ export enum Timescale {
     Months = 'Months' as any,
 }
 /**
+ * Represents the body of a request that updates a VBA module.
+ */
+export class UpdateVbaModuleRequest {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "sourceCode",
+            baseName: "sourceCode",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return UpdateVbaModuleRequest.attributeTypeMap;
+    }
+
+    /**
+     * The new source code
+     */
+    public sourceCode: string;
+    
+    public constructor(init?: Partial<UpdateVbaModuleRequest>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Represents a lookup value of an extended attribute.
  */
 export class Value {
@@ -8528,6 +8624,11 @@ export class VbaModule {
             name: "sourceCode",
             baseName: "sourceCode",
             type: "string",
+        },        
+        {
+            name: "type",
+            baseName: "type",
+            type: "VbaModuleType",
         }    ];
 
     /**
@@ -8551,6 +8652,11 @@ export class VbaModule {
      * Gets a source code of the module
      */
     public sourceCode: string;
+    
+    /**
+     * Gets the type of the module.
+     */
+    public type: VbaModuleType;
     
     public constructor(init?: Partial<VbaModule>) {
         
@@ -8601,6 +8707,15 @@ export class VbaModuleAttribute {
     }        
 }
 
+/**
+ * Specifies the type of a module in a VBA project.
+ */
+export enum VbaModuleType {
+    DocumentModule = 'DocumentModule' as any,
+    ProceduralModule = 'ProceduralModule' as any,
+    ClassModule = 'ClassModule' as any,
+    DesignerModule = 'DesignerModule' as any,
+}
 /**
  * Represents VbaProject
  */
@@ -10803,6 +10918,39 @@ export class TimephasedDataResponse extends AsposeResponse {
 }
 
 /**
+ * VbaModule response.
+ */
+export class VbaModuleResponse extends AsposeResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "module",
+            baseName: "module",
+            type: "VbaModule",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(VbaModuleResponse.attributeTypeMap);
+    }
+
+    /**
+     * VbaModule DTO.
+     */
+    public module: VbaModule;
+    
+    public constructor(init?: Partial<VbaModuleResponse>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * VbaProject response
  */
 export class VbaProjectResponse extends AsposeResponse {
@@ -10949,6 +11097,7 @@ const enumsMap = {
     "TimeUnitType": TimeUnitType,
     "TimephasedDataType": TimephasedDataType,
     "Timescale": Timescale,
+    "VbaModuleType": VbaModuleType,
     "ViewScreen": ViewScreen,
     "WBSSequence": WBSSequence,
     "WeekDayType": WeekDayType,
@@ -10963,6 +11112,7 @@ const typeMap = {
             Calendar,
             CalendarException,
             CalendarItem,
+            CreateVbaModuleRequest,
             DiscUsage,
             Duration,
             ErrorDetails,
@@ -11004,6 +11154,7 @@ const typeMap = {
             TaskItem,
             TaskLink,
             TimephasedData,
+            UpdateVbaModuleRequest,
             Value,
             VbaModule,
             VbaModuleAttribute,
@@ -11067,6 +11218,7 @@ const typeMap = {
             TaskLinksResponse,
             TaskResponse,
             TimephasedDataResponse,
+            VbaModuleResponse,
             VbaProjectResponse,
             ViewsResponse,
             WBSDefinitionResponse,
@@ -14079,6 +14231,98 @@ public fileName: string;
 }
 
 /**
+ * Request model for clearVba operation.
+ */
+export class ClearVbaRequest {
+    /**
+     * The name of the file
+     */
+public name: string;
+
+    /**
+     * Optional output file name
+     */
+public fileName: string;
+
+    /**
+     * The folder storage
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<ClearVbaRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for deleteVbaModule operation.
+ */
+export class DeleteVbaModuleRequest {
+    /**
+     * The name of the file
+     */
+public name: string;
+
+    /**
+     * The module name or index
+     */
+public module: string;
+
+    /**
+     * Optional output file name
+     */
+public fileName: string;
+
+    /**
+     * The folder storage
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<DeleteVbaModuleRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for getVbaModule operation.
+ */
+export class GetVbaModuleRequest {
+    /**
+     * The name of the file
+     */
+public name: string;
+
+    /**
+     * The module name or index
+     */
+public module: string;
+
+    /**
+     * The folder storage
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<GetVbaModuleRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
  * Request model for getVbaProject operation.
  */
 export class GetVbaProjectRequest {
@@ -14098,6 +14342,79 @@ public folder: string;
 public storage: string;
     
     public constructor(init?: Partial<GetVbaProjectRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for postVbaModule operation.
+ */
+export class PostVbaModuleRequest {
+    /**
+     * The name of the file
+     */
+public name: string;
+
+    /**
+     * The module creation request
+     */
+public module: CreateVbaModuleRequest;
+
+    /**
+     * Optional output file name
+     */
+public fileName: string;
+
+    /**
+     * The folder storage
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<PostVbaModuleRequest>) {        
+        Object.assign(this, init);
+    } 
+}
+
+/**
+ * Request model for putVbaModule operation.
+ */
+export class PutVbaModuleRequest {
+    /**
+     * The name of the file
+     */
+public name: string;
+
+    /**
+     * The module name or index
+     */
+public module: string;
+
+    /**
+     * The module update request
+     */
+public updateRequest: UpdateVbaModuleRequest;
+
+    /**
+     * Optional output file name
+     */
+public fileName: string;
+
+    /**
+     * The folder storage
+     */
+public folder: string;
+
+    /**
+     * The document storage.
+     */
+public storage: string;
+    
+    public constructor(init?: Partial<PutVbaModuleRequest>) {        
         Object.assign(this, init);
     } 
 }

@@ -105,7 +105,7 @@ async function invokeApiMethodInternal(requestOptions: any, configuration: Confi
     const defaultHeaders: any = {
         "User-Agent": "tasks nodejs sdk",
         "x-aspose-client": "nodejs sdk",
-        "x-aspose-client-version": "26.7",
+        "x-aspose-client-version": "26.9",
     };
 
     axiosConfig.headers = Object.assign({}, defaultHeaders, requestOptions.headers || {});
